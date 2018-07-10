@@ -1,4 +1,4 @@
 The uniNote is a web-based notebook.
 
-Member:
+Members:
 seriouszyx
