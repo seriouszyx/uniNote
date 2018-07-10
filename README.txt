@@ -1,7 +1,5 @@
-The uniNote is a web-based notebook.
+ï»¿The uniNote is a web-based notebook.
 
 Members:
 seriouszyx
 StathamWYJ
-¡£¡£¡£
-£¡£¡£¡
