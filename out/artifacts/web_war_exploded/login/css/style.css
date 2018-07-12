@@ -4,7 +4,7 @@ body {
   overflow: hidden;
   width: 100% !important;
   box-sizing: border-box;
-  font-family: "Roboto", sans-serif;
+  font-family: 'Lato', sans-serif;
 }
 
 /*
@@ -277,9 +277,7 @@ button:focus.off.login, button:active.off.login, button:hover.off.login {
 *, *:before, *:after{
   box-sizing:border-box;
 }
-body{
-  font-family: 'Lato', sans-serif;
-}
+
 div.foo{
   width: 90%;
   margin: 0 auto;
@@ -344,4 +342,23 @@ div.foo{
     rotateY(40deg)
     rotateZ(0deg)
     skew(0deg,22deg);
+}
+
+b {
+  display: block;
+  width: 1000px;
+
+  box-sizing: border-box;
+  font: 700 8em helvetica;
+  letter-spacing: -.05em;
+  /* gradient */
+  /* image */
+  background: url("https://i.loli.net/2018/07/12/5b46a405030f3.jpg") no-repeat;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+#right-letter {
+  position: absolute;
+  top: 160px;
+  left: 58%;
 }
