@@ -6,6 +6,25 @@
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
           <element id="module-output" name="uniNote" />
+          <element id="dir-copy" path="F:/Java/mylib/mysql-connector-java-8.0.11" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="file-copy" path="F:/Java/mylib/c3p0-0.9.5.2/lib/c3p0-0.9.5.2.jar" />
+          <element id="file-copy" path="F:/Java/mylib/c3p0-0.9.5.2/lib/mchange-commons-java-0.2.11.jar" />
+          <element id="file-copy" path="F:/Java/mylib/commons-beanutils-1.9.3/commons-beanutils-1.9.3.jar" />
+          <element id="file-copy" path="F:/Java/mylib/commons-collections-3.2.2/commons-collections-3.2.2.jar" />
+          <element id="file-copy" path="F:/Java/mylib/commons-dbutils-1.7/commons-dbutils-1.7.jar" />
+          <element id="file-copy" path="F:/Java/mylib/commons-fileupload-1.3.3-bin/commons-fileupload-1.3.3.jar" />
+          <element id="file-copy" path="F:/Java/mylib/commons-io-2.6/commons-io-2.6.jar" />
+          <element id="file-copy" path="F:/Java/mylib/commons-lang-2.6/commons-lang-2.6.jar" />
+          <element id="file-copy" path="F:/Java/mylib/commons-logging-1.2/commons-logging-1.2.jar" />
+          <element id="file-copy" path="F:/Java/mylib/commons-pool2-2.6.0/commons-pool2-2.6.0.jar" />
+          <element id="file-copy" path="F:/Java/mylib/ezmorph-1.0.6.jar" />
+          <element id="file-copy" path="F:/Java/mylib/json-lib-2.4-jdk15.jar" />
+          <element id="file-copy" path="F:/Java/mylib/jstl.jar" />
+          <element id="file-copy" path="F:/Java/mylib/mail.jar" />
+          <element id="file-copy" path="F:/Java/mylib/mchange-commons-java-0.2.11.jar" />
+          <element id="file-copy" path="F:/Java/mylib/standard.jar" />
         </element>
       </element>
     </root>
