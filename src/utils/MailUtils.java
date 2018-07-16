@@ -44,7 +44,7 @@ public class MailUtils {
 		message.setSubject("用户激活");
 		// message.setText("这是一封激活邮件，请<a href='#'>点击</a>");
 
-		String url="http://localhost:8080/MyTomcat/UserServlet?method=active&code="+emailMsg;
+		String url="http://localhost:8080/UserServlet?method=active&code="+emailMsg;
 		String content="<h1>来自购物天堂的激活邮件!激活请点击以下链接!</h1><h3><a href='"+url+"'>"+url+"</a></h3>";
 		//设置邮件内容
 		message.setContent(content, "text/html;charset=utf-8");
