@@ -3,6 +3,7 @@ package dao.dao.impl;
 import dao.UserDao;
 import domain.User;
 import org.apache.commons.dbutils.QueryRunner;
+import org.apache.commons.dbutils.handlers.BeanHandler;
 import utils.JDBCUtils;
 
 import java.sql.SQLException;
@@ -17,9 +18,32 @@ import java.sql.SQLException;
 public class UserDaoImpl implements UserDao {
     @Override
     public void userSignup(User user) throws SQLException {
-        String sql = "insert into user values (?, ?, ?, ?)";
+        String sql = "insert into user values (?, ?, ?, ?, ?, ?, ?, ?, ?)";
         QueryRunner qr = new QueryRunner(JDBCUtils.getDataSource());
-        Object[] params = {user.getId(), user.getUsername(), user.getPassword(), user.getEmail()};
+        Object[] params = {user.getId(), user.getUsername(), user.getPassword(), user.getEmail(),
+                            user.getCode(), user.getName(), user.getTelephone(), user.getSex(),
+                            user.getState()};
         qr.update(sql, params);
     }
+
+    @Override
+    public User userActive(String code) throws SQLException {
+        String sql = "select * from user where code = ?";
+        QueryRunner qr = new QueryRunner(JDBCUtils.getDataSource());
+        return qr.query(sql, new BeanHandler<User>(User.class), code);
+    }
+
+    @Override
+    public void updateUser(User user) throws SQLException {
+        String sql = "update user set username = ?, password = ?, email = ?," +
+                "code = ?, name = ?, telephone = ?, sex = ?, state = ? where id = ?";
+        QueryRunner qr = new QueryRunner(JDBCUtils.getDataSource());
+        Object[] params = {user.getUsername(), user.getPassword(), user.getEmail(),
+                user.getCode(), user.getName(), user.getTelephone(), user.getSex(),
+                user.getState(),  user.getId()};
+        qr.update(sql, params);
+    }
+
+
+
 }

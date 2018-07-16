@@ -13,4 +13,13 @@ public interface UserService {
      * @return void
      **/
     void userSignup(User user) throws SQLException;
+
+    /**
+     * @Author Yixiang Zhao
+     * @Description 判断用户是否已注册
+     * @Date 21:21 2018/7/16
+     * @Param [code]
+     * @return boolean
+     **/
+    boolean userActive(String code) throws SQLException;
 }
