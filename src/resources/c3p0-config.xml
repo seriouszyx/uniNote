@@ -3,7 +3,7 @@
 <c3p0-config>
     <default-config>
         <property name="driverClass">com.mysql.cj.jdbc.Driver</property>
-        <property name="jdbcUrl">jdbc:mysql://localhost:3306/store?serverTimezone=GMT&amp;useSSL=false</property>
+        <property name="jdbcUrl">jdbc:mysql://localhost:3306/uniNote?serverTimezone=GMT&amp;useSSL=false</property>
         <property name="user">root</property>
         <property name="password">zhaoyixiang123</property>
 
