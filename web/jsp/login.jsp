@@ -51,7 +51,8 @@
         <div class="left" style="overflow-x: hidden;overflow-y: hidden">
             <div class="content">
                 <h2>Sign Up</h2>
-                <form id="form-signup" method="post" onsubmit="return false;" action="${pageContext.request.contextPath}/UserServlet?method=userSignup">
+                <form id="form-signup" method="post"
+                      action="${pageContext.request.contextPath}/UserServlet?method=userSignup">
                     <div class="form-element form-stack">
                         <label for="email" class="form-label">Email</label>
                         <input id="email" type="email" name="email">
@@ -81,7 +82,7 @@
         <div class="right">
             <div class="content">
                 <h2>Login</h2>
-                <form id="form-login" method="post" onsubmit="return false;">
+                <form id="form-login" method="post">
                     <div class="form-element form-stack">
                         <label for="username-login" class="form-label">Username</label>
                         <input id="username-login" type="text" name="username">
@@ -104,10 +105,7 @@
 <script src='https://cdnjs.cloudflare.com/ajax/libs/paper.js/0.11.3/paper-full.min.js'></script>
 
 
-
 <script src="../js/login.js"></script>
-
-
 
 
 </body>
