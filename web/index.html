@@ -36,100 +36,103 @@
         	作者：offline
         	时间：2018-07-12
         	描述:左侧隐藏信息栏
-        	有BUG！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！
+        	
         -->
-		<ul id="slide-out" class="side-nav ">
-			<!--left-side-out-->
-			<li>
-				<div class=" userView">
-					<div class="background">
-						<img src="images/test4.jpg">
-						<!--User background-->
+		
+			<ul id="slide-out" class="side-nav " style="min-width: 275px;width: 19%;">
+				<!--left-side-out-->
+				<li>
+					<div class=" userView">
+						<div class="background">
+							<img src="images/test4.jpg">
+							<!--User background-->
+						</div>
+						<a href="#!user"><img class="circle" src="images/background2.jpg"></a>
+						<!--User Head portrait-->
+						<a href="#!name"><span class="white-text name">UserName</span></a>
+						<a href="#!email"><span class="white-text email">UserEmail@.com</span></a>
 					</div>
-					<a href="#!user"><img class="circle" src="images/background2.jpg"></a>
-					<!--User Head portrait-->
-					<a href="#!name"><span class="white-text name">UserName</span></a>
-					<a href="#!email"><span class="white-text email">UserEmail@.com</span></a>
-				</div>
-			</li>
-			<li>
-				<!--Member information-->
-				<a href="UserInformation.html"target="_blank" class="waves-effect waves-light btn card-panel hoverable flow-text"><i class="material-icons">perm_identity</i>Personal</a>
-			</li>
-			<li>
-				<!--Create a new note-->
-				<a href="#!" class="waves-effect waves-light btn card-panel hoverable flow-text"><i class="material-icons">mode_edit</i>Create Notes</a>
-			</li>
-			<li>
-				<!--Find note-->
-				<a href="#!" class="waves-effect waves-light btn card-panel hoverable flow-text"><i class="material-icons">search</i>Search Notes</a>
-			</li>
-			<li>
-				<!--Note book-->
-				<a href="NoteBook/index.html" target="_blank" class="waves-effect waves-light btn card-panel hoverable flow-text"><i class="material-icons">view_headline</i>Note Books</a>
-			</li>
-			<li>
-				<!--Note mark-->
-				<a href="#!" class="waves-effect waves-light btn card-panel hoverable flow-text"><i class="material-icons">star</i>Mark</a>
-			</li>
-			<li>
-				<!--Note delete-->
-				<a href="#!" class="waves-effect waves-light btn card-panel hoverable flow-text"><i class="material-icons">delete</i>Trash</a>
-			</li>
-			<li>
-				<!--Note settings-->
-				<a href="#!" class="waves-effect waves-light btn card-panel hoverable flow-text"><i class="material-icons">settings</i>Settings</a>
-			</li>
-			<li>
-				<!--About us-->
-				<a href="#!" href="javascript:void(0)" class="share waves-effect waves-light btn card-panel hoverable flow-text"><i class="material-icons">open_in_new</i>Share</a>
-			</li>
-		</ul>
-		<!--Click to show user's information-->
-		<a href="#" data-activates="slide-out" class="  button-collapse "><i class="  btn " id="infor"><i  class=" material-icons" id="information">perm_identity</i></i>
-		</a>
-		<!--*************************************************************************************************************************-->
-		<!--Main-->
-		<br><br><br>
-		<div id="order_nav">
-			<div class="auto_width height100">
-				<ul class="list not_ie">
-					<li class="BUTTON">
-						<div class="ico _6">
-							<a href="#" onclick="noteBooks()"></a>
-						</div>
-						<p><span>Note Books</span></p>
-					</li>
-					<li class="BUTTON">
-						<div class="ico _3">
-							<a href="#" onclick="create()"></a>
-						</div>
-						<p><span>Create Note</span></p>
-					</li>
-					<li class="BUTTON">
-						<div class="ico _2">
-							<a href="#"></a>
-						</div>
-						<p><span>标签分类</span></p>
-					</li>
-					<li class="BUTTON">
-						<div class="ico _4">
-							<a href="#"></a>
-						</div>
-						<p><span>Trash</span></p>
-					</li>
+				</li>
+				<li>
+					<!--Member information-->
+					<a href="UserInformation.html" target="_blank" class="waves-effect waves-light btn card-panel hoverable flow-text"><i class="material-icons">perm_identity</i>Personal</a>
+				</li>
+				<li>
+					<!--Create a new note-->
+					<a href="#!" class="waves-effect waves-light btn card-panel hoverable flow-text"><i class="material-icons">mode_edit</i>Create Notes</a>
+				</li>
+				<li>
+					<!--Find note-->
+					<a href="#!" class="waves-effect waves-light btn card-panel hoverable flow-text"><i class="material-icons">search</i>Search Notes</a>
+				</li>
+				<li>
+					<!--Note book-->
+					<a href="NoteBook/index.html" target="_blank" class="waves-effect waves-light btn card-panel hoverable flow-text"><i class="material-icons">view_headline</i>Note Books</a>
+				</li>
+				<li>
+					<!--Note mark-->
+					<a href="#!" class="waves-effect waves-light btn card-panel hoverable flow-text"><i class="material-icons">star</i>Mark</a>
+				</li>
+				<li>
+					<!--Note delete-->
+					<a href="#!" class="waves-effect waves-light btn card-panel hoverable flow-text"><i class="material-icons">delete</i>Trash</a>
+				</li>
+				<li>
+					<!--Note settings-->
+					<a href="#!" class="waves-effect waves-light btn card-panel hoverable flow-text"><i class="material-icons">settings</i>Settings</a>
+				</li>
+				<li>
+					<!--About us-->
+					<a href="#!" href="javascript:void(0)" class="share waves-effect waves-light btn card-panel hoverable flow-text"><i class="material-icons">open_in_new</i>Share</a>
+				</li>
+			</ul>
+			<!--Click to show user's information-->
+			<a href="#" data-activates="slide-out" class="  button-collapse "><i class="  btn " id="infor"><i  class=" material-icons" id="information">perm_identity</i></i>
+			</a>
+			<!--*************************************************************************************************************************-->
+			<!--Main-->
+			<br><br><br>
+			<div id="order_nav">
+				<div class="auto_width height100">
+					<ul class="list not_ie">
+						<li class="BUTTON">
+							<div class="ico _6">
+								<a href="#" onclick="noteBooks()"></a>
+							</div>
+							<p><span>Note Books</span></p>
+						</li>
+						<li class="BUTTON">
+							<div class="ico _3">
+								<a href="#" onclick="create()"></a>
+							</div>
+							<p><span>Create Note</span></p>
+						</li>
+						<li class="BUTTON">
+							<div class="ico _2">
+								<a href="#"></a>
+							</div>
+							<p><span>标签分类</span></p>
+						</li>
+						<li class="BUTTON">
+							<div class="ico _4">
+								<a href="#"></a>
+							</div>
+							<p><span>Trash</span></p>
+						</li>
 
-				</ul>
+					</ul>
+				</div>
 			</div>
-		</div>
-		</div>
+		
+
 		<!--*************************************************************************************************************************-->
 		<!--
 	作者：offline
 	时间：2018-07-12
 	描述：动态背景
-		-->
-		<svg class="mainSVG" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+		
+		<div id="divcircle">
+		<svg class="mainSVG" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg" >
 			<defs>
 				<filter id="goo">
 					<feGaussianBlur in="SourceGraphic" stdDeviation="8" result="blur" />
@@ -189,14 +192,22 @@
 			</g>
 			<circle id="dot" fill="url(#dotGrad)" cx="0" cy="0" r="24" />
 			<g id="pContainer" />
-			<!-- <text x="50%" y="15%" fill="#14264D" style="text-anchor:middle;">xxx</text>-->
+			
 		</svg>
+		</div>
+		-->
 		<!--*************************************************************************************************************************-->
 		<!--右下角隐藏add标签-->
-		<div class="fixed-action-btn  toolbar" style="width: 56px;">
-			<a class="btn-floating btn-large 2bba30">
-				<i class="large material-icons">add</i>
-			</a>
+		<div id="divrightdown">
+			<div id="showUp" style="width: 100px;height: 100px;background-color: red;    position: absolute;
+    right: 0;
+    bottom: 79px;display: none;"></div>
+			<div class="fixed-action-btn  toolbar" style="width: 56px;" onclick="showUp()">
+
+				<a class="btn-floating waves-effect waves-light RDF btn-large 2bba30">
+					<i class="large material-icons">add</i>
+				</a>
+				<!--
 			<ul>
 				<li class="waves-effect waves-light RDF">
 					<a href="#!"><i class="material-icons" style="font-size: 40px;">speaker_notes</i>Conversation</a>
@@ -211,13 +222,15 @@
 					<a href="#!"><i class="material-icons" style="font-size: 40px;">toc</i>Taskbar</a>
 				</li>
 			</ul>
+			-->
+			</div>
+
 		</div>
-		
 		<!--*************************************************************************************************************************-->
 
 		<!--*************************************************************************************************************************-->
 
-		<section id="createNote" style="width:685px;position: relative;top: -53%;left: 27.5%;color: black;font-size: 14px;display: none;">
+		<section id="createNote" style="width:685px;position: relative;left: 27.5%;color: black;font-size: 14px;display: none;">
 			<div id="div1">
 				<p id="time">时间：2018/7/16 16:08</p>
 			</div>
@@ -233,7 +246,7 @@
 	描述：笔记本目录
 -->
 
-		<div id="noteBooks" style="width: 60%;min-width: 145px;height: 48%;background-color: white;position: relative;top: -58%;left: 20%;display: none ;border:1px solid #666;overflow:hidden;vertical-align:middle;border-radius: 8px;">
+		<div id="noteBooks" style="width: 60%;min-width: 145px;height: 48%;background-color: white;position: relative;left: 20%;display: none ;border:1px solid #666;overflow:hidden;vertical-align:middle;border-radius: 8px;">
 			<form action="#">
 
 				<p style="margin-left: 5%;">
@@ -290,26 +303,14 @@
 	<script type="text/javascript" src="js/wangEditor.min.js"></script>
 	<script src="js/jquery-1.8.3.min.js"></script>
 	<script type="text/javascript" src="js/share.js"></script>
-	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 	<script type="text/javascript" src='js/TweenMax.min.js'></script>
 	<script type="text/javascript" src='js/MorphSVGPlugin.min.js'></script>
-	<script type="text/javascript" src='js/Physics2DPlugin.min.js'></script>
 	<script type="text/javascript" src="js/Function.js"></script>
-	<script type="text/javascript" src="js/bin/materialize.js"></script>
+	<script type="text/javascript" src="js/materialize.js"></script>
 	<script type="text/javascript" src="js/Initialization.js"></script>
 	<script type="text/javascript" src="js/index.js"></script>
 	<script type="text/javascript" src="js/jq.js"></script>
 	<script type="text/javascript" src="js/style.js"></script>
-	<script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>
-	<script src="createJs/froala_editor.min.js"></script>
-	<script src="createJs/plugins/tables.min.js"></script>
-	<script src="createJs/plugins/lists.min.js"></script>
-	<script src="createJs/plugins/colors.min.js"></script>
-	<script src="createJs/plugins/media_manager.min.js"></script>
-	<script src="createJs/plugins/font_family.min.js"></script>
-	<script src="createJs/plugins/font_size.min.js"></script>
-	<script src="createJs/plugins/block_styles.min.js"></script>
-	<script src="createJs/plugins/video.min.js"></script>
 	<!--
     	作者：offline
     	时间：2018-07-13
