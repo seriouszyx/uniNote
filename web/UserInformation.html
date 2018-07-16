@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>UserInformation</title>
+	</head>
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
+
+	<body>
+
+		<div class="row">
+			<form class="col s12" action="#">
+				<div class="row">
+					<div class="input-field col s6">
+						<label for="first_name">用户名</label>
+						<br /><br />
+						<input id="first_name" type="text" class="validate">
+					</div>
+
+					<div class="input-field col s6">
+						<label for="last_name">真实姓名</label>
+						<br /><br />
+						<input id="last_name" type="text" class="validate">
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="input-field col s6">
+						<label for="password">密码</label>
+						<br /><br />
+						<input id="password" type="password" class="validate">
+					</div>
+					<div class="row">
+						<div class="input-field col s6">
+							<label for="email" data-error="wrong" data-success="right">电子邮箱</label>
+							<br /><br />
+							<input id="email" class="validate" type=text name=email onBlur="if ((this.value.indexOf('@')<0)&&((this.value)!='')) alert('邮件地址错误，请重新输入');">
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div style="width: 30%;">
+						<label for="first_name" style="font-size: 15px;">性别</label>
+						<br />
+						<p>
+							<input name="group1" type="radio" id="test1" />
+							<label for="test1">男♂</label>
+						</p>
+						<p>
+							<input name="group1" type="radio" id="test2" />
+							<label for="test2">女♀</label>
+						</p>
+					</div>
+					<div style="width: 30%;position: relative;left: 50%;margin-top: -107px;">
+						<select style="display: block;border: 1px solid; border-radius: 35px;width: 120px;color: #9e9e9e;">
+							<option value="volvo">所在省份</option>
+							<option value="Provinces1">河南</option>
+							<option value="Provinces2">广西</option>
+							<option value="Provinces3">广东</option>
+						</select>
+						<br />
+						<select style="display: block;border: 1px solid;border-radius: 35px;width: 120px;color: #9e9e9e;">
+							<option value="City1">居住城市</option>
+							<option value="City2">开封</option>
+							<option value="City3">桂林</option>
+							<option value="City4">珠海</option>
+						</select>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="input-field col s12">
+						<label for="email">爱好</label>
+						<br /><br />
+						<input id="email" type="email" class="validate">
+					</div>
+				</div>
+				<div class="row">
+					<div class="input-field col s12">
+						<label for="email">个人描述</label>
+						<br /><br />
+						<input id="email" type="email" class="validate">
+					</div>
+				</div>
+
+			</form>
+		</div>
+
+	</body>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
+
+</html>

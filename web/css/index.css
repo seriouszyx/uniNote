@@ -1,0 +1,24 @@
+
+a {outline-style:none;color:#535353;text-decoration:none}
+a:hover { color: #D40000; text-decoration: none}
+.clear{height:0; overflow:hidden; clear:both}
+
+#order_nav {  position: relative; background: #fff; position: relative; }
+#order_nav .list { width: 936px; margin: 0 auto; }
+#order_nav .list li { width: 116px; height: 116px; float: left; border-radius: 50%; position: relative; margin: 0 20px 80px 70px; position: relative; cursor: pointer; -webkit-transition: .4s all; -moz-transition: .4s all; -ms-transition: .4s all; transition: .4s all; }
+#order_nav .list li a { display: block; width: 100%; height: 100%; }
+#order_nav .list li .cycle_mark { position: absolute; left: 0; top: 0; z-index: 2; }
+#order_nav .list li .ico { width: 102px; height: 102px; position: absolute; left: 7px; top: 7px; background: #424242 url(../images/rotate.png); border-radius: 50%; z-index: 1; -webkit-transition: .4s all; -moz-transition: .4s all; -ms-transition: .4s all; transition: .4s all; }
+#order_nav .list li ._1 { background-position: 0px 0px; }
+#order_nav .list li ._2 { background-position: -102px 0px; }
+#order_nav .list li ._3 { background-position: -204px 0px; }
+#order_nav .list li ._4 { background-position: -306px 0px; }
+#order_nav .list li ._5 { background-position: -408px 0px; }
+#order_nav .list li ._6 { background-position: -510px 0px; }
+
+#order_nav .list li p { width: 100%; position: absolute; left: 0; top: 126px; text-align: center; }
+#order_nav .list li p span { font-size: 16px; color: #414141; display: block; font-weight: bold; }
+#order_nav .list li p strong { font-size: 12px; color: #f00; display: block; }
+
+#order_nav .list li.on { background: rgba(0,0,0,.5); }
+#order_nav .list li.on .ico { background-color: #0ff; -webkit-transform: rotate(360deg); -moz-transform: rotate(360deg); -ms-transform: rotate(360deg); transform: rotate(360deg); }

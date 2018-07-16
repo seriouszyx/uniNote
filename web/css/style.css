@@ -1,0 +1,48 @@
+
+
+body,
+html {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: white;
+}
+
+svg{
+  width:100%;
+  height:60%;
+  visibility:hidden;
+ 
+}
+
+.particle, .shape{
+  mix-blend-mode:soft-light
+}
+
+#dot{
+  mix-blend-mode:screen;
+}
+
+text{
+  font-family:Antic, sand-serif;
+  font-size:54px;
+  letter-spacing:-1px;
+}
+#infor{
+	width: 130px;
+    height: 80px;
+}
+#information{
+	font-size: 70px;
+	margin-top: 21px;
+}
+.RDF{
+	
+	font-size: 25px;
+}
+.RDP{
+	font-size: 40px;
+}
+
