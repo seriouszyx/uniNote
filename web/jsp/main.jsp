@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page import="domain.User" %>
 <html>
 
@@ -43,6 +44,13 @@
     -->
 
 <body>
+<c:if test="${empty loginUser}">
+    <script type="text/javascript" language="javascript">
+        alert("请登陆您的账号");
+        window.location = '/jsp/login.jsp';
+    </script>
+</c:if>
+
 
 <ul id="slide-out" class="side-nav " style="min-width: 275px;width: 19%;">
     <!--left-side-out-->
@@ -89,6 +97,10 @@
     <li>
         <!--About us-->
         <a href="#!" href="javascript:void(0)" class="share waves-effect waves-light btn card-panel hoverable flow-text"><i class="material-icons">open_in_new</i>Share</a>
+    </li>
+    <li>
+        <!--Log out-->
+        <a href="${pageContext.request.contextPath}/UserServlet?method=logOut" class="share waves-effect waves-light btn card-panel hoverable flow-text"><i class="material-icons"></i>LOG OUT</a>
     </li>
 </ul>
 <!--Click to show user's information-->

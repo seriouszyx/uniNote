@@ -106,6 +106,10 @@
                         <label for="password-login" class="form-label">Password</label>
                         <input id="password-login" type="password" name="password">
                     </div>
+                    <div class="form-element form-checkbox  right-chexbox">
+                        <input type="checkbox" name="confirm" value="yes" class="checkbox">
+                        <label for="confirm-terms">Remember me</label>
+                    </div>
                     <div class="form-element form-submit">
                         <button id="logIn" class="login" type="submit" name="login">Log In</button>
                         <button id="goRight" class="login off" name="signup">Sign Up</button>

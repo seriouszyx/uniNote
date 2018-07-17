@@ -69,6 +69,13 @@ public class UserServlet extends BaseServlet {
         }
     }
 
+    /**
+     * @Author Yixiang Zhao
+     * @Description 实现用户登录功能
+     * @Date 11:51 2018/7/17
+     * @Param [request, response]
+     * @return java.lang.String
+     **/
     public String userLogin(HttpServletRequest request, HttpServletResponse response) throws Exception{
         User userTest = new User();
         User user = null;
@@ -78,7 +85,7 @@ public class UserServlet extends BaseServlet {
             user = service.userLogin(userTest);
             // 用户登陆成功
             request.getSession().setAttribute("loginUser", user);
-            request.getRequestDispatcher("/jsp/main.jsp").forward(request, response);
+            response.sendRedirect("/jsp/main.jsp");
             return null;
         } catch (Exception e) {
             // 用户登录失败
@@ -88,6 +95,19 @@ public class UserServlet extends BaseServlet {
             request.getRequestDispatcher("/jsp/login.jsp").forward(request, response);
             return null;
         }
+    }
+
+    /**
+     * @Author Yixiang Zhao
+     * @Description 用户退出功能实现
+     * @Date 12:40 2018/7/17
+     * @Param [request, response]
+     * @return java.lang.String
+     **/
+    public String logOut(HttpServletRequest request, HttpServletResponse response) throws Exception{
+        request.getSession().removeAttribute("loginUser");
+        response.sendRedirect("/jsp/login.jsp");
+        return null;
     }
 
 
