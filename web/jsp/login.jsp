@@ -7,6 +7,7 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page import="domain.User" %>
+<%@ page import="java.net.URLDecoder" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html lang="en">
 
@@ -34,7 +35,30 @@
 <%
     }
 %>
-
+<!--
+    自动登陆处理
+-->
+<%
+    Cookie[] cookies=request.getCookies();
+    String username = null;
+    String password = null;
+    if(cookies!=null){
+        for(int i=0;i<cookies.length;i++){
+            String name = cookies[i].getName();
+            if("username".equals(name)){
+                username = URLDecoder.decode(cookies[i].getValue(), "utf-8");
+            }else if("password".equals(name)){
+                password = cookies[i].getValue();
+            }
+        }
+    }
+    //当用户名和密码不为空时，自动登录
+    if((username!=null&&!("".equals(username)))&&(password!=null&&!("".equals(password)))){
+        session.setAttribute("username", username);
+        session.setAttribute("password", password);
+        response.sendRedirect(request.getContextPath()+"/UserServlet?method=autoLogin");
+    }
+%>
 
 <div id="back">
     <canvas id="canvas" class="canvas-back"></canvas>
@@ -105,6 +129,10 @@
                     <div class="form-element form-stack">
                         <label for="password-login" class="form-label">Password</label>
                         <input id="password-login" type="password" name="password">
+                    </div>
+                    <div class="form-element form-checkbox  right-chexbox">
+                        <input type="checkbox" name="confirm" value="yes" class="checkbox">
+                        <label for="confirm-terms">Remember me</label>
                     </div>
                     <div class="form-element form-submit">
                         <button id="logIn" class="login" type="submit" name="login">Log In</button>
