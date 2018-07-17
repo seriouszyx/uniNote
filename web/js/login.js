@@ -3,6 +3,8 @@
  *  Sign Up / Login       *
  * ====================== */
 $(document).ready(function () {
+    // alert(${msg});
+
     var formFlag = 0;
     $('#goRight').on('click', function () {
         formFlag = 1;
