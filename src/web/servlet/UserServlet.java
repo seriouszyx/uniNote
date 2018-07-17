@@ -10,9 +10,12 @@ import web.base.BaseServlet.BaseServlet;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.net.URLEncoder;
 import java.util.Map;
 
 @WebServlet(name = "UserServlet")
@@ -80,9 +83,25 @@ public class UserServlet extends BaseServlet {
         User userTest = new User();
         User user = null;
         MyBeanUtils.populate(userTest, request.getParameterMap());
+
+        String autoLogin = request.getParameter("confirm");
         UserService service = new UserServiceImpl();
         try {
             user = service.userLogin(userTest);
+            //若用户选择自动登录，则生成cookies保存必要信息
+            System.out.println(autoLogin);
+            if("yes".equals(autoLogin)){
+                Cookie cookie = new Cookie("username", URLEncoder.encode(user.getUsername(), "utf-8"));
+                Cookie cookie2 = new Cookie("password",user.getPassword());
+                //设置保存时间
+                cookie.setMaxAge(7*24*60*60);
+                cookie2.setMaxAge(7*24*60*60);
+                //设置保存路径
+                cookie.setPath(request.getContextPath()+"/");
+                //添加到响应头
+                response.addCookie(cookie);
+                response.addCookie(cookie2);
+            }
             // 用户登陆成功
             request.getSession().setAttribute("loginUser", user);
             response.sendRedirect("/jsp/main.jsp");
@@ -90,9 +109,9 @@ public class UserServlet extends BaseServlet {
         } catch (Exception e) {
             // 用户登录失败
             String msg = e.getMessage();
-            System.out.println(msg);
             request.setAttribute("msg", msg);
             request.getRequestDispatcher("/jsp/login.jsp").forward(request, response);
+
             return null;
         }
     }
@@ -106,7 +125,37 @@ public class UserServlet extends BaseServlet {
      **/
     public String logOut(HttpServletRequest request, HttpServletResponse response) throws Exception{
         request.getSession().removeAttribute("loginUser");
-        response.sendRedirect("/jsp/login.jsp");
+        request.setAttribute("msg", "您已经退出登录！");
+        response.sendRedirect("/jsp/logout.jsp");
+        return null;
+    }
+
+    /**
+     * @Author Yixiang Zhao
+     * @Description 自动登陆的信息处理
+     * @Date 15:49 2018/7/17
+     * @Param [request, response]
+     * @return java.lang.String
+     **/
+    public String autoLogin(HttpServletRequest request, HttpServletResponse response) throws Exception{
+        HttpSession session = request.getSession();
+        String username = (String)session.getAttribute("username");
+        String password = (String)session.getAttribute("password");
+        User user = new User();
+        user.setUsername(username);
+        user.setPassword(password);
+        UserService service = new UserServiceImpl();
+        try {
+            user = service.userLogin(user);
+            // 用户登陆成功
+            request.getSession().setAttribute("loginUser", user);
+            response.sendRedirect("/jsp/main.jsp");
+        } catch (Exception e)  {
+            String msg = e.getMessage();
+            request.setAttribute("msg", msg);
+            request.getRequestDispatcher("/jsp/login.jsp").forward(request, response);
+        }
+
         return null;
     }
 
