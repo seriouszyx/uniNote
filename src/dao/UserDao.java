@@ -31,4 +31,13 @@ public interface UserDao {
      * @return void
      **/
     void updateUser(User user) throws SQLException;
+
+    /**
+     * @Author Yixiang Zhao
+     * @Description 查询数据库中是否有该学生，如果有，返回该学生所有信息
+     * @Date 10:20 2018/7/17
+     * @Param [userTest]
+     * @return domain.User
+     **/
+    User userLogin(User userTest) throws SQLException;
 }

@@ -37,6 +37,18 @@ public class UserServiceImpl implements UserService {
         }
     }
 
+    @Override
+    public User userLogin(User userTest) throws SQLException {
+        UserDao dao = new UserDaoImpl();
+        User uu = dao.userLogin(userTest);
+        if (null == uu) {
+            throw new RuntimeException("密码有误!");
+        } else if (0 == uu.getState()) {
+            throw new RuntimeException("用户未激活！");
+        } else {
+            return uu;
+        }
+    }
 
 
 }

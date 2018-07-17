@@ -8,14 +8,11 @@ import utils.MyBeanUtils;
 import utils.UUIDUtils;
 import web.base.BaseServlet.BaseServlet;
 
-import javax.mail.MessagingException;
-import javax.mail.internet.AddressException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.sql.SQLException;
 import java.util.Map;
 
 @WebServlet(name = "UserServlet")
@@ -69,6 +66,27 @@ public class UserServlet extends BaseServlet {
             // 激活失败
             request.setAttribute("msg", "用户激活失败，请重新激活！");
             return "/jsp/info.jsp";
+        }
+    }
+
+    public String userLogin(HttpServletRequest request, HttpServletResponse response) throws Exception{
+        User userTest = new User();
+        User user = null;
+        MyBeanUtils.populate(userTest, request.getParameterMap());
+        UserService service = new UserServiceImpl();
+        try {
+            user = service.userLogin(userTest);
+            // 用户登陆成功
+            request.getSession().setAttribute("loginUser", user);
+            request.getRequestDispatcher("/jsp/main.jsp").forward(request, response);
+            return null;
+        } catch (Exception e) {
+            // 用户登录失败
+            String msg = e.getMessage();
+            System.out.println(msg);
+            request.setAttribute("msg", msg);
+            request.getRequestDispatcher("/jsp/login.jsp").forward(request, response);
+            return null;
         }
     }
 
