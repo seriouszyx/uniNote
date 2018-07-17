@@ -6,6 +6,8 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page import="domain.User" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html lang="en">
 
 <head>
@@ -21,6 +23,18 @@
 </head>
 
 <body>
+<%
+    String msg = (String)request.getAttribute("msg");
+    if(msg != null) {
+%>
+<script type="text/javascript" language="javascript">
+    alert("<%=msg%>");
+    window.location = '/jsp/login.jsp';
+</script>
+<%
+    }
+%>
+
 
 <div id="back">
     <canvas id="canvas" class="canvas-back"></canvas>
@@ -82,7 +96,8 @@
         <div class="right">
             <div class="content">
                 <h2>Login</h2>
-                <form id="form-login" method="post">
+                <form id="form-login" method="post"
+                      action="${pageContext.request.contextPath}/UserServlet?method=userLogin">
                     <div class="form-element form-stack">
                         <label for="username-login" class="form-label">Username</label>
                         <input id="username-login" type="text" name="username">
