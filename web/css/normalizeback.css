@@ -200,3 +200,9 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+canvas{
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+}

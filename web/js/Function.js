@@ -5,6 +5,7 @@ $(function() {
 	})
 });
 
+
 var E = window.wangEditor
 var editor = new E('#div1')
 editor.create()

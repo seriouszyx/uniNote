@@ -6,16 +6,9 @@ html {
   width: 100%;
   margin: 0;
   padding: 0;
-  overflow: hidden;
   background-color: white;
 }
 
-svg{
-  width:100%;
-  height:60%;
-  visibility:hidden;
- 
-}
 
 .particle, .shape{
   mix-blend-mode:soft-light
@@ -45,4 +38,7 @@ text{
 .RDP{
 	font-size: 40px;
 }
-
+.share_layer_box
+{
+	z-index: 1000000;
+}
