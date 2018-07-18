@@ -7,6 +7,15 @@ body {
   font-family: 'Lato', sans-serif;
 }
 
+.spanStyle{
+	line-height: 20px;
+	font-size: 10px;
+	clear: left;
+	padding-left: 200px;
+	margin-top: -3px;
+	color: whitesmoke;
+	position: absolute;
+}
 /*
   EE6E73
   673AB7
