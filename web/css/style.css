@@ -1,44 +1,121 @@
+/*2DBE60,398DEE,white*/
 
+html {
+	font-family: sans-serif;
+	-ms-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+}
 
 body,
 html {
-  height: 100%;
-  width: 100%;
-  margin: 0;
-  padding: 0;
-  background-color: white;
+	height: 100%;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	background-color: white;
+	overflow: hidden;
 }
 
-
-.particle, .shape{
-  mix-blend-mode:soft-light
+ul li {
+	list-style: none;
 }
 
-#dot{
-  mix-blend-mode:screen;
+ul li:hover {
+	cursor: pointer;
 }
 
-text{
-  font-family:Antic, sand-serif;
-  font-size:54px;
-  letter-spacing:-1px;
+#top {
+	position: relative;
+	height:63px;
+	background: #398dee;
+	min-width: 956px;
 }
-#infor{
-	width: 130px;
-    height: 80px;
+
+#choose {
+	width: 200px;
+	min-width: 115px;
+	height: 100%;
+	min-width: 114.7px;
+	float: left;
 }
-#information{
-	font-size: 70px;
-	margin-top: 21px;
+
+#workPlace {
+	width: 29.5%;
+	height: 100%;
+	float: left;
 }
-.RDF{
-	
+
+#mainPlace {
+	width: 58%;
+	height: 100%;
+	background-color: black;
+	float: right;
+}
+
+.fristC {
+	line-height: 48px;
+}
+
+.sceondC {
+	line-height: 15px;
+}
+
+#box {
+	width: 242px;
+	font-family: 'Microsoft YaHei';
+	font-size: 14px;
+	height: 32px;
+	position: relative;
+	top: 165px;
+	left: -243px;
+	z-index: 0;
+}
+
+#workPlace input {
+	width: 150px;
+	border: 1px solid #e2e2e2;
+	height: 30px;
+	float: left;
+	background-repeat: no-repeat;
+	background-size: 25px;
+	background-position: 5px center;
+	padding: 0 0 0 20px;
+	border: 1px solid #222222;
+}
+
+.vertical-nav {
+	z-index: 1;
+}
+
+#search {
+	width: 70px;
+	height: 32px;
+	float: right;
+	background: #222222;
+	color: white;
+	text-align: center;
+	line-height: 32px;
+	cursor: pointer;
+}
+#helloUser{
+	 background-color: yellow;
+    width: 200px;
+    
+
+    
+    height: 100%;
+}
+#helloUser div{
+	color: #888;
 	font-size: 25px;
+	text-align: center;
+	position: relative;
+    top: 25%;
 }
-.RDP{
-	font-size: 40px;
-}
-.share_layer_box
-{
-	z-index: 1000000;
+#share{
+    width: 300px;
+    height: 63px;
+    position: relative;
+    top: -63px;
+	left: 85%;	
 }
