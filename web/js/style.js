@@ -1,19 +1,41 @@
-$(function() {
-				$('#order_nav li').hover(function() {
-						$(this).addClass('on');
-					},
-					function() {
-						$(this).removeClass('on');
-					}
-				);
+$(document).ready(function() {
+
+	$("#find").click(function() { //点击搜索弹出搜索框
+
+		if(document.getElementById("box").style.left != "0px") {
+			$("#box").stop().animate({
+				left: '0px'
 			});
-			$(function(){
-	// 初始化 传入dom id
-	var victor = new Victor("container", "output");
-	var theme = [
-			["#002c4a", "#005584"],
-			["#35ac03", "#3f4303"],
-			["#ac0908", "#cd5726"],
-			["#18bbff", "#00486b"]
-		]
+		} else {
+			$("#box").stop().animate({
+				left: '-243px'
+			});
+		}
+	});
+	$(document).click(function() { //点击任意位置搜索框隐藏
+		$("#box").stop().animate({
+			left: '-243px'
+		});
+	});//防止冒泡
+	$("#box").click(function(event) {
+		event.stopPropagation();
+	});
+	$("#find").click(function(event) {
+		event.stopPropagation();
+	});//防止冒泡
+	$("#logoff").click(function() { //点击注销账户进行询问
+
+		var isLogoff = confirm("是否退出当前用户？");
+		if(isLogoff) {
+			//此处链接到登录页面
+			
+			
+			
+			
+			
+
+		}
+
+	});
+
 });
