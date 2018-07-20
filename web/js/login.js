@@ -37,18 +37,22 @@ $(document).ready(function () {
             'left': '-360px'
         });
     });
-    $('#form-signup').submit(function () {
+    $('#form-signup').submit(function() {
         if (formFlag == 0)
             return false;
         else
             return true;
     });
-    $('#form-login').submit(function () {
+    $('#form-login').submit(function() {
         if (formFlag != 0)
             return false;
         else
             return true;
     });
+
+
+    // email username-signup
+
 });
 
 /* ====================== *

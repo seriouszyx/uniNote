@@ -1,11 +1,13 @@
 package domain;
 
+import java.sql.Timestamp;
+
 /**
  * @ClassName User
  * @Description 储存用户信息
  * @Author Yixiang Zhao
  * @Date 2018/7/16 11:11
- * @Version 1.0
+ * @Version 2.0
  */
 public class User {
     private String id;
@@ -17,6 +19,7 @@ public class User {
     private String telephone;
     private String sex;
     private int state;
+    private Timestamp createTime;
 
     @Override
     public String toString() {
@@ -30,6 +33,7 @@ public class User {
                 ", telephone='" + telephone + '\'' +
                 ", sex='" + sex + '\'' +
                 ", state=" + state +
+                ", createTime=" + createTime +
                 '}';
     }
 
@@ -105,4 +109,11 @@ public class User {
         this.state = state;
     }
 
+    public Timestamp getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(Timestamp createTime) {
+        this.createTime = createTime;
+    }
 }
