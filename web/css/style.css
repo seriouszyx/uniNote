@@ -119,3 +119,17 @@ ul li:hover {
     top: -63px;
 	left: 85%;	
 }
+
+/* ZYX changed below */
+#createNotebookPop {
+    width: 300px;
+    height: 600px;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 1040;
+    border: 1px solid #000000;
+    background: red;
+    display: none;
+}
+

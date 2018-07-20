@@ -26,4 +26,22 @@
         <servlet-name>UserServlet</servlet-name>
         <url-pattern>/UserServlet</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>NotebookServlet</servlet-name>
+        <servlet-class>web.servlet.NotebookServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>NotebookServlet</servlet-name>
+        <url-pattern>/NotebookServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>NoteServlet</servlet-name>
+        <servlet-class>web.servlet.NoteServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>NoteServlet</servlet-name>
+        <url-pattern>/NoteServlet</url-pattern>
+    </servlet-mapping>
 </web-app>

@@ -18,11 +18,11 @@ import java.sql.SQLException;
 public class UserDaoImpl implements UserDao {
     @Override
     public void userSignup(User user) throws SQLException {
-        String sql = "insert into user values (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        String sql = "insert into user values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         QueryRunner qr = new QueryRunner(JDBCUtils.getDataSource());
         Object[] params = {user.getId(), user.getUsername(), user.getPassword(), user.getEmail(),
                             user.getCode(), user.getName(), user.getTelephone(), user.getSex(),
-                            user.getState()};
+                            user.getState(), user.getCreateTime()};
         qr.update(sql, params);
     }
 
@@ -36,11 +36,11 @@ public class UserDaoImpl implements UserDao {
     @Override
     public void updateUser(User user) throws SQLException {
         String sql = "update user set username = ?, password = ?, email = ?," +
-                "code = ?, name = ?, telephone = ?, sex = ?, state = ? where id = ?";
+                "code = ?, name = ?, telephone = ?, sex = ?, state = ?, createTime = ? where id = ?";
         QueryRunner qr = new QueryRunner(JDBCUtils.getDataSource());
         Object[] params = {user.getUsername(), user.getPassword(), user.getEmail(),
                 user.getCode(), user.getName(), user.getTelephone(), user.getSex(),
-                user.getState(),  user.getId()};
+                user.getState(), user.getCreateTime(), user.getId()};
         qr.update(sql, params);
     }
 

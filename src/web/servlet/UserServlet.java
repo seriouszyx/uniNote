@@ -16,6 +16,9 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.net.URLEncoder;
+import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Map;
 
 @WebServlet(name = "UserServlet")
@@ -36,6 +39,8 @@ public class UserServlet extends BaseServlet {
         user.setId(UUIDUtils.getId());
         user.setCode(UUIDUtils.getCode());
         user.setState(0);
+        String nowTime = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date());
+        user.setCreateTime(Timestamp.valueOf(nowTime));
         try {
             // 向数据库添加用户信息
             UserService service = new UserServiceImpl();
@@ -89,7 +94,6 @@ public class UserServlet extends BaseServlet {
         try {
             user = service.userLogin(userTest);
             //若用户选择自动登录，则生成cookies保存必要信息
-            System.out.println(autoLogin);
             if("yes".equals(autoLogin)){
                 Cookie cookie = new Cookie("username", URLEncoder.encode(user.getUsername(), "utf-8"));
                 Cookie cookie2 = new Cookie("password",user.getPassword());
@@ -104,7 +108,7 @@ public class UserServlet extends BaseServlet {
             }
             // 用户登陆成功
             request.getSession().setAttribute("loginUser", user);
-            response.sendRedirect("/jsp/main.jsp");
+            response.sendRedirect("/jsp/index.jsp");
             return null;
         } catch (Exception e) {
             // 用户登录失败
@@ -149,7 +153,7 @@ public class UserServlet extends BaseServlet {
             user = service.userLogin(user);
             // 用户登陆成功
             request.getSession().setAttribute("loginUser", user);
-            response.sendRedirect("/jsp/main.jsp");
+            response.sendRedirect("/jsp/index.jsp");
         } catch (Exception e)  {
             String msg = e.getMessage();
             request.setAttribute("msg", msg);
