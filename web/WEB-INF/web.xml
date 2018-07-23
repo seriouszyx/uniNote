@@ -44,4 +44,13 @@
         <servlet-name>NoteServlet</servlet-name>
         <url-pattern>/NoteServlet</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>EditorServlet</servlet-name>
+        <servlet-class>web.servlet.EditorServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>EditorServlet</servlet-name>
+        <url-pattern>/EditorServlet</url-pattern>
+    </servlet-mapping>
 </web-app>

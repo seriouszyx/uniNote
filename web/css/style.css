@@ -48,7 +48,7 @@ ul li:hover {
 #mainPlace {
 	width: 58%;
 	height: 100%;
-	background-color: black;
+	background-color: darkgray;
 	float: right;
 }
 
@@ -124,12 +124,52 @@ ul li:hover {
 #createNotebookPop {
     width: 300px;
     height: 600px;
-    position: fixed;
-    top: 0px;
-    left: 0px;
-    z-index: 1040;
-    border: 1px solid #000000;
-    background: red;
+    background-color: darkslategray;
+    text-align: center; /*让div内部文字居中*/
+    border-radius: 20px;
+    margin: auto;
+    position: absolute;
+    z-index: 10000;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     display: none;
 }
-
+#createNotebookPop > span {
+    width: 20px;
+    height: 20px;
+    background-color: #FFFFFF;
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+#createNotePop {
+    width: 300px;
+    height: 600px;
+    background-color: darkslategray;
+    text-align: center; /*让div内部文字居中*/
+    border-radius: 20px;
+    margin: auto;
+    position: absolute;
+    z-index: 10000;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: none;
+}
+#createNotePop > span {
+    width: 20px;
+    height: 20px;
+    background-color: #FFFFFF;
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+workPlace ul {
+    width: 200px;
+    height: 70px;
+}

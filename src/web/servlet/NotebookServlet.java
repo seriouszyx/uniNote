@@ -2,6 +2,7 @@ package web.servlet;
 
 import domain.Notebook;
 import domain.User;
+import net.sf.json.JSONArray;
 import service.NotebookService;
 import service.service.impl.NotebookServiceImpl;
 import utils.MyBeanUtils;
@@ -27,9 +28,8 @@ public class NotebookServlet extends BaseServlet {
     public String createNotebook(HttpServletRequest request, HttpServletResponse response) throws Exception {
 
         try {
-            Map<String, String[]> parameterMap = request.getParameterMap();
             Notebook notebook = new Notebook();
-            MyBeanUtils.populate(notebook, parameterMap);
+            notebook.setBookName(request.getParameter("bookName"));
             String nowTime = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date());
             notebook.setCreateTime(Timestamp.valueOf(nowTime));
             User user = (User) request.getSession().getAttribute("loginUser");
@@ -37,7 +37,9 @@ public class NotebookServlet extends BaseServlet {
             NotebookService service = new NotebookServiceImpl();
             notebook = service.createNotebook(notebook, user);
             // ajax传到前端
-            response.getWriter().print(notebook);
+            String jsonStr = JSONArray.fromObject(notebook).toString();
+            response.setContentType("text/html;charset=utf-8");
+            response.getWriter().print(jsonStr);
         } catch (Exception e) {
             // 创建 失败
             request.setAttribute("msg", "笔记本创建失败，请重新创建！");

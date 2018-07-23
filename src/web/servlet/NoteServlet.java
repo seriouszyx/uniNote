@@ -15,7 +15,8 @@ public class NoteServlet extends HttpServlet {
      * @return java.lang.String
      **/
     public String createNote(HttpServletRequest request, HttpServletResponse response) throws Exception {
-        
+        System.out.println(request.getParameter("notebookName"));
         return null;
     }
+
 }

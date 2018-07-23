@@ -1,35 +1,24 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: seriouszyx
-  Date: 2018/7/20
-  Time: 13:56
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
+
 <head>
     <meta charset="utf-8" />
     <title>HelloNote</title>
 </head>
 <link rel="stylesheet" href="../css/style.css" />
 <link href="../css/font-awesome.css" rel="stylesheet">
+<script type="text/javascript" src="../js/google-maps.js"></script>
 <script type="text/javascript" src="../js/jquery-1.10.1.min.js"></script>
 <script type="text/javascript" src="../js/google-maps.js"></script>
 <script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js" type="text/javascript" charset="utf-8"></script>
-<script type="text/javascript" src="../js/style.js"></script>
 <script type="text/javascript" src="http://widget.renren.com/js/rrshare.js"></script>
-
+<script type="text/javascript" src="../wangEditor-3.1.1/release/wangEditor.js"></script>
+<script type="text/javascript" src="js/jquery-1.10.1.min.js"></script>
+<script type="text/javascript" src="../js/style.js"></script>
+<script type="text/javascript" src="../js/index.js"></script>
 <script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/buttonLite.js#style=-1&amp;uuid=&amp;pophcol=2&amp;lang=zh"></script>
 <script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/bshareC0.js"></script>
-<script>
-    $(document).ready(function() {
-        $(".vertical-nav").verticalnav({
-            speed: 400,
-            align: "left"
-        });
-    });
-</script>
 
 <body>
 <c:if test="${empty loginUser}">
@@ -38,6 +27,7 @@
         window.location = '/jsp/login.jsp';
     </script>
 </c:if>
+
 
 <div id="top">
     <div id="helloUser">
@@ -63,7 +53,7 @@
         <div class="content">
             <ul class="vertical-nav dark red" style="height: 760px;">
                 <li class="active">
-                    <a href="../UserInformation.html" target="_blank"><i class="icon-user " style="margin: -14.958px 14px 15px -20px;"></i>个人中心</a>
+                    <a href="UserInformation.html" target="_blank"><i class="icon-user " style="margin: -14.958px 14px 15px -20px;"></i>个人中心</a>
                 </li>
                 <li class="fristC">
                     <a href="#"><i class="icon-edit " style="margin: 0px 14px 0 -20px;font-size:30px"></i>新建笔记
@@ -75,7 +65,10 @@
                 <li class="fristC">
                     <a href="#"><i class="icon-th-list" style="margin: 0px 14px 0 -20px;font-size:30px"></i>笔记本
                         <span class="submenu-icon " style="line-height: 48px;"></span></a>
-                    <ul>
+                    <ul id="notebook">
+                        <li class="sceondC">
+                            <a href="#" id="createNotebook">新建笔记本<span class="submenu-icon"></span></a>
+                        </li>
                         <li class="sceondC">
                             <a href="#">我的第一个笔记本<span class="submenu-icon"></span></a>
                             <ul>
@@ -94,12 +87,9 @@
                                 </li>
                             </ul>
                         </li>
-                        <li class="sceondC">
-                            <a id="createNotebook">新建笔记本<span class="submenu-icon"></span></a>
-                        </li>
+
                     </ul>
                 </li>
-
                 <li class="fristC">
                     <a href="#"><i class="icon-tags " style="margin: 0px 14px 0 -20px;font-size:30px"></i>标签分类<span class="submenu-icon " style="line-height: 48px;"></span></a>
                     <ul>
@@ -188,22 +178,82 @@
         <input type="text" name="search" placeholder="请输入关键字">
         <div id="search">搜索</div>
     </div>
+    <ul>
+        <li>我的第一个笔记</li>
+    </ul>
 
 </div>
 <div id="mainPlace">
+    <div id="editor">
+        <p>欢迎使用 wangEditor 编辑器</p>
+    </div>
+    <button id="btn1">获取html</button>
+    <button id="btn2">保存</button>
 </div>
 
 <!-- 各种弹出窗口 -->
 <div id="createNotebookPop">
-    <form method="post" action="${pageContext.request.contextPath}/NotebookServlet?method=createNotebook">
-        <tr>
-            <td>
-
-            </td>
-        </tr>
-    </form>
+        <h2>新建笔记本</h2>
+        笔记本名字：<input name="bookName" id="bookName" type="text"><br>
+        <input type="button" id="createNotebookPopSub" value="确认">
+    <span class="createNotebookPopSpan"></span>
 </div>
-</body>
+<div id="createNotePop">
+    <h2>新建笔记</h2>
+    笔记本名字：<input name="noteName" id="noteName" type="text"><br>
+    <input type="button" id="createNotePopSub" value="确认">
+    <span class="createNotePopSpan"></span>
+</div>
+<script>
+    var E = window.wangEditor;
+    var editor = new E('#editor');
+    // 或者 var editor = new E( document.getElementById('editor') )
+    editor.create();
 
+    document.getElementById('btn1').addEventListener('click', function () {
+        // 读取 html
+        $.post("${pageContext.request.contextPath}/EditorServlet?method=createNote", {getJson:JSON.stringify(editor.txt.getJSON())}, function(data) {
+            alert(data)
+        });
+    }, false);
+
+    document.getElementById('createNotebookPopSub').addEventListener('click', function () {
+        var bookName = document.getElementById('bookName').value;
+        $.post("${pageContext.request.contextPath}/NotebookServlet?method=createNotebook", {"bookName":bookName}, function(data) {
+            $("#createNotebookPop").css("display", "none")
+            $.each(data, function(i, obj) {
+                var li = " <li class=\"sceondC\">\n" +
+                    "                    <a href=\"#\">"+obj.bookName+"<span class=\"submenu-icon\"></span></a>\n" +
+                    "                <ul>\n" +
+                    "                <li>\n" +
+                    "                <a href=\"#\">编辑</a>\n" +
+                    "                    </li>\n" +
+                    "                    <li>\n" +
+                    "                    <a href=\"#\">添加标签</a>\n" +
+                    "                    </li>\n" +
+                    "                    <li>\n" +
+                    "                    <a href=\"#\">共享\n" +
+                    "                    </a>\n" +
+                    "                    </li>\n" +
+                    "                    <li>\n" +
+                    "                    <a href=\"#\">删除</a>\n" +
+                    "                    </li>\n" +
+                    "                    </ul>\n" +
+                    "                    </li>";
+                $('#notebook').append(li);
+            });
+
+            alert("创建成功！")
+        }, 'json');
+    }, false)
+
+
+    document.getElementById('btn2').addEventListener('click', function () {
+        // 读取 text
+        alert(editor.txt.text())
+    }, false)
+
+</script>
+</body>
 
 </html>
