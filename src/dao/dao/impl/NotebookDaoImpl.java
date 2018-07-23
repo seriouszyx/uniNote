@@ -22,10 +22,11 @@ public class NotebookDaoImpl implements NotebookDao {
     public Notebook createNotebook(Notebook notebook, User user) throws SQLException {
         String sql = "insert into notebook values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         QueryRunner qr = new QueryRunner(JDBCUtils.getDataSource());
-        Object[] params = {notebook.getId(), user.getId(), notebook.getBookName(), notebook.getBookName(),
+        Object[] params = {notebook.getId(), user.getId(), notebook.getBookName(),
                             notebook.getIsShare(), notebook.getIsDelete(), notebook.getCreateTime(),
                             notebook.getUpdateTime(), notebook.getIsStart(), notebook.getNoteNumber(),
                             notebook.getSharedpeople()};
-        return qr.query(sql, new BeanHandler<Notebook>(Notebook.class), params);
+        qr.update(sql, params);
+        return notebook;
     }
 }
