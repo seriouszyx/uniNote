@@ -1,8 +1,10 @@
-/* ====================== *
+﻿/* ====================== *
  *  Toggle Between        *
  *  Sign Up / Login       *
  * ====================== */
 $(document).ready(function () {
+    // alert(${msg});
+
     var formFlag = 0;
     $('#goRight').on('click', function () {
         formFlag = 1;
@@ -35,18 +37,22 @@ $(document).ready(function () {
             'left': '-360px'
         });
     });
-    $('#form-signup').submit(function () {
+    $('#form-signup').submit(function() {
         if (formFlag == 0)
             return false;
         else
             return true;
     });
-    $('#form-login').submit(function () {
+    $('#form-login').submit(function() {
         if (formFlag != 0)
             return false;
         else
             return true;
     });
+
+
+    // email username-signup
+
 });
 
 /* ====================== *
@@ -119,6 +125,202 @@ function getCanvasBounds() {
 /* ====================== *
  * Create Shapes          *
  * ====================== */
+
+function changeSucceedStyle(nameID, spanID) {
+	spanID.firstChild.nodeValue = "*";
+	spanID.style.fontSize = "larger";
+	spanID.style.color = "rgba(41,178,165,1)";
+	nameID.style.borderColor = "rgba(41,178,165,1)";
+};
+
+function changeFailedStyle(nameID, spanID) {
+	spanID.firstChild.nodeValue = "*";
+	spanID.style.fontSize = "larger";
+	spanID.style.color = "red";
+	nameID.style.borderColor = "red";
+};
+
+function changeFailingStyle(nameID, spanID) {
+	spanID.style.fontSize = "small";
+	spanID.style.color = "red";
+	nameID.style.borderColor = "red";
+};
+
+function spanValue(spanID, spanValue) {
+	switch(spanValue) {
+		case "usernameSpan":
+			spanID.firstChild.nodeValue = "（6-16位：英文.数字.下划线）";
+			break;
+		case "passwordSpan":
+			spanID.firstChild.nodeValue = "（6-16位：非空字符）";
+			break;
+		case "repasswordSpan":
+			spanID.firstChild.nodeValue = "（请确认密码）";
+			break;
+		case "repasswordSpan1":
+			spanID.firstChild.nodeValue = "（两次密码不一致）";
+			break;
+		case "mailboxSpan":
+			spanID.firstChild.nodeValue = "(email5~6位@mail.com)";
+			break;
+		case "usernameAgain":
+			spanID.firstChild.nodeValue = "用户名已存在！";
+	}
+};
+
+function mailbox() {
+	var mailbox = document.getElementById("mailbox");
+	var mailboxSpan = document.getElementById("mailboxSpan");
+	var pattern = /^[0-9a-zA-Z_]{5,18}@[0-9a-z]+.com$/;
+	mailbox.onfocus = function() {
+		if(!pattern.test(mailbox.value)) {
+			spanValue(mailboxSpan, "mailboxSpan");
+			changeFailingStyle(mailbox, mailboxSpan);
+		}
+	}
+	mailbox.onkeyup = function() {
+		if(pattern.test(mailbox.value)) {
+			changeSucceedStyle(mailbox, mailboxSpan);
+		} else {
+			spanValue(mailboxSpan, "mailboxSpan");
+			changeFailingStyle(mailbox, mailboxSpan);
+		}
+	}
+	mailbox.onblur = function() {
+		if(pattern.test(mailbox.value)) {
+			changeSucceedStyle(mailbox, mailboxSpan);
+			mailboxnum = 1;
+		} else {
+			changeFailedStyle(mailbox, mailboxSpan);
+			mailboxnum = 0;
+		}
+	}
+};
+
+function username() {
+	var username = document.getElementById("username");
+	var usernameSpan = document.getElementById("usernameSpan");
+	var pattern = /^[0-9a-zA-Z_]{6,16}$/;
+	var userAgain = 0;
+	username.onfocus = function() {
+		if(!pattern.test(username.value)) {
+			spanValue(usernameSpan, "usernameSpan");
+			changeFailingStyle(username, usernameSpan);
+		} else {
+			if(userAgain == 0) {
+				spanValue(usernameSpan, "usernameAgain");
+				changeFailingStyle(username, usernameSpan);
+			}
+		}
+	}
+	username.onkeyup = function() {
+		if(pattern.test(username.value)) {
+			changeSucceedStyle(username, usernameSpan);
+			/*if(!checkUsername(username.value + "username")) {
+				spanValue(usernameSpan, "usernameAgain"); 
+				changeFailingStyle(username, usernameSpan); 
+				userAgain = 0; 
+			} else {
+				userAgain = 1; 
+			}*/
+		} else {
+			spanValue(usernameSpan, "usernameSpan");
+			changeFailingStyle(username, usernameSpan);
+		}
+	};
+	username.onblur = function() {
+		if(pattern.test(username.value) /*&& userAgain*/ ) {
+			changeSucceedStyle(username, usernameSpan);
+			usernamenum = 1;
+		} else {
+			changeFailedStyle(username, usernameSpan);
+			usernamenum = 0;
+		}
+	}
+};
+
+function password() {
+	var password = document.getElementById("password");
+	var passwordSpan = document.getElementById("passwordSpan");
+	var pattern = /^\S{6,16}$/;
+	var repassword = document.getElementById("repassword");
+	password.onfocus = function() {
+		if(!pattern.test(password.value)) {
+			spanValue(passwordSpan, "passwordSpan");
+			changeFailingStyle(password, passwordSpan);
+		}
+	}
+	password.onkeyup = function() {
+		if(pattern.test(password.value)) {
+			changeSucceedStyle(password, passwordSpan);
+			if(repassword.value != "") {
+				repassword.onfocus();
+			}
+		} else {
+			spanValue(passwordSpan, "passwordSpan");
+			changeFailingStyle(password, passwordSpan);
+			if(repassword.value != "") {
+				repassword.onfocus();
+			}
+		}
+	}
+
+	password.onblur = function() {
+		if(repassword.value == "") {
+			if(pattern.test(password.value)) {
+				changeSucceedStyle(password, passwordSpan);
+				passwordnum = 1;
+			} else {
+				changeFailedStyle(password, passwordSpan);
+				passwordnum = 0;
+			}
+		} else {
+			if(password.value != repassword.value) {
+				repassword.onfocus();
+				//repassword.style.borderColor = "red";
+				repasswordnum = 0;
+			}
+		}
+
+	}
+
+};
+
+function repassword() {
+	var password = document.getElementById("password");
+	var repassword = document.getElementById("repassword");
+	var repasswordSpan = document.getElementById("repasswordSpan");
+
+	repassword.onfocus = function() {
+		if(!(password.value == repassword.value && password.value != "")) {
+			spanValue(repasswordSpan, "repasswordSpan");
+			changeFailingStyle(repassword, repasswordSpan);
+		} else {
+			changeSucceedStyle(repassword, repasswordSpan);
+		}
+	}
+	repassword.onkeyup = function() {
+		if(password.value == repassword.value && password.value != "") {
+			changeSucceedStyle(repassword, repasswordSpan);
+		} else {
+			spanValue(repasswordSpan, "repasswordSpan1");
+			changeFailingStyle(repassword, repasswordSpan);
+		}
+	}
+	repassword.onblur = function() {
+		if(password.value == repassword.value && password.value != "") {
+			changeSucceedStyle(repassword, repasswordSpan);
+			repasswordnum = 1;
+		} else {
+			spanValue(repasswordSpan, "repasswordSpan");
+			changeFailedStyle(repassword, repasswordSpan);
+			repasswordnum = 0;
+		}
+	}
+};
+
+
+
 function initializeShapes() {
     // Get Canvas Bounds
     getCanvasBounds();
@@ -183,4 +385,10 @@ view.onResize = function paperOnResize() {
         shapeGroup.children[2].opacity = 1;
         shapeGroup.children[5].opacity = 1;
     }
+};
+window.onload = function() {
+	username();
+	password();
+	repassword();
+	mailbox();
 };

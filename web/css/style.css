@@ -45,7 +45,10 @@ ul li:hover {
 }
 
 #mainPlace {
-	float: left;
+	width: 58%;
+	height: 100%;
+	background-color: darkgray;
+	float: right;
 }
 
 .fristC {
@@ -109,6 +112,7 @@ ul li:hover {
 	top: -63px;
 	left: 85%;
 }
+
 
 #WorkChat {
 	width: 100%;
@@ -199,4 +203,58 @@ ul li:hover {
 
 #newChat:hover {
 	cursor: pointer;
+
+/* ZYX changed below */
+#createNotebookPop {
+    width: 300px;
+    height: 600px;
+    background-color: darkslategray;
+    text-align: center; /*让div内部文字居中*/
+    border-radius: 20px;
+    margin: auto;
+    position: absolute;
+    z-index: 10000;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: none;
+}
+#createNotebookPop > span {
+    width: 20px;
+    height: 20px;
+    background-color: #FFFFFF;
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+#createNotePop {
+    width: 300px;
+    height: 600px;
+    background-color: darkslategray;
+    text-align: center; /*让div内部文字居中*/
+    border-radius: 20px;
+    margin: auto;
+    position: absolute;
+    z-index: 10000;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: none;
+}
+#createNotePop > span {
+    width: 20px;
+    height: 20px;
+    background-color: #FFFFFF;
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+workPlace ul {
+    width: 200px;
+    height: 70px;
+
 }

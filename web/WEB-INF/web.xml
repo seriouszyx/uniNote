@@ -4,6 +4,11 @@
            xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
 		  http://java.sun.com/xml/ns/javaee/web-app_4_0.xsd"
            version="3.0">
+    <welcome-file-list>
+        <welcome-file>/jsp/login.jsp</welcome-file>
+    </welcome-file-list>
+    
+    
     <filter>
         <filter-name>EncodingFilter</filter-name>
         <filter-class>web.filter.EncodingFilter</filter-class>
@@ -20,5 +25,32 @@
     <servlet-mapping>
         <servlet-name>UserServlet</servlet-name>
         <url-pattern>/UserServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>NotebookServlet</servlet-name>
+        <servlet-class>web.servlet.NotebookServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>NotebookServlet</servlet-name>
+        <url-pattern>/NotebookServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>NoteServlet</servlet-name>
+        <servlet-class>web.servlet.NoteServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>NoteServlet</servlet-name>
+        <url-pattern>/NoteServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>EditorServlet</servlet-name>
+        <servlet-class>web.servlet.EditorServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>EditorServlet</servlet-name>
+        <url-pattern>/EditorServlet</url-pattern>
     </servlet-mapping>
 </web-app>
