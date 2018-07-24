@@ -1,4 +1,4 @@
-/*2DBE60,398DEE,white*/
+/*#888,#222,white*/
 
 html {
 	font-family: sans-serif;
@@ -26,8 +26,7 @@ ul li:hover {
 
 #top {
 	position: relative;
-	height:63px;
-	background: #398dee;
+	height: 63px;
 	min-width: 956px;
 }
 
@@ -61,64 +60,149 @@ ul li:hover {
 }
 
 #box {
-	width: 242px;
-	font-family: 'Microsoft YaHei';
-	font-size: 14px;
-	height: 32px;
+	width: 100%;
+	height: 100%;
 	position: relative;
-	top: 165px;
-	left: -243px;
-	z-index: 0;
+	border: 1px solid #888;
+	min-width: 330px;
+	left: -480px;
 }
 
-#workPlace input {
-	width: 150px;
-	border: 1px solid #e2e2e2;
-	height: 30px;
-	float: left;
-	background-repeat: no-repeat;
-	background-size: 25px;
-	background-position: 5px center;
-	padding: 0 0 0 20px;
-	border: 1px solid #222222;
+#box div {
+	height: 265px;
+	width: 80%;
+	margin: 0 auto 0px auto;
+	text-align: center;
+	border-bottom: 1px solid;
 }
 
 .vertical-nav {
 	z-index: 1;
 }
 
-#search {
+
+/*#search {
 	width: 70px;
-	height: 32px;
+	height: 50px;
 	float: right;
 	background: #222222;
-	color: white;
-	text-align: center;
-	line-height: 32px;
-	cursor: pointer;
-}
-#helloUser{
-	 background-color: yellow;
-    width: 200px;
-    
-
-    
-    height: 100%;
-}
-#helloUser div{
 	color: #888;
+	text-align: center;
+	line-height: 50px;
+	cursor: pointer;
+}*/
+
+#helloUser {
+	width: 200px;
+	height: 100%;
+}
+
+#helloUser div {
+	color: #888888;
 	font-size: 25px;
 	text-align: center;
 	position: relative;
-    top: 25%;
+	top: 25%;
 }
-#share{
-    width: 300px;
-    height: 63px;
-    position: relative;
-    top: -63px;
-	left: 85%;	
+
+#share {
+	width: 300px;
+	height: 63px;
+	position: relative;
+	top: -63px;
+	left: 85%;
 }
+
+
+#WorkChat {
+	width: 100%;
+	height: 100%;
+	position: relative;
+	top: -100.3%;
+	border: 1px solid #888;
+	min-width: 330px;
+	left: -480px;
+}
+
+.findChat {
+	height: 190px;
+	width: 80%;
+	margin: 0 auto 0px auto;
+	text-align: center;
+	border-bottom: 1px solid;
+}
+
+.chatInput1 {
+	float: none;
+	margin: 0 auto;
+	width: 90%;
+	margin-top: 35px;
+	height: 45px;
+	border-radius: 24px;
+	min-width: 215px;
+	font-size: 20px;
+	padding: 5px 5px 5px 15px;
+	border: 1px solid #222222;
+}
+
+.chatInput2 {
+	font-size: 25px;
+	min-width: 50px;
+	width: 80%;
+	text-align: center;
+	border: 1px solid #222;
+	height: 34px;
+	border-radius: 30px;
+	margin: 30px auto 0px;
+	color: #888;
+}
+
+.chatInput2:hover {
+	cursor: pointer;
+}
+
+#chat {
+	width: 80%;
+	margin: 0 auto;
+	text-align: center;
+	font-size: 35px;
+	color: #888;
+}
+
+#WorkChat ul li {
+	padding: 10px;
+	border-bottom: 1px solid #222
+}
+
+#workInput {
+	float: none;
+	margin: 0 auto;
+	width: 90%;
+	margin-top: 35px;
+	height: 120px;
+	/* border-radius: 24px; */
+	min-width: 215px;
+	font-size: 35px;
+	padding: 5px 5px 5px 15px;
+}
+
+#workPlace h1 {
+	font-size: 30px;
+	margin: 0 0 0 20px;
+}
+
+#newChat {
+	float: right;
+	font-size: 22px;
+	border: 1px solid;
+	border-radius: 8px;
+	margin-top: 25px;
+	margin-right: 33px;
+	padding: 10px;
+}
+
+#newChat:hover {
+	cursor: pointer;
 
 /* ZYX changed below */
 #createNotebookPop {
@@ -172,4 +256,5 @@ ul li:hover {
 workPlace ul {
     width: 200px;
     height: 70px;
+
 }
