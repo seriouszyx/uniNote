@@ -6,19 +6,18 @@
     <meta charset="utf-8" />
     <title>HelloNote</title>
 </head>
-<link rel="stylesheet" href="../css/style.css" />
+<link href="../css/style.css" rel="stylesheet">
 <link href="../css/font-awesome.css" rel="stylesheet">
-<script type="text/javascript" src="../js/google-maps.js"></script>
+<link href="../css/new.css" rel="stylesheet">
 <script type="text/javascript" src="../js/jquery-1.10.1.min.js"></script>
-<script type="text/javascript" src="../js/google-maps.js"></script>
 <script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js" type="text/javascript" charset="utf-8"></script>
 <script type="text/javascript" src="http://widget.renren.com/js/rrshare.js"></script>
-<script type="text/javascript" src="../wangEditor-3.1.1/release/wangEditor.js"></script>
-<script type="text/javascript" src="js/jquery-1.10.1.min.js"></script>
 <script type="text/javascript" src="../js/style.js"></script>
 <script type="text/javascript" src="../js/index.js"></script>
 <script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/buttonLite.js#style=-1&amp;uuid=&amp;pophcol=2&amp;lang=zh"></script>
 <script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/bshareC0.js"></script>
+<script type="text/javascript" src="../js/google-maps.js"></script>
+<script type="text/javascript" src="../wangEditor-3.1.1/release/wangEditor.min.js"></script>
 
 <body onload="init()">
 <c:if test="${empty loginUser}">
@@ -174,18 +173,14 @@
 
 </div>
 <div id="workPlace">
-    <div id="box">
-        <input type="text" name="search" placeholder="请输入关键字">
-        <div id="search">搜索</div>
-    </div>
-    <ul>
-        <li>我的第一个笔记</li>
-    </ul>
+    <div id="BIJI"><p id="note">笔记</p></div>
+    <ul id="notelist">
 
+    </ul>
 </div>
 <div id="mainPlace">
     <div id="editor">
-        <p>欢迎使用 wangEditor 编辑器</p>
+        <p></p>
     </div>
     <button id="btn1">创建</button>
     <button id="btn2">保存</button>
@@ -198,23 +193,25 @@
         <input type="button" id="createNotebookPopSub" value="确认">
     <span class="createNotebookPopSpan"></span>
 </div>
-<div id="createNotePop">
-    <h2>新建笔记</h2>
-    笔记本名字：<input name="noteName" id="noteName" type="text"><br>
-    <input type="button" id="createNotePopSub" value="确认">
-    <span class="createNotePopSpan"></span>
-</div>
+
 <script>
     var E = window.wangEditor;
     var editor = new E('#editor');
-    // 或者 var editor = new E( document.getElementById('editor') )
     editor.create();
+
 
     document.getElementById('btn1').addEventListener('click', function () {
         // 读取 html
-        $.post("${pageContext.request.contextPath}/EditorServlet?method=createNote", {getJson:JSON.stringify(editor.txt.getJSON())}, function(data) {
-            alert(data)
-        });
+        $.post("${pageContext.request.contextPath}/EditorServlet?method=createNote", {getHTML:editor.txt.html()}, function(data) {
+            $.each(data, function(i, obj) {
+                alert("笔记创建成功")
+                var li = "<li class=\"biji\" id=\"note"+obj.id+"\">\n" +
+                    "            "+obj.title+"\n" +
+                    "        </li>"
+                $("#notelist").append(li);
+            });
+            changeNote();
+        }, 'json');
     }, false);
 
     document.getElementById('createNotebookPopSub').addEventListener('click', function () {
@@ -254,6 +251,22 @@
         alert(editor.txt.text())
     }, false)
 
+    function changeNote() {
+        var notes = document.getElementById('notelist').getElementsByTagName("li");
+        for (var i=0; i<notes.length; i++) {
+            notes[i].addEventListener('click', function() {
+                var noteID = this.id.slice(4);
+                $.post("${pageContext.request.contextPath}/EditorServlet?method=findContent", {noteID:noteID}, function(data) {
+                    $.each(data, function(i, obj) {
+                        // editor.txt.html(obj.content)
+                        editor.txt.html(obj.content)
+                    });
+                }, 'json')
+            }, false)
+        }
+    }
+
+
     function jsInit() {
         $(".vertical-nav").verticalnav({
             speed: 400,
@@ -286,12 +299,28 @@
                 $('#notebook').append(li);
             });
             jsInit();
+            changeNote();
+        }, 'json');
+
+        listNote();
+
+    }
+    function listNote() {
+        // 将所有笔记部署到页面上
+        $.post("${pageContext.request.contextPath}/EditorServlet?method=listNote", {}, function(data) {
+            $.each(data, function(i, obj) {
+                var li = "<li class=\"biji\" id=\"note"+obj.id+"\">\n" +
+                    "            "+obj.title+"\n" +
+                    "        </li>"
+                $("#notelist").append(li);
+            });
+            changeNote();
         }, 'json');
     }
 
     function deleteNotebook() {
         var notebookId = $("#1")
-           
+
 
     }
 </script>
