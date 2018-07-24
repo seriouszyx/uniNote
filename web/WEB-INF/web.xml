@@ -53,4 +53,13 @@
         <servlet-name>EditorServlet</servlet-name>
         <url-pattern>/EditorServlet</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>BinServlet</servlet-name>
+        <servlet-class>web.servlet.BinServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>BinServlet</servlet-name>
+        <url-pattern>/BinServlet</url-pattern>
+    </servlet-mapping>
 </web-app>

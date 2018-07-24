@@ -35,4 +35,22 @@ public interface NoteService {
      * @return domain.Note
      **/
     Note findContent(int noteID) throws SQLException;
+
+    /**
+     * @Author Yixiang Zhao
+     * @Description 保存/更新笔记
+     * @Date 20:26 2018/7/24
+     * @Param [note, noteID]
+     * @return void
+     **/
+    void saveNote(Note note, int noteID) throws SQLException;
+
+    /**
+     * @Author Yixiang Zhao
+     * @Description 删除笔记至废纸篓
+     * @Date 20:54 2018/7/24
+     * @Param [noteID]
+     * @return void
+     **/
+    void delNote(int noteID) throws SQLException;
 }

@@ -34,4 +34,22 @@ public interface NoteDao {
      * @return domain.Note
      **/
     Note findContent(int noteID) throws SQLException;
+
+    /**
+     * @Author Yixiang Zhao
+     * @Description 根据id更新数据库中的笔记内容并修改更新时间
+     * @Date 20:27 2018/7/24
+     * @Param [note, noteID]
+     * @return void
+     **/
+    void saveNote(Note note, int noteID) throws SQLException;
+
+    /**
+     * @Author Yixiang Zhao
+     * @Description 在数据库中将note的isDelete属性设为1
+     * @Date 20:55 2018/7/24
+     * @Param [noteID]
+     * @return void
+     **/
+    void delNote(int noteID) throws SQLException;
 }

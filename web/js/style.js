@@ -1,6 +1,8 @@
-//这里写js和jq
 
 $(document).ready(function() {
+	$("#find").click(function() { //点击搜索弹出搜索框
+		if(document.getElementById("WorkChat").style.left == "0px")
+
 
 	$("#find").click(function() { //点击搜索弹出搜索界面
 		if(document.getElementById("WorkChat").style.left == "200px") {
