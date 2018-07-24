@@ -92,14 +92,23 @@
                     <div class="form-element form-stack">
                         <label for="email" class="form-label">Email</label>
                         <input id="email" type="email" name="email">
+                        <span class="spanStyle" id="mailboxSpan">*</span>
                     </div>
                     <div class="form-element form-stack">
                         <label for="username-signup" class="form-label">Username</label>
                         <input id="username-signup" type="text" name="username">
+                        <span class="spanStyle" id="usernameSpan">*</span>
                     </div>
                     <div class="form-element form-stack">
                         <label for="password-signup" class="form-label">Password</label>
                         <input id="password-signup" type="password" name="password">
+                        <span class="spanStyle" id="passwordSpan">*</span>
+                    </div>
+                    <div class="form-element form-stack">
+                        <label for="password-signup" class="form-label">Confirm password</label>
+                        <input id="repassword" type="password" name="repwd" >
+                        <span class="spanStyle" id="repasswordSpan">*</span>
+
                     </div>
                     <div class="form-element form-checkbox">
                         <input id="confirm-terms" type="checkbox" name="confirm" value="yes" class="checkbox">

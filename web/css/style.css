@@ -14,6 +14,7 @@ html {
 	padding: 0;
 	background-color: white;
 	overflow: hidden;
+    position: relative;
 }
 
 ul li {
@@ -23,11 +24,44 @@ ul li {
 ul li:hover {
 	cursor: pointer;
 }
+#BIJI{
+	width: 100%;
+	height: 150px;
+	border-bottom: 1px solid lightgray;
+}
+.biji{
+	width: 100%;
+	height: 160px;
+}
+.biji:hover{
+	background-color: #e74c3c;
+	
+}
+
+
+.fenge{
+	width: 90%;
+	height: 1px;
+	position: relative;
+	background-color: lightgrey;
+	margin-left: 5%;
+}
+#note{
+	color: #878787;
+    display: inline-block;
+    vertical-align: top;
+    font-size: 21px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    position: relative;
+    left: 5%;
+    top: 20%;
+}
 
 #top {
 	position: relative;
 	height:63px;
-	background: #398dee;
+	background: white;
 	min-width: 956px;
 }
 
@@ -43,13 +77,17 @@ ul li:hover {
 	width: 29.5%;
 	height: 100%;
 	float: left;
+	background-color: white;
+	border: 2px solid gainsboro;
+    overflow: scroll;
 }
 
 #mainPlace {
 	width: 58%;
 	height: 100%;
-	background-color: darkgray;
-	float: right;
+	background-color: white;
+    position: absolute;
+    right: 0;
 }
 
 .fristC {
@@ -98,11 +136,8 @@ ul li:hover {
 	cursor: pointer;
 }
 #helloUser{
-	 background-color: yellow;
+	 background-color: white;
     width: 200px;
-    
-
-    
     height: 100%;
 }
 #helloUser div{
@@ -172,4 +207,52 @@ ul li:hover {
 workPlace ul {
     width: 200px;
     height: 70px;
+}
+
+
+/* ZYX added */
+/* table 样式 */
+table {
+    border-top: 1px solid #ccc;
+    border-left: 1px solid #ccc;
+}
+table td,
+table th {
+    border-bottom: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    padding: 3px 5px;
+}
+table th {
+    border-bottom: 2px solid #ccc;
+    text-align: center;
+}
+
+/* blockquote 样式 */
+blockquote {
+    display: block;
+    border-left: 8px solid #d0e5f2;
+    padding: 5px 10px;
+    margin: 10px 0;
+    line-height: 1.4;
+    font-size: 100%;
+    background-color: #f1f1f1;
+}
+
+/* code 样式 */
+code {
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    background-color: #f1f1f1;
+    border-radius: 3px;
+    padding: 3px 5px;
+    margin: 0 3px;
+}
+pre code {
+    display: block;
+}
+
+/* ul ol 样式 */
+ul, ol {
+    margin: 10px 0 10px 20px;
 }

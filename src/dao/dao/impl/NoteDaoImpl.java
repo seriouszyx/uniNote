@@ -2,11 +2,15 @@ package dao.dao.impl;
 
 import dao.NoteDao;
 import domain.Note;
+import domain.Notebook;
 import domain.User;
 import org.apache.commons.dbutils.QueryRunner;
+import org.apache.commons.dbutils.handlers.BeanHandler;
+import org.apache.commons.dbutils.handlers.BeanListHandler;
 import utils.JDBCUtils;
 
 import java.sql.SQLException;
+import java.util.List;
 
 /**
  * @ClassName NoteDaoImpl
@@ -25,5 +29,19 @@ public class NoteDaoImpl implements NoteDao {
                             note.getTitle()};
         QueryRunner qr = new QueryRunner(JDBCUtils.getDataSource());
         qr.update(sql, params);
+    }
+
+    @Override
+    public List<Note> listNote(User user, Notebook notebook) throws SQLException {
+        String sql = "select * from note where userid = ? and notebookID = ?";
+        QueryRunner qr = new QueryRunner(JDBCUtils.getDataSource());
+        return qr.query(sql, new BeanListHandler<Note>(Note.class), user.getId(), notebook.getId());
+    }
+
+    @Override
+    public Note findContent(int noteID) throws SQLException {
+        String sql = "select * from note where id = ?";
+        QueryRunner qr = new QueryRunner(JDBCUtils.getDataSource());
+        return qr.query(sql, new BeanHandler<Note>(Note.class), noteID);
     }
 }
