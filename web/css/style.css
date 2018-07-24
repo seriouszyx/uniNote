@@ -14,7 +14,7 @@ html {
 	padding: 0;
 	background-color: white;
 	overflow: hidden;
-    position: relative;
+	position: relative;
 }
 
 ul li {
@@ -24,46 +24,46 @@ ul li {
 ul li:hover {
 	cursor: pointer;
 }
-#BIJI{
+
+#BIJI {
 	width: 100%;
 	height: 150px;
 	border-bottom: 1px solid lightgray;
 }
-.biji{
+
+.biji {
 	width: 100%;
 	height: 160px;
 }
-.biji:hover{
+
+.biji:hover {
 	background-color: #e74c3c;
-	
 }
 
-
-.fenge{
+.fenge {
 	width: 90%;
 	height: 1px;
 	position: relative;
 	background-color: lightgrey;
 	margin-left: 5%;
 }
-#note{
+
+#note {
 	color: #878787;
-    display: inline-block;
-    vertical-align: top;
-    font-size: 21px;
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
-    position: relative;
-    left: 5%;
-    top: 20%;
+	display: inline-block;
+	vertical-align: top;
+	font-size: 21px;
+	letter-spacing: 0.5px;
+	text-transform: uppercase;
+	position: relative;
+	left: 5%;
+	top: 20%;
 }
 
 #top {
 	position: relative;
-
-	height:63px;
+	height: 63px;
 	background: white;
-
 	min-width: 956px;
 }
 
@@ -81,15 +81,15 @@ ul li:hover {
 	float: left;
 	background-color: white;
 	border: 2px solid gainsboro;
-    overflow: scroll;
+	overflow: scroll;
 }
 
 #mainPlace {
 	width: 58%;
 	height: 100%;
 	background-color: white;
-    position: absolute;
-    right: 0;
+	position: absolute;
+	right: 0;
 }
 
 .fristC {
@@ -100,50 +100,13 @@ ul li:hover {
 	line-height: 15px;
 }
 
-#box {
-	width: 100%;
-	height: 100%;
-	position: relative;
-	border: 1px solid #888;
-	min-width: 330px;
-	left: -480px;
-}
-
-#box div {
-	height: 265px;
-	width: 80%;
-	margin: 0 auto 0px auto;
-	text-align: center;
-	border-bottom: 1px solid;
-}
-
 .vertical-nav {
 	z-index: 1;
 }
 
-
-/*#search {
-	width: 70px;
-	height: 50px;
-	float: right;
-	background: #222222;
-	color: #888;
-	text-align: center;
-	line-height: 50px;
-	cursor: pointer;
-
-}
-#helloUser{
-	 background-color: white;
-    width: 200px;
-    height: 100%;
-
-}*/
-
 #helloUser {
 	width: 200px;
 	height: 100%;
-
 }
 
 #helloUser div {
@@ -163,14 +126,160 @@ ul li:hover {
 }
 
 
-#WorkChat {
-	width: 100%;
-	height: 100%;
+/* ZYX changed below */
+
+#createNotebookPop {
+	width: 300px;
+	height: 600px;
+	background-color: darkslategray;
+	text-align: center;
+	/*让div内部文字居中*/
+	border-radius: 20px;
+	margin: auto;
+	position: absolute;
+	z-index: 10000;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	display: none;
+}
+
+#createNotebookPop>span {
+	width: 20px;
+	height: 20px;
+	background-color: #FFFFFF;
+	display: block;
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+
+#createNotePop {
+	width: 300px;
+	height: 600px;
+	background-color: darkslategray;
+	text-align: center;
+	/*让div内部文字居中*/
+	border-radius: 20px;
+	margin: auto;
+	position: absolute;
+	z-index: 10000;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	display: none;
+}
+
+#createNotePop>span {
+	width: 20px;
+	height: 20px;
+	background-color: #FFFFFF;
+	display: block;
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+
+workPlace ul {
+	width: 200px;
+	height: 70px;
+}
+
+
+/* ZYX added */
+
+
+/* table 样式 */
+
+table {
+	border-top: 1px solid #ccc;
+	border-left: 1px solid #ccc;
+}
+
+table td,
+table th {
+	border-bottom: 1px solid #ccc;
+	border-right: 1px solid #ccc;
+	padding: 3px 5px;
+}
+
+table th {
+	border-bottom: 2px solid #ccc;
+	text-align: center;
+}
+
+
+/* blockquote 样式 */
+
+blockquote {
+	display: block;
+	border-left: 8px solid #d0e5f2;
+	padding: 5px 10px;
+	margin: 10px 0;
+	line-height: 1.4;
+	font-size: 100%;
+	background-color: #f1f1f1;
+}
+
+
+/* code 样式 */
+
+code {
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+	background-color: #f1f1f1;
+	border-radius: 3px;
+	padding: 3px 5px;
+	margin: 0 3px;
+}
+
+pre code {
+	display: block;
+}
+
+
+/* ul ol 样式 */
+
+ul,
+ol {
+	margin: 10px 0 10px 20px;
+}
+
+
+/* WYJ add below */
+
+#box {
+	width: 235%;
 	position: relative;
-	top: -100.3%;
 	border: 1px solid #888;
-	min-width: 330px;
-	left: -480px;
+	left: -272px;
+	top: -760.5px;
+	z-index: 1;
+	height: 735px;
+	background-color: white;
+}
+
+#box div {
+	height: 265px;
+	width: 80%;
+	margin: 0 auto 0px auto;
+	text-align: center;
+	border-bottom: 1px solid;
+}
+
+#workInput {
+	float: none;
+	margin: 0 auto;
+	width: 90%;
+	margin-top: 35px;
+	height: 120px;
+	/* border-radius: 24px; */
+	min-width: 215px;
+	font-size: 35px;
+	padding: 5px 5px 5px 15px;
 }
 
 .findChat {
@@ -191,7 +300,7 @@ ul li:hover {
 	min-width: 215px;
 	font-size: 20px;
 	padding: 5px 5px 5px 15px;
-	border: 1px solid #222222;
+	border: 1px solid #888;
 }
 
 .chatInput2 {
@@ -199,7 +308,7 @@ ul li:hover {
 	min-width: 50px;
 	width: 80%;
 	text-align: center;
-	border: 1px solid #222;
+	border: 1px solid #888;
 	height: 34px;
 	border-radius: 30px;
 	margin: 30px auto 0px;
@@ -208,6 +317,24 @@ ul li:hover {
 
 .chatInput2:hover {
 	cursor: pointer;
+	background-color: #e74c3c;
+	color: white;
+}
+
+.chatInput1:focus {
+	cursor: pointer;
+	border: 1px solid #e74c3c;
+}
+
+#choose h1 {
+	font-size: 30px;
+	margin: 20px;
+}
+
+#WorkChat ul li {
+	padding: 10px;
+	border-bottom: 1px solid #888;
+	width: 95%;
 }
 
 #chat {
@@ -217,30 +344,13 @@ ul li:hover {
 	font-size: 35px;
 	color: #888;
 }
-
-#WorkChat ul li {
-	padding: 10px;
-	border-bottom: 1px solid #222
+#chat ul li:hover{
+	cursor: pointer;
+	background-color: #e74c3c;
+	color: white;
 }
 
-#workInput {
-	float: none;
-	margin: 0 auto;
-	width: 90%;
-	margin-top: 35px;
-	height: 120px;
-	/* border-radius: 24px; */
-	min-width: 215px;
-	font-size: 35px;
-	padding: 5px 5px 5px 15px;
-}
-
-#workPlace h1 {
-	font-size: 30px;
-	margin: 0 0 0 20px;
-}
-
-#newChat {
+.newChat {
 	float: right;
 	font-size: 22px;
 	border: 1px solid;
@@ -250,108 +360,59 @@ ul li:hover {
 	padding: 10px;
 }
 
-#newChat:hover {
+.newChat:hover {
 	cursor: pointer;
-
-/* ZYX changed below */
-#createNotebookPop {
-    width: 300px;
-    height: 600px;
-    background-color: darkslategray;
-    text-align: center; /*让div内部文字居中*/
-    border-radius: 20px;
-    margin: auto;
-    position: absolute;
-    z-index: 10000;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    display: none;
-}
-#createNotebookPop > span {
-    width: 20px;
-    height: 20px;
-    background-color: #FFFFFF;
-    display: block;
-    position: absolute;
-    right: 0;
-    top: 0;
-}
-#createNotePop {
-    width: 300px;
-    height: 600px;
-    background-color: darkslategray;
-    text-align: center; /*让div内部文字居中*/
-    border-radius: 20px;
-    margin: auto;
-    position: absolute;
-    z-index: 10000;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    display: none;
-}
-#createNotePop > span {
-    width: 20px;
-    height: 20px;
-    background-color: #FFFFFF;
-    display: block;
-    position: absolute;
-    right: 0;
-    top: 0;
-}
-workPlace ul {
-    width: 200px;
-    height: 70px;
+	background-color: #e74c3c;
+	color: white;
 }
 
-
-/* ZYX added */
-/* table 样式 */
-table {
-    border-top: 1px solid #ccc;
-    border-left: 1px solid #ccc;
-}
-table td,
-table th {
-    border-bottom: 1px solid #ccc;
-    border-right: 1px solid #ccc;
-    padding: 3px 5px;
-}
-table th {
-    border-bottom: 2px solid #ccc;
-    text-align: center;
+#WorkChat {
+	position: relative;
+	border: 1px solid #888;
+	width: 235%;
+	left: -272px;
+	top: -1497.5px;
+	z-index: 1;
+	height: 735px;
+	background-color: white;
 }
 
-/* blockquote 样式 */
-blockquote {
-    display: block;
-    border-left: 8px solid #d0e5f2;
-    padding: 5px 10px;
-    margin: 10px 0;
-    line-height: 1.4;
-    font-size: 100%;
-    background-color: #f1f1f1;
+#trash {
+	position: relative;
+	border: 1px solid #888;
+	width: 235%;
+	left: -272px;
+	top: -2233px;
+	background-color: white;
+	z-index: 1;
+	height: 735px;
 }
 
-/* code 样式 */
-code {
-    display: inline-block;
-    *display: inline;
-    *zoom: 1;
-    background-color: #f1f1f1;
-    border-radius: 3px;
-    padding: 3px 5px;
-    margin: 0 3px;
-}
-pre code {
-    display: block;
+#trash ul li {
+	padding: 15px 20px;
+	border-bottom: 1px solid #e0e1e5;
+	height: 50px;
+	font-size: 25px;
+	line-height: 50px;
+	width: 91.5%;
 }
 
-/* ul ol 样式 */
-ul, ol {
-    margin: 10px 0 10px 20px;
+#trash ul li:hover {
+	cursor: default;
+	background-color: #e74c3c;
+	color: white;
+}
 
+.filei {
+	margin-right: 10px;
+}
+
+.both {
+	line-height: 50px;
+	float: right;
+	margin-right: 22px;
+}
+
+.both:hover {
+	cursor: pointer;
 }
