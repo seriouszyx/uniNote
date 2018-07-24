@@ -33,7 +33,7 @@ public class NoteDaoImpl implements NoteDao {
 
     @Override
     public List<Note> listNote(User user, Notebook notebook) throws SQLException {
-        String sql = "select * from note where userid = ? and notebookID = ?";
+        String sql = "select * from note where userid = ? and notebookID = ? and isDelete = 0";
         QueryRunner qr = new QueryRunner(JDBCUtils.getDataSource());
         return qr.query(sql, new BeanListHandler<Note>(Note.class), user.getId(), notebook.getId());
     }
@@ -43,5 +43,20 @@ public class NoteDaoImpl implements NoteDao {
         String sql = "select * from note where id = ?";
         QueryRunner qr = new QueryRunner(JDBCUtils.getDataSource());
         return qr.query(sql, new BeanHandler<Note>(Note.class), noteID);
+    }
+
+    @Override
+    public void saveNote(Note note, int noteID) throws SQLException {
+        String sql = "update note set content = ?, updateTime = ? where id = ?";
+        Object[] params = {note.getContent(), note.getUpdateTime(), noteID};
+        QueryRunner qr = new QueryRunner(JDBCUtils.getDataSource());
+        qr.update(sql, params);
+    }
+
+    @Override
+    public void delNote(int noteID) throws SQLException {
+        String sql = "update note set isDelete = 1 where id = ?";
+        QueryRunner qr = new QueryRunner(JDBCUtils.getDataSource());
+        qr.update(sql, noteID);
     }
 }

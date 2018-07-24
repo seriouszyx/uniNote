@@ -1,0 +1,41 @@
+package dao.dao.impl;
+
+import dao.BinDao;
+import domain.Note;
+import domain.User;
+import org.apache.commons.dbutils.QueryRunner;
+import org.apache.commons.dbutils.handlers.BeanListHandler;
+import utils.JDBCUtils;
+
+import java.sql.SQLException;
+import java.util.List;
+
+/**
+ * @ClassName BinDaoImpl
+ * @Description TODO
+ * @Author Yixiang Zhao
+ * @Date 2018/7/24 21:35
+ * @Version 1.0
+ */
+public class BinDaoImpl implements BinDao {
+    @Override
+    public List<Note> listNoteBin(User user) throws SQLException {
+        String sql = "select * from note where isDelete = 1 and userid = ?";
+        QueryRunner qr = new QueryRunner(JDBCUtils.getDataSource());
+        return qr.query(sql, new BeanListHandler<Note>(Note.class), user.getId());
+    }
+
+    @Override
+    public void RecoverNoteInBin(User user, int id) throws SQLException {
+        String sql = "update note set isDelete = ? where userid = ? and id = ?";
+        QueryRunner qr = new QueryRunner(JDBCUtils.getDataSource());
+        qr.update(sql, user.getId(), id);
+    }
+
+    @Override
+    public void removeNoteInBin(User user, int id) throws SQLException {
+        String sql = "delete from note where id = ? and userid = ?";
+        QueryRunner qr = new QueryRunner(JDBCUtils.getDataSource());
+        qr.update(sql, id, user.getId());
+    }
+}

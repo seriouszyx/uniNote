@@ -251,8 +251,8 @@ ul li:hover {
 }
 
 #newChat:hover {
-	cursor: pointer;
-
+    cursor: pointer;
+}
 /* ZYX changed below */
 #createNotebookPop {
     width: 300px;

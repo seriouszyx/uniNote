@@ -19,21 +19,30 @@ import java.util.List;
  */
 public class NoteServiceImpl implements NoteService {
 
+    NoteDao dao = new NoteDaoImpl();
+
     @Override
     public void createNote(User user, Note note) throws SQLException {
-        NoteDao dao = new NoteDaoImpl();
         dao.createNote(user, note);
     }
 
     @Override
     public List<Note> listNote(User user, Notebook notebook) throws SQLException {
-        NoteDao dao = new NoteDaoImpl();
         return dao.listNote(user, notebook);
     }
 
     @Override
     public Note findContent(int noteID) throws SQLException {
-        NoteDao dao = new NoteDaoImpl();
         return dao.findContent(noteID);
+    }
+
+    @Override
+    public void saveNote(Note note, int noteID) throws SQLException {
+        dao.saveNote(note, noteID);
+    }
+
+    @Override
+    public void delNote(int noteID) throws SQLException {
+        dao.delNote(noteID);
     }
 }

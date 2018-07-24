@@ -184,6 +184,7 @@
     </div>
     <button id="btn1">创建</button>
     <button id="btn2">保存</button>
+    <button id="btn3">删除</button>
 </div>
 
 <!-- 各种弹出窗口 -->
@@ -195,20 +196,18 @@
 </div>
 
 <script>
+    // 目前所写笔记的id
+    var NOTE = 0;
     var E = window.wangEditor;
     var editor = new E('#editor');
     editor.create();
-
 
     document.getElementById('btn1').addEventListener('click', function () {
         // 读取 html
         $.post("${pageContext.request.contextPath}/EditorServlet?method=createNote", {getHTML:editor.txt.html()}, function(data) {
             $.each(data, function(i, obj) {
                 alert("笔记创建成功")
-                var li = "<li class=\"biji\" id=\"note"+obj.id+"\">\n" +
-                    "            "+obj.title+"\n" +
-                    "        </li>"
-                $("#notelist").append(li);
+                listNote();
             });
             changeNote();
         }, 'json');
@@ -247,8 +246,21 @@
 
 
     document.getElementById('btn2').addEventListener('click', function () {
-        // 读取 text
-        alert(editor.txt.text())
+        // 保存
+        $.post("${pageContext.request.contextPath}/EditorServlet?method=saveNote", {getHTML:editor.txt.html(),noteID:NOTE}, function(data) {
+            alert(data);
+            changeNote();
+        });
+    }, false)
+
+    document.getElementById('btn3').addEventListener('click', function () {
+        // 删除
+        $.post("${pageContext.request.contextPath}/EditorServlet?method=delNote", {noteID:NOTE}, function(data) {
+            alert(data);
+            editor.txt.clear();
+            listNote();
+            changeNote();
+        });
     }, false)
 
     function changeNote() {
@@ -256,6 +268,7 @@
         for (var i=0; i<notes.length; i++) {
             notes[i].addEventListener('click', function() {
                 var noteID = this.id.slice(4);
+                NOTE = noteID;
                 $.post("${pageContext.request.contextPath}/EditorServlet?method=findContent", {noteID:noteID}, function(data) {
                     $.each(data, function(i, obj) {
                         // editor.txt.html(obj.content)
@@ -308,11 +321,13 @@
     function listNote() {
         // 将所有笔记部署到页面上
         $.post("${pageContext.request.contextPath}/EditorServlet?method=listNote", {}, function(data) {
+            $("#notelist").html("");
             $.each(data, function(i, obj) {
                 var li = "<li class=\"biji\" id=\"note"+obj.id+"\">\n" +
                     "            "+obj.title+"\n" +
                     "        </li>"
                 $("#notelist").append(li);
+                NOTE = obj.id;
             });
             changeNote();
         }, 'json');

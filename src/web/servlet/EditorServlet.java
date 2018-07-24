@@ -85,15 +85,62 @@ public class EditorServlet extends BaseServlet {
         NoteService service = new NoteServiceImpl();
         try {
             Note note = service.findContent(noteID);
-            System.out.println(note);
             String jsonStr = JSONArray.fromObject(note).toString();
             response.setContentType("text/html;charset=utf-8");
-            System.out.println(jsonStr);
             response.getWriter().print(jsonStr);
         } catch (Exception e) {
             request.setAttribute("msg", "笔记查找失败");
             return "/jsp/info.jsp";
         }
+        return null;
+    }
+
+    /**
+     * @Author Yixiang Zhao
+     * @Description 保存当前笔记
+     * @Date 20:07 2018/7/24
+     * @Param [request, response]
+     * @return java.lang.String
+     **/
+    public String saveNote(HttpServletRequest request, HttpServletResponse response) throws Exception{
+        Note note = new Note();
+        note.setContent(request.getParameter("getHTML"));
+        String nowTime = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date());
+        note.setUpdateTime(Timestamp.valueOf(nowTime));
+        int noteID = Integer.parseInt(request.getParameter("noteID"));
+
+        try {
+            NoteService service = new NoteServiceImpl();
+            service.saveNote(note, noteID);
+            response.setContentType("text/html;charset=utf-8");
+            response.getWriter().print("笔记保存成功！");
+        } catch (Exception e) {
+            request.setAttribute("msg", "笔记保存失败");
+            return "/jsp/info.jsp";
+        }
+        return null;
+    }
+
+    /**
+     * @Author Yixiang Zhao
+     * @Description 删除笔记至废纸篓
+     * @Date 20:51 2018/7/24
+     * @Param [request, response]
+     * @return java.lang.String
+     **/
+    public String delNote(HttpServletRequest request, HttpServletResponse response) throws Exception{
+        int noteID = Integer.parseInt(request.getParameter("noteID"));
+        try {
+            NoteService service = new NoteServiceImpl();
+            service.delNote(noteID);
+            response.setContentType("text/html;charset=utf-8");
+            response.getWriter().print("笔记删除成功！");
+        } catch (Exception e) {
+            request.setAttribute("msg", "笔记删除失败");
+            return "/jsp/info.jsp";
+        }
+
+
         return null;
     }
 }
