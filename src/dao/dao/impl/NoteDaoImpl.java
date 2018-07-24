@@ -18,10 +18,11 @@ import java.sql.SQLException;
 public class NoteDaoImpl implements NoteDao {
     @Override
     public void createNote(User user, Note note) throws SQLException {
-        String sql = "insert into note values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        String sql = "insert into note values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         Object[] params = {note.getId(), user.getId(), note.getContent(), note.getCreateTime(),
                             note.getUpdateTime(), note.getMarkID(), note.getNotebookID(), note.getRemindTime(),
-                            note.getIsStart(), note.getIsShare(), note.getIsdelete(), note.getSharedpeople()};
+                            note.getIsStart(), note.getIsShare(), note.getIsdelete(), note.getSharedpeople(),
+                            note.getTitle()};
         QueryRunner qr = new QueryRunner(JDBCUtils.getDataSource());
         qr.update(sql, params);
     }

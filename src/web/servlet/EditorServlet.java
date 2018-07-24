@@ -29,7 +29,8 @@ public class EditorServlet extends BaseServlet {
         String nowTime = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date());
         note.setCreateTime(Timestamp.valueOf(nowTime));
         User user = (User) request.getSession().getAttribute("loginUser");
-
+        // 标题
+        note.setTitle("test");
         try {
             NoteService service = new NoteServiceImpl();
             service.createNote(user, note);

@@ -1,9 +1,6 @@
 
 $(document).ready(function() {
-    $(".vertical-nav").verticalnav({
-        speed: 400,
-        align: "left"
-    });
+
 
     $("#createNotebook").click(function() {
         $("#createNotebookPop").css("display", "block")

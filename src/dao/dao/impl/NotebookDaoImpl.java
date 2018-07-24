@@ -5,9 +5,11 @@ import domain.Notebook;
 import domain.User;
 import org.apache.commons.dbutils.QueryRunner;
 import org.apache.commons.dbutils.handlers.BeanHandler;
+import org.apache.commons.dbutils.handlers.BeanListHandler;
 import utils.JDBCUtils;
 
 import java.sql.SQLException;
+import java.util.List;
 
 /**
  * @ClassName NotebookDaoImpl
@@ -28,5 +30,12 @@ public class NotebookDaoImpl implements NotebookDao {
                             notebook.getSharedpeople()};
         qr.update(sql, params);
         return notebook;
+    }
+
+    @Override
+    public List<Notebook> listNotebook(User user) throws SQLException {
+        String sql = "select * from notebook where userid = ?";
+        QueryRunner qr = new QueryRunner(JDBCUtils.getDataSource());
+        return qr.query(sql, new BeanListHandler<Notebook>(Notebook.class), user.getId());
     }
 }

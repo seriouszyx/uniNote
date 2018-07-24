@@ -7,6 +7,7 @@ import domain.User;
 import service.NotebookService;
 
 import java.sql.SQLException;
+import java.util.List;
 
 /**
  * @ClassName NotebookServiceImpl
@@ -21,5 +22,11 @@ public class NotebookServiceImpl implements NotebookService {
     public Notebook createNotebook(Notebook notebook, User user) throws SQLException {
         NotebookDao dao = new NotebookDaoImpl();
         return dao.createNotebook(notebook, user);
+    }
+
+    @Override
+    public List<Notebook> listNotebook(User user) throws SQLException {
+        NotebookDao dao = new NotebookDaoImpl();
+        return dao.listNotebook(user);
     }
 }
