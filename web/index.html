@@ -43,7 +43,7 @@
             -->
 			<div class="kePublic">
 				<div class="content">
-					<ul class="vertical-nav dark red" style="height: 760px;">
+					<ul class="vertical-nav dark red" style="height: 760px;z-index: 2;">
 						<li class="active">
 							<a href="UserInformation.html" target="_blank"><i class="icon-user " style="margin: -14.958px 14px 15px -20px;"></i>个人用户</a>
 						</li>
@@ -62,7 +62,10 @@
 									<a href="#">笔记本1<span class="submenu-icon"></span></a>
 									<ul>
 										<li>
-											<a href="#">编辑</a>
+											<a href="#">添加笔记</a>
+										</li>
+										<li>
+											<a href="#">编辑名称</a>
 										</li>
 										<li>
 											<a href="#">添加标签</a>
@@ -80,7 +83,10 @@
 									<a href="#">笔记本2<span class="submenu-icon"></span></a>
 									<ul>
 										<li>
-											<a href="#">编辑</a>
+											<a href="#">添加笔记</a>
+										</li>
+										<li>
+											<a href="#">编辑名称</a>
 										</li>
 										<li>
 											<a href="#">添加标签</a>
@@ -98,7 +104,10 @@
 									<a href="#">笔记本3<span class="submenu-icon"></span></a>
 									<ul>
 										<li>
-											<a href="#">编辑</a>
+											<a href="#">添加笔记</a>
+										</li>
+										<li>
+											<a href="#">编辑名称</a>
 										</li>
 										<li>
 											<a href="#">添加标签</a>
@@ -116,7 +125,10 @@
 									<a href="#">笔记本4<span class="submenu-icon"></span></a>
 									<ul>
 										<li>
-											<a href="#">编辑</a>
+											<a href="#">添加笔记</a>
+										</li>
+										<li>
+											<a href="#">编辑名称</a>
 										</li>
 										<li>
 											<a href="#">添加标签</a>
@@ -134,7 +146,10 @@
 									<a href="#">笔记本5<span class="submenu-icon"></span></a>
 									<ul>
 										<li>
-											<a href="#">编辑</a>
+											<a href="#">添加笔记</a>
+										</li>
+										<li>
+											<a href="#">编辑名称</a>
 										</li>
 										<li>
 											<a href="#">添加标签</a>
@@ -199,30 +214,46 @@
 							</ul>
 						</li>
 						<li class="fristC">
-							<a href="#"><i class="icon-comments " style="margin: 0px 14px 0 -20px;font-size:30px"></i>工作评论<span class="submenu-icon " style="line-height: 48px;"></span></a>
-							<ul>
-								<li class="sceondC">
-									<a href="#">添加群聊</a>
-								</li>
-								<li class="sceondC">
-									<a href="#">查看已有群聊</a>
-								</li>
+							<a id="comment"><i class="icon-comments " style="margin: 0px 14px 0 -20px;font-size:30px"></i>工作群聊</a>
 
-							</ul>
 						</li>
 						<li class="fristC">
 							<a href="#"><i class="icon-trash" style="margin: 0px 14px 0 -20px;font-size:30px"></i>废纸篓<span class="submenu-icon " style="line-height: 48px;"></span></a>
-
 							<ul>
 								<li class="sceondC">
-									<a href="#">还原笔记</a>
+									<a href="#">已删除笔记1<span class="submenu-icon "></span></a>
+									<ul>
+										<li class="sceondC">
+											<a href="#">还原笔记</a>
+										</li>
+										<li class="sceondC">
+											<a href="#">彻底删除</a>
+										</li>
+									</ul>
 								</li>
 								<li class="sceondC">
-									<a href="#">彻底删除</a>
+									<a href="#">已删除笔记2<span class="submenu-icon "></span></a>
+									<ul>
+										<li class="sceondC">
+											<a href="#">还原笔记</a>
+										</li>
+										<li class="sceondC">
+											<a href="#">彻底删除</a>
+										</li>
+									</ul>
 								</li>
-
+								<li class="sceondC">
+									<a href="#">已删除笔记3<span class="submenu-icon "></span></a>
+									<ul>
+										<li class="sceondC">
+											<a href="#">还原笔记</a>
+										</li>
+										<li class="sceondC">
+											<a href="#">彻底删除</a>
+										</li>
+									</ul>
+								</li>
 							</ul>
-
 						</li>
 						<li class="fristC">
 							<a id="logoff"><i class="icon-off " style="margin: 0px 14px 0 -20px;font-size:30px"></i>注销账户</a>
@@ -247,8 +278,74 @@
 			<div class="fenge"></div>
 			
 			<div id="box">
-				<input type="text" name="search" placeholder="请输入关键字">
-				<div id="search">搜索</div>
+				<!--
+                          	作者：offline
+                          	时间：2018-07-24
+                          	描述：搜索笔记
+                          -->
+
+				<h1 class="icon-search">搜索笔记</h1>
+
+				<div class="findChat">
+					<input id="workInput" class="chatInput1" type="text" name="search" placeholder="请输入关键字">
+					<input class="chatInput2" type="button" value="搜索" />
+				</div>
+				<div>
+                     <!--
+                     	作者：offline
+                     	时间：2018-07-24
+                     	描述：根据关键字显示符合的笔记
+                     -->
+					<ul>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+					</ul>
+					
+					
+					
+				</div>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+
+			</div>
+			<!--作者：offline时间：2018-07-19描述：工作群聊-->
+			<div id="WorkChat">
+				<!--作者：offline时间：2018-07-19描述：工作群聊-->
+				<!--
+                	作者：903875165@qq.com
+                	时间：2018-07-22
+                	描述：点击出现。
+                -->
+				<br />
+				<h1 class="icon-comments">工作群聊</h1>
+				<div class="findChat">
+					<input class="chatInput1" type="text" name="searchChat" placeholder="请输入群聊名称/群聊号码">
+					<input class="chatInput2" type="button" value="搜索">
+				</div>
+				<div id="chat">
+					<ul>
+						<li>群聊1</li>
+						<li>群聊2</li>
+						<li>群聊3</li>
+						<li>群聊4</li>
+						<li>群聊5</li>
+					</ul>
+				</div>
+				<div id="newChat"><i class="icon-plus"></i><span>&nbsp;新建群聊</span></div>
+
 			</div>
 
 		</div>
@@ -259,7 +356,6 @@
 	<script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js" type="text/javascript" charset="utf-8"></script>
 	<script type="text/javascript" src="js/style.js"></script>
 	<script type="text/javascript" src="http://widget.renren.com/js/rrshare.js"></script>
-
 	<script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/buttonLite.js#style=-1&amp;uuid=&amp;pophcol=2&amp;lang=zh"></script>
 	<script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/bshareC0.js"></script>
 
