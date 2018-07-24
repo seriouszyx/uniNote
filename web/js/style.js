@@ -1,28 +1,37 @@
+
 $(document).ready(function() {
 	$("#find").click(function() { //点击搜索弹出搜索框
 		if(document.getElementById("WorkChat").style.left == "0px")
 
-		{
+
+	$("#find").click(function() { //点击搜索弹出搜索界面
+		if(document.getElementById("WorkChat").style.left == "200px") {
 			$("#WorkChat").stop().animate({
 
-				left: '-480px'
+				left: '-272px'
 			});
+		}
+		if(document.getElementById("trash").style.left == "200px") {
+			$("#trash").stop().animate({
 
+				left: '-272px'
+			});
 		}
 
-		if(document.getElementById("box").style.left != "0px") {
+		if(document.getElementById("box").style.left != "200px") {
 
 			$("#box").stop().animate({
 
-				left: '0px'
+				left: '200px'
 			});
 		} else {
 			$("#box").stop().animate({
 
-				left: '-480px'
+				left: '-272px'
 			});
 
 		}
+
 	});
 	/*
 	$(document).click(function() { //点击任意位置搜索框隐藏
@@ -30,8 +39,6 @@ $(document).ready(function() {
 		$("#box").stop().animate({
 			left: '-310px'
 		});
-		
-		
 	});//防止冒泡
 	
 	$("#box").click(function(event) {
@@ -52,29 +59,83 @@ $(document).ready(function() {
 
 	$("#comment").click(function() { //点击工作群聊滑出群聊界面
 
-		if(document.getElementById("box").style.left == "0px") {
+		if(document.getElementById("box").style.left == "200px") {
 			$("#box").stop().animate({
 
-				left: '-480px'
+				left: '-272px'
 			});
-
-
 		}
+		if(document.getElementById("trash").style.left == "200px") {
+			$("#trash").stop().animate({
 
-		if(document.getElementById("WorkChat").style.left != "0px") {
+				left: '-272px'
+			});
+		}
+		if(document.getElementById("WorkChat").style.left != "200px") {
 
 			$("#WorkChat").stop().animate({
 
-				left: '0px'
+				left: '200px'
 			});
 		} else {
 			$("#WorkChat").stop().animate({
 
-				left: '-480px'
+				left: '-272px'
 			});
-
 		}
 	});
+	$("#trashB").click(function() { //点击滑出废纸篓
 
+		if(document.getElementById("box").style.left == "200px") {
+			$("#box").stop().animate({
+
+				left: '-272px'
+			});
+		}
+		if(document.getElementById("WorkChat").style.left == "200px") {
+			$("#WorkChat").stop().animate({
+
+				left: '-272px'
+			});
+		}
+		if(document.getElementById("trash").style.left != "200px") {
+
+			$("#trash").stop().animate({
+
+				left: '200px'
+			});
+		} else {
+			$("#trash").stop().animate({
+
+				left: '-272px'
+			});
+		}
+	});
+	$(".trashi").click(function() { //确认是否彻底删除
+		var x=confirm("是否彻底删除该笔记？");
+		if(x)
+		{
+			
+		}
+		else
+		{
+			
+		}
+		
+	});
+	
+	$("#cleanTrash").click(function() { //确认是否清空废纸篓
+		var x=confirm("是否清空废纸篓？");
+		if(x)
+		{
+			
+		}
+		else
+		{
+			
+		}
+		
+	});
+	
 
 });

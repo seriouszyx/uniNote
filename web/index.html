@@ -219,42 +219,8 @@
 
 						</li>
 						<li class="fristC">
-							<a href="#"><i class="icon-trash" style="margin: 0px 14px 0 -20px;font-size:30px"></i>废纸篓<span class="submenu-icon " style="line-height: 48px;"></span></a>
-							<ul>
-								<li class="sceondC">
-									<a href="#">已删除笔记1<span class="submenu-icon "></span></a>
-									<ul>
-										<li class="sceondC">
-											<a href="#">还原笔记</a>
-										</li>
-										<li class="sceondC">
-											<a href="#">彻底删除</a>
-										</li>
-									</ul>
-								</li>
-								<li class="sceondC">
-									<a href="#">已删除笔记2<span class="submenu-icon "></span></a>
-									<ul>
-										<li class="sceondC">
-											<a href="#">还原笔记</a>
-										</li>
-										<li class="sceondC">
-											<a href="#">彻底删除</a>
-										</li>
-									</ul>
-								</li>
-								<li class="sceondC">
-									<a href="#">已删除笔记3<span class="submenu-icon "></span></a>
-									<ul>
-										<li class="sceondC">
-											<a href="#">还原笔记</a>
-										</li>
-										<li class="sceondC">
-											<a href="#">彻底删除</a>
-										</li>
-									</ul>
-								</li>
-							</ul>
+							<a id="trashB"><i class="icon-trash" style="margin: 0px 14px 0 -20px;font-size:30px"></i>废纸篓<span style="line-height: 48px;"></span></a>
+
 						</li>
 						<li class="fristC">
 							<a id="logoff"><i class="icon-off " style="margin: 0px 14px 0 -20px;font-size:30px"></i>注销账户</a>
@@ -264,27 +230,13 @@
 				<div class="clear"></div>
 			</div>
 
-		</div>
-		<div id="workPlace">
-			<div id="BIJI"><p id="note">笔记</p></div>
-			<div class="biji"></div>
-			<div class="fenge"></div>
-			<div class="biji"></div>
-			<div class="fenge"></div>
-			<div class="biji"></div>
-			<div class="fenge"></div>
-			<div class="biji"></div>
-			<div class="fenge"></div>
-			<div class="biji"></div>
-			<div class="fenge"></div>
-			
 			<div id="box">
 				<!--
                           	作者：offline
                           	时间：2018-07-24
                           	描述：搜索笔记
                           -->
-
+				<br />
 				<h1 class="icon-search">搜索笔记</h1>
 
 				<div class="findChat">
@@ -292,7 +244,7 @@
 					<input class="chatInput2" type="button" value="搜索" />
 				</div>
 				<div>
-                     <!--
+					<!--
                      	作者：offline
                      	时间：2018-07-24
                      	描述：根据关键字显示符合的笔记
@@ -304,25 +256,11 @@
 						<li></li>
 						<li></li>
 					</ul>
-					
-					
-					
+
 				</div>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
 
 			</div>
-			<!--作者：offline时间：2018-07-19描述：工作群聊-->
+
 			<div id="WorkChat">
 				<!--作者：offline时间：2018-07-19描述：工作群聊-->
 				<!--
@@ -345,10 +283,39 @@
 						<li>群聊5</li>
 					</ul>
 				</div>
-				<div id="newChat"><i class="icon-plus"></i><span>&nbsp;新建群聊</span></div>
+				<div class="newChat"><i class="icon-plus"></i><span>&nbsp;新建群聊</span></div>
 
 			</div>
 
+			<div id="trash">
+				<!--回收站-->
+				<br />
+				<h1 class="icon-trash">废纸篓</h1>
+				<ul>
+					<li><i class="icon-file filei"></i><span>笔记1</span><i class="icon-trash trashi both"></i><i class="icon-undo both"></i></li>
+					<li><i class="icon-file filei"></i><span>笔记2</span><i class="icon-trash trashi both"></i><i class="icon-undo both"></i></li>
+					<li><i class="icon-file filei"></i><span>笔记3</span><i class="icon-trash trashi both"></i><i class="icon-undo both"></i></li>
+					<li><i class="icon-file filei"></i><span>笔记4</span><i class="icon-trash trashi both"></i><i class="icon-undo both"></i></li>
+				</ul>
+				<div id="cleanTrash" class="newChat"><i class="icon-trash"></i><span>&nbsp;清空废纸篓</span></div>
+
+			</div>
+
+		</div>
+		<div id="workPlace">
+			<div id="BIJI">
+				<p id="note">笔记</p>
+			</div>
+			<div class="biji"></div>
+			<div class="fenge"></div>
+			<div class="biji"></div>
+			<div class="fenge"></div>
+			<div class="biji"></div>
+			<div class="fenge"></div>
+			<div class="biji"></div>
+			<div class="fenge"></div>
+			<div class="biji"></div>
+			<div class="fenge"></div>
 		</div>
 		<div id="mainPlace">
 		</div>
