@@ -236,7 +236,7 @@ ul.icons-ul>li .icon-li {
 	display: inline;
 	width: auto;
 	height: auto;
-	line-height: normal;
+	/*line-height: normal;*/
 	vertical-align: baseline;
 	background-image: none;
 	background-position: 0% 0%;
