@@ -22,6 +22,7 @@ public class Note {
     private int isShare;
     private int isdelete;
     private String sharedpeople;
+    private String title;
 
     @Override
     public String toString() {
@@ -38,6 +39,7 @@ public class Note {
                 ", isShare=" + isShare +
                 ", isdelete=" + isdelete +
                 ", sharedpeople='" + sharedpeople + '\'' +
+                ", title='" + title + '\'' +
                 '}';
     }
 
@@ -135,5 +137,13 @@ public class Note {
 
     public void setSharedpeople(String sharedpeople) {
         this.sharedpeople = sharedpeople;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
     }
 }

@@ -20,7 +20,7 @@
 <script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/buttonLite.js#style=-1&amp;uuid=&amp;pophcol=2&amp;lang=zh"></script>
 <script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/bshareC0.js"></script>
 
-<body>
+<body onload="init()">
 <c:if test="${empty loginUser}">
     <script type="text/javascript" language="javascript">
         alert("请登陆您的账号");
@@ -70,7 +70,7 @@
                             <a href="#" id="createNotebook">新建笔记本<span class="submenu-icon"></span></a>
                         </li>
                         <li class="sceondC">
-                            <a href="#">我的第一个笔记本<span class="submenu-icon"></span></a>
+                            <a id="1" href="#">我的第一个笔记本<span class="submenu-icon"></span></a>
                             <ul>
                                 <li>
                                     <a href="#">编辑</a>
@@ -83,7 +83,7 @@
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#">删除</a>
+                                    <a href="#" onclick="deleteNote()">删除</a>
                                 </li>
                             </ul>
                         </li>
@@ -187,7 +187,7 @@
     <div id="editor">
         <p>欢迎使用 wangEditor 编辑器</p>
     </div>
-    <button id="btn1">获取html</button>
+    <button id="btn1">创建</button>
     <button id="btn2">保存</button>
 </div>
 
@@ -222,28 +222,29 @@
         $.post("${pageContext.request.contextPath}/NotebookServlet?method=createNotebook", {"bookName":bookName}, function(data) {
             $("#createNotebookPop").css("display", "none")
             $.each(data, function(i, obj) {
-                var li = " <li class=\"sceondC\">\n" +
-                    "                    <a href=\"#\">"+obj.bookName+"<span class=\"submenu-icon\"></span></a>\n" +
-                    "                <ul>\n" +
-                    "                <li>\n" +
-                    "                <a href=\"#\">编辑</a>\n" +
-                    "                    </li>\n" +
-                    "                    <li>\n" +
-                    "                    <a href=\"#\">添加标签</a>\n" +
-                    "                    </li>\n" +
-                    "                    <li>\n" +
-                    "                    <a href=\"#\">共享\n" +
-                    "                    </a>\n" +
-                    "                    </li>\n" +
-                    "                    <li>\n" +
-                    "                    <a href=\"#\">删除</a>\n" +
-                    "                    </li>\n" +
-                    "                    </ul>\n" +
-                    "                    </li>";
+                var li = "<li class=\"sceondC\">\n" +
+                    "       <a href=\"#\">"+obj.bookName+"<span class=\"submenu-icon\"></span></a>\n" +
+                    "       <ul>\n" +
+                    "          <li>\n" +
+                    "              <a href=\"#\">编辑</a>\n" +
+                    "          </li>\n" +
+                    "          <li>\n" +
+                    "               <a href=\"#\">添加标签</a>\n" +
+                    "          </li>\n" +
+                    "          <li>\n" +
+                    "               <a href=\"#\">共享\n" +
+                    "               </a>\n" +
+                    "          </li>\n" +
+                    "          <li>\n" +
+                    "               <a href=\"#\" onclick=\"deleteNotebook()\">删除</a>\n" +
+                    "          </li>\n" +
+                    "        </ul>\n" +
+                    "      </li>";
                 $('#notebook').append(li);
             });
 
             alert("创建成功！")
+            jsInit();
         }, 'json');
     }, false)
 
@@ -253,6 +254,46 @@
         alert(editor.txt.text())
     }, false)
 
+    function jsInit() {
+        $(".vertical-nav").verticalnav({
+            speed: 400,
+            align: "left"
+        });
+    }
+
+    function init() {
+        jsInit();
+        $.post("${pageContext.request.contextPath}/NotebookServlet?method=listNotebook", {}, function(data) {
+            $.each(data, function(i, obj) {
+                var li = "<li class=\"sceondC\">\n" +
+                    "       <a href=\"#\">"+obj.bookName+"<span class=\"submenu-icon\"></span></a>\n" +
+                    "       <ul>\n" +
+                    "          <li>\n" +
+                    "              <a href=\"#\">编辑</a>\n" +
+                    "          </li>\n" +
+                    "          <li>\n" +
+                    "               <a href=\"#\">添加标签</a>\n" +
+                    "          </li>\n" +
+                    "          <li>\n" +
+                    "               <a href=\"#\">共享\n" +
+                    "               </a>\n" +
+                    "          </li>\n" +
+                    "          <li>\n" +
+                    "               <a href=\"#\" onclick=\"deleteNotebook()\">删除</a>\n" +
+                    "          </li>\n" +
+                    "        </ul>\n" +
+                    "      </li>";
+                $('#notebook').append(li);
+            });
+            jsInit();
+        }, 'json');
+    }
+
+    function deleteNotebook() {
+        var notebookId = $("#1")
+           
+
+    }
 </script>
 </body>
 

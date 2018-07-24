@@ -14,6 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 import java.util.Map;
 
 @WebServlet(name = "NotebookServlet")
@@ -49,6 +50,29 @@ public class NotebookServlet extends BaseServlet {
     }
 
 
+    /**
+     * @Author Yixiang Zhao
+     * @Description 查找所有笔记本并发送到前端
+     * @Date 9:34 2018/7/24
+     * @Param [request, response]
+     * @return java.lang.String
+     **/
+    public String listNotebook(HttpServletRequest request, HttpServletResponse response) throws Exception {
+        User user = (User) request.getSession().getAttribute("loginUser");
+        NotebookService service = new NotebookServiceImpl();
+        try {
+            List<Notebook> notebook = service.listNotebook(user);
+            response.setContentType("text/html;charset=utf-8");
+            String jsonStr = JSONArray.fromObject(notebook).toString();
+            response.getWriter().print(jsonStr);
+        } catch (Exception e) {
+            request.setAttribute("msg", "主页面加载失败！");
+            return "/jsp/info.jsp";
+        }
+
+
+        return null;
+    }
 
 
 }

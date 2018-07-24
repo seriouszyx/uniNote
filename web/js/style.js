@@ -28,11 +28,11 @@ $(document).ready(function() {
 		var isLogoff = confirm("是否退出当前用户？");
 		if(isLogoff) {
 			//此处链接到登录页面
-			
-			
-			
-			
-			
+
+
+
+
+
 
 		}
 
