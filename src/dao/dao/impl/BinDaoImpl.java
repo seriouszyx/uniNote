@@ -27,7 +27,7 @@ public class BinDaoImpl implements BinDao {
 
     @Override
     public void RecoverNoteInBin(User user, int id) throws SQLException {
-        String sql = "update note set isDelete = ? where userid = ? and id = ?";
+        String sql = "update note set isDelete = 0 where userid = ? and id = ?";
         QueryRunner qr = new QueryRunner(JDBCUtils.getDataSource());
         qr.update(sql, user.getId(), id);
     }
@@ -37,5 +37,12 @@ public class BinDaoImpl implements BinDao {
         String sql = "delete from note where id = ? and userid = ?";
         QueryRunner qr = new QueryRunner(JDBCUtils.getDataSource());
         qr.update(sql, id, user.getId());
+    }
+
+    @Override
+    public void clearNoteInBin(User user) throws SQLException {
+        String sql = "delete from note where userid = ? and isDelete = 1";
+        QueryRunner qr = new QueryRunner(JDBCUtils.getDataSource());
+        qr.update(sql, user.getId());
     }
 }

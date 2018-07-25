@@ -33,4 +33,9 @@ public class BinServiceImpl implements BinService {
     public void removeNoteInBin(User user, int id) throws SQLException {
         dao.removeNoteInBin(user, id);
     }
+
+    @Override
+    public void clearNoteInBin(User user) throws SQLException {
+        dao.clearNoteInBin(user);
+    }
 }

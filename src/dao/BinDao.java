@@ -34,4 +34,13 @@ public interface BinDao {
      * @return void
      **/
     void removeNoteInBin(User user, int id) throws SQLException;
+
+    /**
+     * @Author Yixiang Zhao
+     * @Description 将user用户下isDelete为1的笔记记录全部删除
+     * @Date 10:18 2018/7/25
+     * @Param [user]
+     * @return void
+     **/
+    void clearNoteInBin(User user) throws SQLException;
 }

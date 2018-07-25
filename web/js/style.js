@@ -1,8 +1,11 @@
 
 $(document).ready(function() {
-	$("#find").click(function() { //点击搜索弹出搜索框
-		if(document.getElementById("WorkChat").style.left == "0px")
 
+	$("#find").click(function() { //点击搜索弹出搜索框
+		if(document.getElementById("WorkChat").style.left == "0px") {
+
+		}
+	});
 
 	$("#find").click(function() { //点击搜索弹出搜索界面
 		if(document.getElementById("WorkChat").style.left == "200px") {
@@ -85,7 +88,6 @@ $(document).ready(function() {
 		}
 	});
 	$("#trashB").click(function() { //点击滑出废纸篓
-
 		if(document.getElementById("box").style.left == "200px") {
 			$("#box").stop().animate({
 
@@ -111,31 +113,8 @@ $(document).ready(function() {
 			});
 		}
 	});
-	$(".trashi").click(function() { //确认是否彻底删除
-		var x=confirm("是否彻底删除该笔记？");
-		if(x)
-		{
-			
-		}
-		else
-		{
-			
-		}
-		
-	});
+
 	
-	$("#cleanTrash").click(function() { //确认是否清空废纸篓
-		var x=confirm("是否清空废纸篓？");
-		if(x)
-		{
-			
-		}
-		else
-		{
-			
-		}
-		
-	});
-	
+
 
 });
