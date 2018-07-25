@@ -50,7 +50,7 @@
     -->
     <div class="kePublic">
         <div class="content">
-            <ul class="vertical-nav dark red" style="height: 760px;">
+            <ul class="vertical-nav dark red" style="height: 760px;z-index: 2;">
                 <li class="active">
                     <a href="UserInformation.html" target="_blank"><i class="icon-user " style="margin: -14.958px 14px 15px -20px;"></i>个人中心</a>
                 </li>
@@ -138,29 +138,11 @@
                     </ul>
                 </li>
                 <li class="fristC">
-                    <a href="#"><i class="icon-comments " style="margin: 0px 14px 0 -20px;font-size:30px"></i>工作评论<span class="submenu-icon " style="line-height: 48px;"></span></a>
-                    <ul>
-                        <li class="sceondC">
-                            <a href="#">添加群聊</a>
-                        </li>
-                        <li class="sceondC">
-                            <a href="#">查看已有群聊</a>
-                        </li>
+                    <a id="comment"><i class="icon-comments " style="margin: 0px 14px 0 -20px;font-size:30px"></i>工作群聊</a>
 
-                    </ul>
                 </li>
                 <li class="fristC">
-                    <a href="#"><i class="icon-trash" style="margin: 0px 14px 0 -20px;font-size:30px"></i>废纸篓<span class="submenu-icon " style="line-height: 48px;"></span></a>
-
-                    <ul>
-                        <li class="sceondC">
-                            <a href="#">还原笔记</a>
-                        </li>
-                        <li class="sceondC">
-                            <a href="#">彻底删除</a>
-                        </li>
-
-                    </ul>
+                    <a id="trashB"><i class="icon-trash" style="margin: 0px 14px 0 -20px;font-size:30px"></i>废纸篓<span style="line-height: 48px;"></span></a>
 
                 </li>
                 <li class="fristC">
@@ -169,6 +151,72 @@
             </ul>
         </div>
         <div class="clear"></div>
+    </div>
+    <div id="box">
+        <!--
+                      作者：offline
+                      时间：2018-07-24
+                      描述：搜索笔记
+                  -->
+        <br />
+        <h1 class="icon-search">搜索笔记</h1>
+
+        <div class="findChat">
+            <input id="workInput" class="chatInput1" type="text" name="search" placeholder="请输入关键字">
+            <input class="chatInput2" type="button" value="搜索" />
+        </div>
+        <div>
+            <!--
+                 作者：offline
+                 时间：2018-07-24
+                 描述：根据关键字显示符合的笔记
+             -->
+            <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+
+        </div>
+
+    </div>
+
+    <div id="WorkChat">
+        <!--作者：offline时间：2018-07-19描述：工作群聊-->
+        <!--
+            作者：903875165@qq.com
+            时间：2018-07-22
+            描述：点击出现。
+        -->
+        <br />
+        <h1 class="icon-comments">工作群聊</h1>
+        <div class="findChat">
+            <input class="chatInput1" type="text" name="searchChat" placeholder="请输入群聊名称/群聊号码">
+            <input class="chatInput2" type="button" value="搜索">
+        </div>
+        <div id="chat">
+            <ul>
+                <li>群聊1</li>
+                <li>群聊2</li>
+                <li>群聊3</li>
+                <li>群聊4</li>
+                <li>群聊5</li>
+            </ul>
+        </div>
+        <div class="newChat"><i class="icon-plus"></i><span>&nbsp;新建群聊</span></div>
+
+    </div>
+
+    <div id="trash">
+        <!--回收站-->
+        <br />
+        <h1 class="icon-trash">废纸篓</h1>
+        <ul id="note-in-bin">
+        </ul>
+        <div id="cleanTrash" class="newChat"><i class="icon-trash"></i><span>&nbsp;清空废纸篓</span></div>
+
     </div>
 
 </div>
@@ -263,6 +311,47 @@
         });
     }, false)
 
+    $("#trashB").on('click', function() {
+        // 遍历废纸篓中的笔记
+        listNoteInBin();
+    })
+    function listNoteInBin() {
+            // 遍历废纸篓中的笔记
+            $.post("${pageContext.request.contextPath}/BinServlet?method=listNoteInBin", {}, function(data) {
+                $("#note-in-bin").html("");
+                $.each(data, function(i, obj) {
+                    var li = "<li id=\"noteInBin"+obj.id+"\"><i class=\"icon-file filei\"></i><span>"+obj.title+"</span><i class=\"icon-trash trashi both\"></i><i class=\"icon-undo both\"></i></li>";
+                    $("#note-in-bin").append(li);
+                });
+            }, 'json');
+    }
+
+    $(document).on('click', '.trashi', function() {
+        var noteInBinID = this.parentNode.id.slice(9);
+        $.post("${pageContext.request.contextPath}/BinServlet?method=removeNoteInBin", {noteIDInBin:noteInBinID}, function(data) {
+            alert(data)
+            listNoteInBin();
+        })
+    })
+
+    $(document).on('click', '.icon-undo', function() {
+        var noteInBinID = this.parentNode.id.slice(9);
+        $.post("${pageContext.request.contextPath}/BinServlet?method=RecoverNoteInBin", {noteIDInBin:noteInBinID}, function(data) {
+            alert(data)
+            listNoteInBin();
+            listNote();
+        })
+    })
+    $("#cleanTrash").click(function() { //确认是否清空废纸篓
+        var x=confirm("是否清空废纸篓？");
+        if(x) {
+            $.post("${pageContext.request.contextPath}/BinServlet?method=clearNoteInBin", {}, function(data) {
+                listNoteInBin();
+                alert(data);
+            })
+        }
+    });
+
     function changeNote() {
         var notes = document.getElementById('notelist').getElementsByTagName("li");
         for (var i=0; i<notes.length; i++) {
@@ -332,6 +421,8 @@
             changeNote();
         }, 'json');
     }
+
+
 
     function deleteNotebook() {
         var notebookId = $("#1")

@@ -66,4 +66,18 @@ public class BinServlet extends BaseServlet {
         }
         return null;
     }
+
+    public String clearNoteInBin(HttpServletRequest request, HttpServletResponse response) throws Exception{
+        User user = (User) request.getSession().getAttribute("loginUser");
+        BinService service = new BinServiceImpl();
+        try {
+            service.clearNoteInBin(user);
+            response.setContentType("text/html;charset=utf-8");
+            response.getWriter().print("废纸篓已清空");
+        } catch (Exception e) {
+            request.setAttribute("msg", "废纸篓清空失败！");
+            return "/jsp/info.jsp";
+        }
+        return null;
+    }
 }

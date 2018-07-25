@@ -34,4 +34,13 @@ public interface BinService {
      * @return void
      **/
     void removeNoteInBin(User user, int id) throws SQLException;
+
+    /**
+     * @Author Yixiang Zhao
+     * @Description 清空废纸篓中的笔记
+     * @Date 10:17 2018/7/25
+     * @Param [user]
+     * @return void
+     **/
+    void clearNoteInBin(User user) throws SQLException;
 }
