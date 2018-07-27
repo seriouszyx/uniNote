@@ -18,6 +18,8 @@
 <script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/bshareC0.js"></script>
 <script type="text/javascript" src="../js/google-maps.js"></script>
 <script type="text/javascript" src="../wangEditor-3.1.1/release/wangEditor.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
 
 <body onload="init()">
 <c:if test="${empty loginUser}">
@@ -52,7 +54,7 @@
         <div class="content">
             <ul class="vertical-nav dark red" style="height: 760px;z-index: 2;">
                 <li class="active">
-                    <a href="UserInformation.html" target="_blank"><i class="icon-user " style="margin: -14.958px 14px 15px -20px;"></i>个人中心</a>
+                    <a href="../UserInformation.html" target="_blank"><i class="icon-user " style="margin: -14.958px 14px 15px -20px;"></i>个人中心</a>
                 </li>
                 <li class="fristC">
                     <a href="#"><i class="icon-edit " style="margin: 0px 14px 0 -20px;font-size:30px"></i>新建笔记
@@ -248,6 +250,7 @@
     var NOTE = 0;
     var E = window.wangEditor;
     var editor = new E('#editor');
+    editor.customConfig.uploadImgShowBase64 = true
     editor.create();
 
     document.getElementById('btn1').addEventListener('click', function () {
