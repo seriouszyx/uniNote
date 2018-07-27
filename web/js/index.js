@@ -1,7 +1,7 @@
 
 $(document).ready(function() {
 
-
+/*
     $("#createNotebook").click(function() {
         $("#createNotebookPop").css("display", "block")
     });
@@ -14,6 +14,6 @@ $(document).ready(function() {
     $(".createNotePopSpan").click(function() {
         $("#createNotePop").css("display", "none")
     });
-
+*/
 
 });
