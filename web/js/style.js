@@ -1,137 +1,17 @@
 //这里写js和jq
 
 $(document).ready(function() {
-
-	$("#find").click(function() { //点击搜索弹出搜索界面***************************************************
-		$("#comment").removeClass("onchoose");
-		$("#trashB").removeClass("onchoose");
-		$("#new").removeClass("onchoose");
-		if(document.getElementById("WorkChat").style.left == "200px") {
-
-			$("#WorkChat").stop().animate({
-
-				left: '-272px'
-			});
-		}
-		if(document.getElementById("trash").style.left == "200px") {
-
-			$("#trash").stop().animate({
-
-				left: '-272px'
-			});
-		}
-
-		if(document.getElementById("box").style.left != "200px") {
-
-			$("#find").addClass("onchoose");
-			$("#box").stop().animate({
-
-				left: '200px'
-			});
-		} else {
-			$("#find").removeClass("onchoose");
-			$("#box").stop().animate({
-
-				left: '-272px'
-			});
-
-		}
-
-	});
-	/*
-	$(document).click(function() { //点击任意位置搜索框隐藏
-		
-		$("#box").stop().animate({
-			left: '-310px'
-		});
-	});//防止冒泡
-	
-	$("#box").click(function(event) {
-		event.stopPropagation();
-	});
-	$("#find").click(function(event) {
-		event.stopPropagation();
-	});//防止冒泡
-	*/
-	$("#logoff").click(function() { //点击注销账户进行询问
+	//点击注销账户进行询问并链接到登录页面
+	$("#logoffB").click(function() {
 		var isLogoff = confirm("是否退出当前用户？");
 		if(isLogoff) {
-			//此处链接到登录页面
 
 		} else {
 
 		}
 	});
-
-	$("#comment").click(function() { //点击工作群聊滑出群聊界面***************************************************
-		$("#trashB").removeClass("onchoose");
-		$("#find").removeClass("onchoose");
-		$("#new").removeClass("onchoose");
-		if(document.getElementById("box").style.left == "200px") {
-
-			$("#box").stop().animate({
-
-				left: '-272px'
-			});
-		}
-		if(document.getElementById("trash").style.left == "200px") {
-
-			$("#trash").stop().animate({
-
-				left: '-272px'
-			});
-		}
-		if(document.getElementById("WorkChat").style.left != "200px") {
-			$("#comment").addClass("onchoose");
-			$("#WorkChat").stop().animate({
-
-				left: '200px'
-			});
-		} else {
-			$("#comment").removeClass("onchoose");
-
-			$("#WorkChat").stop().animate({
-
-				left: '-272px'
-			});
-		}
-
-	});
-	$("#trashB").click(function() { //点击滑出废纸篓***************************************************
-		$("#find").removeClass("onchoose");
-		$("#comment").removeClass("onchoose");
-		$("#new").removeClass("onchoose");
-		if(document.getElementById("box").style.left == "200px") {
-
-			$("#box").stop().animate({
-
-				left: '-272px'
-			});
-		}
-		if(document.getElementById("WorkChat").style.left == "200px") {
-
-			$("#WorkChat").stop().animate({
-
-				left: '-272px'
-			});
-		}
-		if(document.getElementById("trash").style.left != "200px") {
-			$("#trashB").addClass("onchoose");
-
-			$("#trash").stop().animate({
-
-				left: '200px'
-			});
-		} else {
-			$("#trashB").removeClass("onchoose");
-
-			$("#trash").stop().animate({
-
-				left: '-272px'
-			});
-		}
-	});
-	$(".trashi").click(function() { //确认是否彻底删除
+	//确认是否彻底删除
+	$(".trashi").click(function() {
 		var x = confirm("是否彻底删除该笔记？");
 		if(x) {
 
@@ -140,8 +20,8 @@ $(document).ready(function() {
 		}
 
 	});
-
-	$("#cleanTrash").click(function() { //确认是否清空废纸篓
+	//确认是否清空废纸篓
+	$("#cleanTrash").click(function() {
 		var x = confirm("是否清空废纸篓？");
 		if(x) {
 
@@ -150,24 +30,46 @@ $(document).ready(function() {
 		}
 
 	});
-	$("#new").click(function() { //点击新建笔记,收起workPlace，放大mainPlace***************************************************
-		$("#find").removeClass("onchoose");
-		$("#comment").removeClass("onchoose");
-		$("#trashB").removeClass("onchoose");
-		
-		$(this).addClass("onchoose");
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+
+	//点击新建笔记,收起workPlace，放大mainPlace
+	$("#newB").click(function() {
+
+	});
+
+	//choose选中样式
+	$(".chooseB").click(function() {
+		var btnB = document.getElementsByClassName("chooseB");
+
+		if(this.name == "1") {
+			$(this).removeClass("onchoose");
+			this.name = "0";
+			$("#" + this.id.replace("B", "")).stop().animate({
+
+				left: '-272px'
+			});
+
+		} else if(this.name == "0") {
+			$(".chooseB").removeClass("onchoose");
+
+			$(".show").stop().animate({
+
+				left: '-272px'
+			});
+			for(var i = 0; i < btnB.length; i++) {
+				btnB[i].name = "0";
+
+			}
+
+			$(this).addClass("onchoose");
+			this.name = "1";
+
+			$("#" + this.id.replace("B", "")).stop().animate({
+
+				left: '200px'
+			});
+
+		}
+
 	});
 
 });

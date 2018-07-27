@@ -8,8 +8,6 @@ html {
 
 body,
 html {
-	height: 100%;
-	width: 100%;
 	margin: 0;
 	padding: 0;
 	background-color: white;
@@ -70,36 +68,33 @@ ul li:hover {
 #choose {
 	width: 200px;
 	min-width: 115px;
-	height: 100%;
+	height: 760px;
+	background-color: white;
 	min-width: 114.7px;
 	float: left;
+	position: relative;
 }
 
 #workPlace {
 	width: 29.5%;
-	height: 100%;
 	float: left;
+	height: 760px;
 	background-color: white;
 	border: 2px solid gainsboro;
 	overflow: scroll;
 }
 
 #mainPlace {
-	width: 58%;
-	height: 100%;
+	width: 49%;
 	background-color: white;
-	position: absolute;
-	right: 0;
+	height: 760px;
+	float: left;
+	
 }
 
 .fristC {
 	line-height: 48px;
 }
-
-.sceondC {
-	line-height: 15px;
-}
-
 .vertical-nav {
 	z-index: 1;
 }
@@ -250,19 +245,7 @@ ol {
 
 
 /* WYJ add below */
-
-#box {
-	width: 235%;
-	position: relative;
-	border: 1px solid #888;
-	left: -272px;
-	top: -760.5px;
-	z-index: 1;
-	height: 735px;
-	background-color: white;
-}
-
-#box div {
+#find div {
 	height: 265px;
 	width: 80%;
 	margin: 0 auto 0px auto;
@@ -289,7 +272,6 @@ ol {
 	text-align: center;
 	border-bottom: 1px solid;
 }
-
 .chatInput1 {
 	float: none;
 	margin: 0 auto;
@@ -302,7 +284,6 @@ ol {
 	padding: 5px 5px 5px 15px;
 	border: 1px solid #888;
 }
-
 .chatInput2 {
 	font-size: 25px;
 	min-width: 50px;
@@ -314,13 +295,11 @@ ol {
 	margin: 30px auto 0px;
 	color: #888;
 }
-
 .chatInput2:hover {
 	cursor: pointer;
 	background-color: #e74c3c;
 	color: white;
 }
-
 .chatInput1:focus {
 	cursor: pointer;
 	border: 1px solid #e74c3c;
@@ -330,13 +309,11 @@ ol {
 	font-size: 30px;
 	margin: 20px;
 }
-
-#WorkChat ul li {
+#comment ul li {
 	padding: 10px;
 	border-bottom: 1px solid #888;
 	width: 95%;
 }
-
 #chat {
 	width: 80%;
 	margin: 0 auto;
@@ -349,7 +326,6 @@ ol {
 	background-color: #e74c3c;
 	color: white;
 }
-
 .newChat {
 	float: right;
 	font-size: 22px;
@@ -359,35 +335,23 @@ ol {
 	margin-right: 33px;
 	padding: 10px;
 }
-
 .newChat:hover {
 	cursor: pointer;
 	background-color: #e74c3c;
 	color: white;
 }
-
-#WorkChat {
-	position: relative;
+.show{/*控制弹出界面样式*/
+	position: absolute;
 	border: 1px solid #888;
 	width: 235%;
 	left: -272px;
-	top: -1497.5px;
+	top: 0px;
 	z-index: 1;
-	height: 735px;
+	height: 760px;
 	background-color: white;
+	overflow: scroll;
+	
 }
-
-#trash {
-	position: relative;
-	border: 1px solid #888;
-	width: 235%;
-	left: -272px;
-	top: -2233px;
-	background-color: white;
-	z-index: 1;
-	height: 735px;
-}
-
 #trash ul li {
 	padding: 15px 20px;
 	border-bottom: 1px solid #e0e1e5;
@@ -396,26 +360,24 @@ ol {
 	line-height: 50px;
 	width: 91.5%;
 }
-
 #trash ul li:hover {
 	cursor: default;
 	background-color: #e74c3c;
 	color: white;
 }
-
 .filei {
 	margin-right: 10px;
 }
-
 .both {
 	line-height: 50px;
 	float: right;
 	margin-right: 22px;
 }
-
 .both:hover {
 	cursor: pointer;
 }
+
 .onchoose{
 	color: #E74C3C!important;
+	    font-size: 28px!important;
 }
