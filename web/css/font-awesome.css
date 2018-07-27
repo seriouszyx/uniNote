@@ -1,5 +1,4 @@
 @charset "utf-8";
-body,
 ul,
 dl,
 dd,
@@ -35,13 +34,11 @@ h6 {
 	font-size: 12px;
 	font-weight: normal
 }
-
-div {
-	text-align: left
-}
-
 a img {
 	border: 0
+}
+div{
+	text-align: left;
 }
 
 body {
@@ -1726,7 +1723,7 @@ ul.icons-ul>li .icon-li {
 }
 
 .vertical-nav {
-	width: 200px;
+	width: 210px;
 	margin: 0;
 	padding: 0;
 	float: left;
@@ -2944,7 +2941,6 @@ ol {
 body {
 	margin: 0;
 	padding: 0;
-	background: white url(img/back.png) repeat;
 }
 
 .content {
@@ -3015,6 +3011,3 @@ body {
 	background: #ffcf41;
 }
 
-.vertical-nav {
-	margin: 20px 0 0 0;
-}
