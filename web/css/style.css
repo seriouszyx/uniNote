@@ -186,7 +186,7 @@ ul li:hover {
 	font-size: 23px;
 	letter-spacing: 0.5px;
 	text-transform: uppercase;
-	cursor: auto;
+	cursor: default;
 }
 
 
@@ -270,7 +270,6 @@ ol {
 	z-index: 1;
 	height: 760px;
 	background-color: white;
-	overflow: scroll;
 }
 
 
@@ -356,13 +355,14 @@ ol {
 	right: 20px;
 	position: absolute;
 	font-size: 40px;
-	top: 16px;
+	top: 14px;
+	z-index: 1;
 }
 
 #notebTips {
 	position: absolute;
 	display: none;
-	left: 404px;
+	left: 405px;
 	top: 76px;
 }
 
@@ -418,11 +418,13 @@ ol {
 }
 
 #notebul {
+	    height: 569px;
 	margin: 20px;
+	overflow: scroll;
 }
 
 .notebliBook {
-	width: 245px;
+	width: 225px;
 	float: left;
 	overflow: hidden;
 }
@@ -434,7 +436,7 @@ ol {
 }
 
 .notebli_i {
-	padding: 18px;
+	padding: 15px;
 }
 
 .notebli_i:hover {
@@ -443,7 +445,70 @@ ol {
 
 
 /*mark*/
+#markTop {
+	position: relative;
+	height: 100px;
+}
+.markli{
+	    float: left;
+    overflow: hidden;
+    width: 100px;
+    line-height: 40px;
+    height: 40px;
+    padding: 0 10px;
+    margin-top: 10px;
+    border: 1px solid #888;
+    border-radius: 30px;
+}
+.markli:hover{
+	border: 1px solid white ;
+}
+#newMark:hover {
+	color: #e74c3c;
+	cursor: pointer;
+}
 
+#newMark {
+	color: #878787;
+	right: 20px;
+	position: absolute;
+	font-size: 40px;
+	top: 14px;
+	z-index: 1;
+}
+
+#markTips {
+	position: absolute;
+	display: none;
+	left: 410px;
+	top: 76px;
+}
+
+#markTips p {
+	background-color: #878787;
+	padding: 6px;
+	color: #fff;
+	border-radius: 4px;
+}
+
+#markSearch {
+	border-radius: 2px;
+	padding: 10px 40px 9px 8px;
+	margin: 0;
+	outline: none;
+	box-sizing: border-box;
+	width: 80%;
+	font-family: gotham, helvetica, arial, sans-serif;
+	font-size: 13px;
+	font-weight: 400;
+	color: #606060;
+}
+#markul{
+	    height: 569px;
+		margin: 20px;
+	overflow: scroll;
+	
+}
 
 /*comment*/
 
@@ -597,8 +662,81 @@ ol {
 	background-color: #ececec;
 	border: 1px solid #d9d9d9;
 }
+#notecdivinput_n:hover{
+	background-color: #D9D9D9;
+		border: 1px solid #D9D9D9;
+}
+#notecdivinput_y:hover{
+	background-color: #FF3333;
+	border: 1px solid #FF3333;
+}
 
 #notecdivinput_y {
+	cursor: pointer;
+	border-radius: 5px;
+	display: inline-block;
+	margin: 0 4px;
+	padding: 9px 14px;
+	min-width: 160px;
+	transition: opacity 0.2s ease-in-out;
+	color: white;
+	background-color: #e74c3c;
+	border: 1px solid #e74c3c;
+}
+/*markc*/
+#markc {
+	height: 400px;
+	width: 400px;
+	border: 0px;
+	position: fixed;
+	margin: 0 auto;
+	z-index: 101;
+	left: 22%;
+	display: none;
+	outline: 0;
+	vertical-align: baseline;
+	width: 650px;
+	margin: auto;
+	padding-top: 50px;
+	padding-bottom: 50px;
+}
+#markcdivinput {
+	text-align: center;
+	outline: none;
+	background: none;
+	padding: 18px;
+	border: none;
+	font-size: 32px;
+	font-weight: 100;
+	line-height: 44px;
+	word-break: normal;
+	color: #383838;
+	margin-bottom: 45px;
+	margin-top: 45px;
+}
+
+#markcdivinput_n {
+	cursor: pointer;
+	border-radius: 5px;
+	display: inline-block;
+	margin: 0 4px;
+	padding: 9px 14px;
+	min-width: 160px;
+	transition: opacity 0.2s ease-in-out;
+	color: #606060;
+	background-color: #ececec;
+	border: 1px solid #d9d9d9;
+}
+#markcdivinput_n:hover {
+		background-color: #D9D9D9;
+		border: 1px solid #D9D9D9;
+}
+#markcdivinput_y:hover{
+	background-color: #FF3333;
+	border: 1px solid #FF3333;
+} 
+
+#markcdivinput_y {
 	cursor: pointer;
 	border-radius: 5px;
 	display: inline-block;

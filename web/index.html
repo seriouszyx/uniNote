@@ -51,7 +51,7 @@
 						<a id="notebB" name="0" class="chooseB"><i class="icon-book" style="margin: 0px 14px 0 -20px;font-size:30px"></i>笔记本</a>
 					</li>
 					<li class="fristC">
-						<a id="markB" name="0" class="chooseB"><i class="icon-tags " style="margin: 0px 14px 0 -20px;font-size:30px"></i>标签分类</a>
+						<a id="markB" name="0" class="chooseB"><i class="icon-tags " style="margin: 0px 14px 0 -20px;font-size:30px"></i>标签</a>
 					</li>
 					<li class="fristC">
 						<a id="commentB" name="0" class="chooseB"><i class="icon-comments " style="margin: 0px 14px 0 -20px;font-size:30px"></i>工作群聊</a>
@@ -80,6 +80,7 @@
 				</div>
 				<div id="findul">
 					<ul>
+						<!--搜索到的匹配项-->
 						<li></li>
 						<li></li>
 						<li></li>
@@ -98,7 +99,7 @@
 
 					<h1 class="icon-book">笔记本</h1>
 
-					<i id="newNoteb" class="icon-signin " onmouseleave="tipsHide()" onmouseover="tipsShow()" onclick="showOverlay()"></i>
+					<i id="newNoteb" class="icon-book " onmouseleave="ntipsHide()" onmouseover="ntipsShow()" onclick="newShowOverlay()">+</i>
 					<div id="notebTips">
 						<div class="sj">
 						</div>
@@ -110,21 +111,57 @@
 				</div>
 				<div id="notebul">
 					<div class="notebli">
-						<div class="notebliBook"><i class="icon-book"></i>笔记本1</div>
+						<div class="notebliBook"><i class="icon-book"></i>高数笔记本</div>
 						<div class="notebliBtn"><i class="icon-share notebli_i"></i><i class="icon-star-empty notebli_i "></i><i class="icon-trash notebli_i"></i></div>
 					</div>
 					<div class="notebli">
 
-						<div class="notebliBook"><i class="icon-book"></i>笔记本2</div>
+						<div class="notebliBook"><i class="icon-book"></i>英语笔记本</div>
 						<div class="notebliBtn"><i class="icon-share notebli_i"></i><i class="icon-star-empty notebli_i"></i><i class="icon-trash notebli_i"></i></div>
 
 					</div>
 					<div class="notebli">
-						<div class="notebliBook"><i class="icon-book"></i>笔记本3</div>
+						<div class="notebliBook"><i class="icon-book"></i>日记本</div>
 						<div class="notebliBtn"><i class="icon-share notebli_i"></i><i class="icon-star-empty notebli_i"></i><i class="icon-trash notebli_i"></i></div>
 
 					</div>
-					<div></div>
+					<div class="notebli">
+						<div class="notebliBook"><i class="icon-book"></i>练习题</div>
+						<div class="notebliBtn"><i class="icon-share notebli_i"></i><i class="icon-star-empty notebli_i"></i><i class="icon-trash notebli_i"></i></div>
+
+					</div>
+					<div class="notebli">
+						<div class="notebliBook"><i class="icon-book"></i>笔记本</div>
+						<div class="notebliBtn"><i class="icon-share notebli_i"></i><i class="icon-star-empty notebli_i"></i><i class="icon-trash notebli_i"></i></div>
+					</div>
+					<div class="notebli">
+						<div class="notebliBook"><i class="icon-book"></i>日记本</div>
+						<div class="notebliBtn"><i class="icon-share notebli_i"></i><i class="icon-star-empty notebli_i"></i><i class="icon-trash notebli_i"></i></div>
+
+					</div>
+					<div class="notebli">
+						<div class="notebliBook"><i class="icon-book"></i>练习题</div>
+						<div class="notebliBtn"><i class="icon-share notebli_i"></i><i class="icon-star-empty notebli_i"></i><i class="icon-trash notebli_i"></i></div>
+
+					</div>
+					<div class="notebli">
+						<div class="notebliBook"><i class="icon-book"></i>笔记本</div>
+						<div class="notebliBtn"><i class="icon-share notebli_i"></i><i class="icon-star-empty notebli_i"></i><i class="icon-trash notebli_i"></i></div>
+					</div>
+					<div class="notebli">
+						<div class="notebliBook"><i class="icon-book"></i>日记本</div>
+						<div class="notebliBtn"><i class="icon-share notebli_i"></i><i class="icon-star-empty notebli_i"></i><i class="icon-trash notebli_i"></i></div>
+
+					</div>
+					<div class="notebli">
+						<div class="notebliBook"><i class="icon-book"></i>练习题</div>
+						<div class="notebliBtn"><i class="icon-share notebli_i"></i><i class="icon-star-empty notebli_i"></i><i class="icon-trash notebli_i"></i></div>
+
+					</div>
+					<div class="notebli">
+						<div class="notebliBook"><i class="icon-book"></i>笔记本</div>
+						<div class="notebliBtn"><i class="icon-share notebli_i"></i><i class="icon-star-empty notebli_i"></i><i class="icon-trash notebli_i"></i></div>
+					</div>
 
 				</div>
 
@@ -133,10 +170,94 @@
 				<!--
                 	作者：offline
                 	时间：2018-07-27
-                	描述：标签分类
-                -->
+                	描述：标签
+              -->
+
 				<br />
-				<h1 class="icon-tags">标签分类</h1>
+				<div id="markTop">
+
+					<h1 class="icon-tags">标签</h1>
+
+					<i id="newMark" class="icon-tag " onmouseleave="mtipsHide()" onmouseover="mtipsShow()" onclick="markShowOverlay()">+</i>
+					<div id="markTips">
+						<div class="sj">
+						</div>
+						<p>添加标签</p>
+					</div>
+				</div>
+				<div style="text-align: center;">
+					<input id="markSearch" type="text" placeholder="搜索标签" />
+				</div>
+				<div id="markul">
+
+					<div class="notebli">
+						<div class="markli">
+							<i class="icon-tag"></i>C++
+						</div>
+						<div class="notebliBtn"><a name="0" class="icon-pencil notebli_i"></a><i class="icon-star-empty notebli_i "></i><i class="icon-trash notebli_i"></i></div>
+					</div>
+					<div class="notebli">
+
+						<div class="markli"><i class="icon-tag"></i>JAVA</div>
+						<div class="notebliBtn"><a name="0" class="icon-pencil notebli_i"></a><i class="icon-star-empty notebli_i"></i><i class="icon-trash notebli_i"></i></div>
+
+					</div>
+					<div class="notebli">
+						<div class="markli"><i class="icon-tag"></i>前端</div>
+						<div class="notebliBtn"><a name="0" class="icon-pencil notebli_i"></a><i class="icon-star-empty notebli_i"></i><i class="icon-trash notebli_i"></i></div>
+
+					</div>
+					<div class="notebli">
+						<div class="markli"><i class="icon-tag"></i>数据库</div>
+						<div class="notebliBtn"><a name="0" class="icon-pencil notebli_i"></a><i class="icon-star-empty notebli_i"></i><i class="icon-trash notebli_i"></i></div>
+
+					</div>
+					<div class="notebli">
+						<div class="markli"><i class="icon-tag"></i>Linux</div>
+						<div class="notebliBtn"><a name="0" class="icon-pencil notebli_i"></a><i class="icon-star-empty notebli_i"></i><i class="icon-trash notebli_i"></i></div>
+
+					</div>
+					<div class="notebli">
+						<div class="markli"><i class="icon-tag"></i>JAVA</div>
+						<div class="notebliBtn"><a name="0" class="icon-pencil notebli_i"></a><i class="icon-star-empty notebli_i"></i><i class="icon-trash notebli_i"></i></div>
+
+					</div>
+					<div class="notebli">
+						<div class="markli"><i class="icon-tag"></i>C++</div>
+						<div class="notebliBtn"><a name="0" class="icon-pencil notebli_i"></a><i class="icon-star-empty notebli_i"></i><i class="icon-trash notebli_i"></i></div>
+
+					</div>
+					<div class="notebli">
+						<div class="markli"><i class="icon-tag"></i>Linux</div>
+						<div class="notebliBtn"><a name="0" class="icon-pencil notebli_i"></a><i class="icon-star-empty notebli_i"></i><i class="icon-trash notebli_i"></i></div>
+
+					</div>
+					<div class="notebli">
+						<div class="markli"><i class="icon-tag"></i>前端</div>
+						<div class="notebliBtn"><a name="0" class="icon-pencil notebli_i"></a><i class="icon-star-empty notebli_i"></i><i class="icon-trash notebli_i"></i></div>
+
+					</div>
+					<div class="notebli">
+						<div class="markli"><i class="icon-tag"></i>JAVA</div>
+						<div class="notebliBtn"><a name="0" class="icon-pencil notebli_i"></a><i class="icon-star-empty notebli_i"></i><i class="icon-trash notebli_i"></i></div>
+
+					</div>
+					<div class="notebli">
+						<div class="markli"><i class="icon-tag"></i>C++</div>
+						<div class="notebliBtn"><a name="0" class="icon-pencil notebli_i"></a><i class="icon-star-empty notebli_i"></i><i class="icon-trash notebli_i"></i></div>
+
+					</div>
+					<div class="notebli">
+						<div class="markli"><i class="icon-tag"></i>Linux</div>
+						<div class="notebliBtn"><a name="0" class="icon-pencil notebli_i"></a><i class="icon-star-empty notebli_i"></i><i class="icon-trash notebli_i"></i></div>
+
+					</div>
+					<div class="notebli">
+						<div class="markli"><i class="icon-tag"></i>前端</div>
+						<div class="notebliBtn"><a name="0" class="icon-pencil notebli_i"></a><i class="icon-star-empty notebli_i"></i><i class="icon-trash notebli_i"></i></div>
+
+					</div>
+				</div>
 
 			</div>
 
@@ -204,7 +325,29 @@
 					<input id="notecdivinput" type="text" placeholder="给笔记本起个名字" />
 				</div>
 				<div class="notecdiv">
-					<input id="notecdivinput_n" type="button" value="取消" onclick="hideOverlay()" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input id="notecdivinput_y" type="submit" value="创建" onclick="notecIsnull()" />
+					<input id="notecdivinput_n" type="button" value="取消" onclick="newHideOverlay()" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input id="notecdivinput_y" type="submit" value="创建" onclick="notecIsnull()" />
+				</div>
+			</div>
+
+			<div id="markc">
+				<!--
+                	作者：offline
+                	时间：2018-07-28
+                	描述：添加标签
+                -->
+				<div class="notecdiv">
+					<i class="icon-tag" style="font-size: 80px;"></i>
+				</div>
+				<br />
+				<div class="notecdiv" style="line-height: 60px;border-bottom: 1px solid;">
+					<p>添加标签</p>
+				</div>
+
+				<div class="notecdiv">
+					<input id="markcdivinput" type="text" placeholder="输入标签名称" />
+				</div>
+				<div class="notecdiv">
+					<input id="markcdivinput_n" type="button" value="取消" onclick="markHideOverlay()" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input id="markcdivinput_y" type="submit" value="添加" onclick="markcIsnull()" />
 				</div>
 			</div>
 		</div>

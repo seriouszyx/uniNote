@@ -8,16 +8,34 @@ function notecIsnull() {
 		hideOverlay();
 	}
 }
+//添加标签确认
+function markcIsnull() {
+	if(document.getElementById("markcdivinput").value == "") {
+		alert("名称不能为空！");
+	} else {
+		alert("添加成功！");
+		hideOverlay();
+	}
+}
 //提示信息
-function tipsShow() {
+function ntipsShow() {
 	document.getElementById("notebTips").style.display = "block";
 }
 //提示信息
-function tipsHide() {
+function ntipsHide() {
 	document.getElementById("notebTips").style.display = "none";
 }
+//提示信息
+function mtipsShow() {
+	document.getElementById("markTips").style.display = "block";
+}
+//提示信息
+function mtipsHide() {
+	document.getElementById("markTips").style.display = "none";
+}
+
 //弹出遮罩
-function showOverlay() {
+function newShowOverlay() {
 	$("#overlay").height(document.body.scrollHeight);
 	$("#overlay").width(document.body.scrollWidth);
 	// fadeTo第一个参数为速度，第二个为透明度
@@ -33,9 +51,31 @@ function showOverlay() {
 	$("#notec").fadeTo(200, 1);
 }
 //隐藏遮罩
-function hideOverlay() {
+function newHideOverlay() {
 	$("#overlay").fadeOut(200);
 	$("#notec").fadeOut(200);
+
+}
+//弹出遮罩
+function markShowOverlay() {
+	$("#overlay").height(document.body.scrollHeight);
+	$("#overlay").width(document.body.scrollWidth);
+	// fadeTo第一个参数为速度，第二个为透明度
+	// 多重方式控制透明度，保证兼容性，但也带来修改麻烦的问题
+	$("#overlay").fadeTo(200, 1);
+	// 解决窗口缩小时放大后不全屏遮罩的问题
+	// 简单来说，就是窗口重置的问题
+	$(window).resize(function() {
+		$("#overlay").height(document.body.scrollHeight);
+		$("#overlay").width(document.body.scrollWidth);
+	});
+
+	$("#markc").fadeTo(200, 1);
+}
+//隐藏遮罩
+function markHideOverlay() {
+	$("#overlay").fadeOut(200);
+	$("#markc").fadeOut(200);
 
 }
 $(document).ready(function() {
@@ -114,5 +154,42 @@ $(document).ready(function() {
 	$(".icon-star-empty").click(function() {
 		$(this).toggleClass("icon-star");
 	});
+	//点击编辑标签名称
+	$(".icon-pencil").click(function(){
+		
+		var btnI=document.getElementsByClassName("icon-pencil");
+		var btnM=document.getElementsByClassName("markli");
+		if(this.name=="1")
+		{
+			$(this).parent().prev().stop().animate({
+				width: '100px'
+			});
+			this.name="0";
+		}else if(this.name=="0"){
+			for(var i=0;i<btnI.length;i++)
+			{
+				btnI[i].name = "0";
+				btnM[i].style.width="100px";
+				
+			}
+			$(this).parent().prev().stop().animate({
+				width: '220px'
+			});
+			this.name="1";
+		}
+		
+		
+
+		
+			
+		
+		
+		
+	});
+	
+	
+	
+	
+	
 
 });
