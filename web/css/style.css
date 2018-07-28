@@ -1,0 +1,383 @@
+/*#888,#222,white*/
+
+html {
+	font-family: sans-serif;
+	-ms-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+}
+
+body,
+html {
+	margin: 0;
+	padding: 0;
+	background-color: white;
+	overflow: hidden;
+	position: relative;
+}
+
+ul li {
+	list-style: none;
+}
+
+ul li:hover {
+	cursor: pointer;
+}
+
+#BIJI {
+	width: 100%;
+	height: 150px;
+	border-bottom: 1px solid lightgray;
+}
+
+.biji {
+	width: 100%;
+	height: 160px;
+}
+
+.biji:hover {
+	background-color: #e74c3c;
+}
+
+.fenge {
+	width: 90%;
+	height: 1px;
+	position: relative;
+	background-color: lightgrey;
+	margin-left: 5%;
+}
+
+#note {
+	color: #878787;
+	display: inline-block;
+	vertical-align: top;
+	font-size: 21px;
+	letter-spacing: 0.5px;
+	text-transform: uppercase;
+	position: relative;
+	left: 5%;
+	top: 20%;
+}
+
+#top {
+	position: relative;
+	height: 63px;
+	background: white;
+	min-width: 956px;
+}
+
+#choose {
+	width: 200px;
+	min-width: 115px;
+	height: 760px;
+	background-color: white;
+	min-width: 114.7px;
+	float: left;
+	position: relative;
+}
+
+#workPlace {
+	width: 29.5%;
+	float: left;
+	height: 760px;
+	background-color: white;
+	border: 2px solid gainsboro;
+	overflow: scroll;
+}
+
+#mainPlace {
+	width: 49%;
+	background-color: white;
+	height: 760px;
+	float: left;
+	
+}
+
+.fristC {
+	line-height: 48px;
+}
+.vertical-nav {
+	z-index: 1;
+}
+
+#helloUser {
+	width: 200px;
+	height: 100%;
+}
+
+#helloUser div {
+	color: #888888;
+	font-size: 25px;
+	text-align: center;
+	position: relative;
+	top: 25%;
+}
+
+#share {
+	width: 300px;
+	height: 63px;
+	position: relative;
+	top: -63px;
+	left: 85%;
+}
+
+
+/* ZYX changed below */
+
+#createNotebookPop {
+	width: 300px;
+	height: 600px;
+	background-color: darkslategray;
+	text-align: center;
+	/*让div内部文字居中*/
+	border-radius: 20px;
+	margin: auto;
+	position: absolute;
+	z-index: 10000;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	display: none;
+}
+
+#createNotebookPop>span {
+	width: 20px;
+	height: 20px;
+	background-color: #FFFFFF;
+	display: block;
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+
+#createNotePop {
+	width: 300px;
+	height: 600px;
+	background-color: darkslategray;
+	text-align: center;
+	/*让div内部文字居中*/
+	border-radius: 20px;
+	margin: auto;
+	position: absolute;
+	z-index: 10000;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	display: none;
+}
+
+#createNotePop>span {
+	width: 20px;
+	height: 20px;
+	background-color: #FFFFFF;
+	display: block;
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+
+workPlace ul {
+	width: 200px;
+	height: 70px;
+}
+
+
+/* ZYX added */
+
+
+/* table 样式 */
+
+table {
+	border-top: 1px solid #ccc;
+	border-left: 1px solid #ccc;
+}
+
+table td,
+table th {
+	border-bottom: 1px solid #ccc;
+	border-right: 1px solid #ccc;
+	padding: 3px 5px;
+}
+
+table th {
+	border-bottom: 2px solid #ccc;
+	text-align: center;
+}
+
+
+/* blockquote 样式 */
+
+blockquote {
+	display: block;
+	border-left: 8px solid #d0e5f2;
+	padding: 5px 10px;
+	margin: 10px 0;
+	line-height: 1.4;
+	font-size: 100%;
+	background-color: #f1f1f1;
+}
+
+
+/* code 样式 */
+
+code {
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+	background-color: #f1f1f1;
+	border-radius: 3px;
+	padding: 3px 5px;
+	margin: 0 3px;
+}
+
+pre code {
+	display: block;
+}
+
+
+/* ul ol 样式 */
+
+ul,
+ol {
+	margin: 10px 0 10px 20px;
+}
+
+
+/* WYJ add below */
+#find div {
+	height: 265px;
+	width: 80%;
+	margin: 0 auto 0px auto;
+	text-align: center;
+	border-bottom: 1px solid;
+}
+
+#workInput {
+	float: none;
+	margin: 0 auto;
+	width: 90%;
+	margin-top: 35px;
+	height: 120px;
+	/* border-radius: 24px; */
+	min-width: 215px;
+	font-size: 35px;
+	padding: 5px 5px 5px 15px;
+}
+
+.findChat {
+	height: 190px;
+	width: 80%;
+	margin: 0 auto 0px auto;
+	text-align: center;
+	border-bottom: 1px solid;
+}
+.chatInput1 {
+	float: none;
+	margin: 0 auto;
+	width: 90%;
+	margin-top: 35px;
+	height: 45px;
+	border-radius: 24px;
+	min-width: 215px;
+	font-size: 20px;
+	padding: 5px 5px 5px 15px;
+	border: 1px solid #888;
+}
+.chatInput2 {
+	font-size: 25px;
+	min-width: 50px;
+	width: 80%;
+	text-align: center;
+	border: 1px solid #888;
+	height: 34px;
+	border-radius: 30px;
+	margin: 30px auto 0px;
+	color: #888;
+}
+.chatInput2:hover {
+	cursor: pointer;
+	background-color: #e74c3c;
+	color: white;
+}
+.chatInput1:focus {
+	cursor: pointer;
+	border: 1px solid #e74c3c;
+}
+
+#choose h1 {
+	font-size: 30px;
+	margin: 20px;
+}
+#comment ul li {
+	padding: 10px;
+	border-bottom: 1px solid #888;
+	width: 95%;
+}
+#chat {
+	width: 80%;
+	margin: 0 auto;
+	text-align: center;
+	font-size: 35px;
+	color: #888;
+}
+#chat ul li:hover{
+	cursor: pointer;
+	background-color: #e74c3c;
+	color: white;
+}
+.newChat {
+	float: right;
+	font-size: 22px;
+	border: 1px solid;
+	border-radius: 8px;
+	margin-top: 25px;
+	margin-right: 33px;
+	padding: 10px;
+}
+.newChat:hover {
+	cursor: pointer;
+	background-color: #e74c3c;
+	color: white;
+}
+.show{/*控制弹出界面样式*/
+	position: absolute;
+	border: 1px solid #888;
+	width: 235%;
+	left: -272px;
+	top: 0px;
+	z-index: 1;
+	height: 760px;
+	background-color: white;
+	overflow: scroll;
+	
+}
+#trash ul li {
+	padding: 15px 20px;
+	border-bottom: 1px solid #e0e1e5;
+	height: 50px;
+	font-size: 25px;
+	line-height: 50px;
+	width: 91.5%;
+}
+#trash ul li:hover {
+	cursor: default;
+	background-color: #e74c3c;
+	color: white;
+}
+.filei {
+	margin-right: 10px;
+}
+.both {
+	line-height: 50px;
+	float: right;
+	margin-right: 22px;
+}
+.both:hover {
+	cursor: pointer;
+}
+
+.onchoose{
+	color: #E74C3C!important;
+	    font-size: 28px!important;
+}
