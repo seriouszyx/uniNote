@@ -45,10 +45,10 @@
 						<a id="newB" name="0" class="chooseB"><i class="icon-edit " style="margin: 0px 14px 0 -20px;font-size:30px"></i>新建笔记</a>
 					</li>
 					<li class="fristC">
-						<a id="findB" name="0" class="chooseB"><i class="icon-search " style="margin: 0px 14px 0 -20px;font-size:30px"></i>搜索笔记</a>
+						<a id="findB" name="0" class="chooseB"><i class="icon-search " style="margin: 0px 14px 0 -20px;font-size:30px"></i>搜索</a>
 					</li>
 					<li class="fristC">
-						<a id="notebB" name="0" class="chooseB"><i class="icon-th-list" style="margin: 0px 14px 0 -20px;font-size:30px"></i>笔记本</a>
+						<a id="notebB" name="0" class="chooseB"><i class="icon-book" style="margin: 0px 14px 0 -20px;font-size:30px"></i>笔记本</a>
 					</li>
 					<li class="fristC">
 						<a id="markB" name="0" class="chooseB"><i class="icon-tags " style="margin: 0px 14px 0 -20px;font-size:30px"></i>标签分类</a>
@@ -71,11 +71,20 @@
                           	描述：搜索笔记
                           -->
 				<br />
-				<h1 class="icon-search">搜索笔记</h1>
+				<h1 class="icon-search">搜索</h1>
 
-				<div class="findChat">
-					<input id="workInput" class="chatInput1" type="text" name="search" placeholder="请输入关键字">
-					<input class="chatInput2" type="button" value="搜索" />
+				<div id="findinput">
+					<form action="#">
+						<input id="searchNote" type="text" name="search" placeholder="搜索笔记" />
+					</form>
+				</div>
+				<div id="findul">
+					<ul>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+					</ul>
 				</div>
 			</div>
 			<div id="noteb" class="show">
@@ -85,7 +94,39 @@
                 	描述：笔记本
                 -->
 				<br />
-				<h1 class="icon-th-list">笔记本</h1>
+				<div id="notebTop">
+
+					<h1 class="icon-book">笔记本</h1>
+
+					<i id="newNoteb" class="icon-signin " onmouseleave="tipsHide()" onmouseover="tipsShow()" onclick="showOverlay()"></i>
+					<div id="notebTips">
+						<div class="sj">
+						</div>
+						<p>新建笔记本</p>
+					</div>
+				</div>
+				<div style="text-align: center;">
+					<input id="notebSearch" type="text" placeholder="搜索笔记本" />
+				</div>
+				<div id="notebul">
+					<div class="notebli">
+						<div class="notebliBook"><i class="icon-book"></i>笔记本1</div>
+						<div class="notebliBtn"><i class="icon-share notebli_i"></i><i class="icon-star-empty notebli_i "></i><i class="icon-trash notebli_i"></i></div>
+					</div>
+					<div class="notebli">
+
+						<div class="notebliBook"><i class="icon-book"></i>笔记本2</div>
+						<div class="notebliBtn"><i class="icon-share notebli_i"></i><i class="icon-star-empty notebli_i"></i><i class="icon-trash notebli_i"></i></div>
+
+					</div>
+					<div class="notebli">
+						<div class="notebliBook"><i class="icon-book"></i>笔记本3</div>
+						<div class="notebliBtn"><i class="icon-share notebli_i"></i><i class="icon-star-empty notebli_i"></i><i class="icon-trash notebli_i"></i></div>
+
+					</div>
+					<div></div>
+
+				</div>
 
 			</div>
 			<div id="mark" class="show">
@@ -108,9 +149,11 @@
                 -->
 				<br />
 				<h1 class="icon-comments">工作群聊</h1>
-				<div class="findChat">
-					<input class="chatInput1" type="text" name="searchChat" placeholder="请输入群聊名称/群聊号码">
-					<input class="chatInput2" type="button" value="搜索">
+				<div class="">
+					<form action="#">
+						<input class="chatInput1" type="text" name="searchChat" placeholder="请输入群聊名称/群聊号码">
+						<input class="chatInput2" type="submit" value="搜索">
+					</form>
 				</div>
 				<div id="chat">
 					<ul>
@@ -133,16 +176,37 @@
                 -->
 				<br />
 				<h1 class="icon-trash">废纸篓</h1>
+				<br /><br />
 				<ul>
-					<li><i class="icon-file filei"></i><span>笔记1</span><i class="icon-trash trashi both"></i><i class="icon-undo both"></i></li>
-					<li><i class="icon-file filei"></i><span>笔记2</span><i class="icon-trash trashi both"></i><i class="icon-undo both"></i></li>
-					<li><i class="icon-file filei"></i><span>笔记3</span><i class="icon-trash trashi both"></i><i class="icon-undo both"></i></li>
-					<li><i class="icon-file filei"></i><span>笔记4</span><i class="icon-trash trashi both"></i><i class="icon-undo both"></i></li>
+					<li><i class="icon-file filei"></i><span>笔记1</span><i class="icon-trash trashi trashBIJI"></i><i class="icon-undo trashBIJI"></i></li>
+					<li><i class="icon-file filei"></i><span>笔记2</span><i class="icon-trash trashi trashBIJI"></i><i class="icon-undo trashBIJI"></i></li>
+					<li><i class="icon-file filei"></i><span>笔记3</span><i class="icon-trash trashi trashBIJI"></i><i class="icon-undo trashBIJI"></i></li>
+					<li><i class="icon-file filei"></i><span>笔记4</span><i class="icon-trash trashi trashBIJI"></i><i class="icon-undo trashBIJI"></i></li>
 				</ul>
 				<div id="cleanTrash" class="newChat"><i class="icon-trash"></i><span>&nbsp;清空废纸篓</span></div>
 
 			</div>
+			<div id="notec">
+				<!--
+                	作者：offline
+                	时间：2018-07-28
+                	描述：创建笔记本
+               -->
+				<div class="notecdiv">
+					<i class="icon-book" style="font-size: 80px;"></i>
+				</div>
+				<br />
+				<div class="notecdiv" style="line-height: 60px;border-bottom: 1px solid;">
+					<p>创建笔记本</p>
+				</div>
 
+				<div class="notecdiv">
+					<input id="notecdivinput" type="text" placeholder="给笔记本起个名字" />
+				</div>
+				<div class="notecdiv">
+					<input id="notecdivinput_n" type="button" value="取消" onclick="hideOverlay()" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input id="notecdivinput_y" type="submit" value="创建" onclick="notecIsnull()" />
+				</div>
+			</div>
 		</div>
 		<!--
         	作者：offline
@@ -151,7 +215,7 @@
         -->
 		<div id="workPlace">
 			<div id="BIJI">
-				<p id="note">笔记</p>
+				<h1 id="note" class="icon-paste">笔记</h1>
 			</div>
 			<div class="biji"></div>
 			<div class="fenge"></div>
@@ -165,8 +229,9 @@
 			<div class="fenge"></div>
 		</div>
 		<div id="mainPlace">
-		</div>
 
+		</div>
+		<div id="overlay"></div>
 	</body>
 	<script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js" type="text/javascript" charset="utf-8"></script>
 	<script type="text/javascript" src="js/style.js"></script>

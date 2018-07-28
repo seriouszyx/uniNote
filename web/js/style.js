@@ -1,6 +1,45 @@
 //这里写js和jq
+//创建笔记本确认
+function notecIsnull() {
+	if(document.getElementById("notecdivinput").value == "") {
+		alert("名称不能为空！");
+	} else {
+		alert("创建成功！");
+		hideOverlay();
+	}
+}
+//提示信息
+function tipsShow() {
+	document.getElementById("notebTips").style.display = "block";
+}
+//提示信息
+function tipsHide() {
+	document.getElementById("notebTips").style.display = "none";
+}
+//弹出遮罩
+function showOverlay() {
+	$("#overlay").height(document.body.scrollHeight);
+	$("#overlay").width(document.body.scrollWidth);
+	// fadeTo第一个参数为速度，第二个为透明度
+	// 多重方式控制透明度，保证兼容性，但也带来修改麻烦的问题
+	$("#overlay").fadeTo(200, 1);
+	// 解决窗口缩小时放大后不全屏遮罩的问题
+	// 简单来说，就是窗口重置的问题
+	$(window).resize(function() {
+		$("#overlay").height(document.body.scrollHeight);
+		$("#overlay").width(document.body.scrollWidth);
+	});
 
+	$("#notec").fadeTo(200, 1);
+}
+//隐藏遮罩
+function hideOverlay() {
+	$("#overlay").fadeOut(200);
+	$("#notec").fadeOut(200);
+
+}
 $(document).ready(function() {
+
 	//点击注销账户进行询问并链接到登录页面
 	$("#logoffB").click(function() {
 		var isLogoff = confirm("是否退出当前用户？");
@@ -45,7 +84,7 @@ $(document).ready(function() {
 			this.name = "0";
 			$("#" + this.id.replace("B", "")).stop().animate({
 
-				left: '-272px'
+				left: '-285px'
 			});
 
 		} else if(this.name == "0") {
@@ -53,7 +92,7 @@ $(document).ready(function() {
 
 			$(".show").stop().animate({
 
-				left: '-272px'
+				left: '-285px'
 			});
 			for(var i = 0; i < btnB.length; i++) {
 				btnB[i].name = "0";
@@ -65,11 +104,15 @@ $(document).ready(function() {
 
 			$("#" + this.id.replace("B", "")).stop().animate({
 
-				left: '200px'
+				left: '210px'
 			});
 
 		}
 
+	});
+	//笔记本：标记快捷方式/删除快捷方式
+	$(".icon-star-empty").click(function() {
+		$(this).toggleClass("icon-star");
 	});
 
 });
