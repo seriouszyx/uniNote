@@ -38,6 +38,24 @@ function mtipsShow() {
 function mtipsHide() {
 	document.getElementById("markTips").style.display = "none";
 }
+//提示信息
+function ctipsShow() {
+	document.getElementById("commentTips").style.display = "block";
+}
+//提示信息
+function ctipsHide() {
+	document.getElementById("commentTips").style.display = "none";
+}
+//打开comment弹窗
+function newCommentOpen() {
+
+	$("#commentc").fadeTo(200, 1);
+}
+//关闭comment弹窗
+function newCommentClose() {
+
+	$("#commentc").fadeOut(200);
+}
 
 //弹出遮罩
 function newShowOverlay() {
@@ -101,6 +119,15 @@ $(document).ready(function() {
 	//鼠标离开按钮star隐藏
 	$(".starli").mouseleave(function() {
 		$(this).children('div.starBtn').hide();
+	});
+
+	//鼠标悬浮trash按钮出现
+	$(".trashli").mouseover(function() {
+		$(this).children('div.trashBtn').show();
+	});
+	//鼠标离开按钮trash隐藏
+	$(".trashli").mouseleave(function() {
+		$(this).children('div.trashBtn').hide();
 	});
 
 	//点击注销账户进行询问并链接到登录页面
@@ -176,6 +203,7 @@ $(document).ready(function() {
 	//笔记本：标记快捷方式/删除快捷方式
 	$(".icon-star-empty").click(function() {
 		$(this).toggleClass("icon-star");
+
 	});
 	//点击编辑标签名称
 	$(".icon-pencil").click(function() {
