@@ -39,13 +39,16 @@
         -->
 				<ul class="vertical-nav dark red" style="height: 760px;z-index: 2;">
 					<li class="active">
-						<a href="UserInformation.html" target="_blank"><i class="icon-user " style="margin: -14.958px 14px 15px -20px;"></i>个人用户</a>
+						<a href="UserInformation.html" target="_blank"><i class="icon-user " style="margin: -14.958px 14px 15px -20px;"></i>个人中心</a>
 					</li>
 					<li class="fristC">
 						<a id="newB" name="0" class="chooseB"><i class="icon-edit " style="margin: 0px 14px 0 -20px;font-size:30px"></i>新建笔记</a>
 					</li>
 					<li class="fristC">
 						<a id="findB" name="0" class="chooseB"><i class="icon-search " style="margin: 0px 14px 0 -20px;font-size:30px"></i>搜索</a>
+					</li>
+					<li class="fristC">
+						<a id="starB" name="0" class="chooseB"><i class="icon-star" style="margin: 0px 14px 0 -20px;font-size:30px"></i>快捷方式</a>
 					</li>
 					<li class="fristC">
 						<a id="notebB" name="0" class="chooseB"><i class="icon-book" style="margin: 0px 14px 0 -20px;font-size:30px"></i>笔记本</a>
@@ -88,6 +91,81 @@
 					</ul>
 				</div>
 			</div>
+			<div id="star" class="show">
+				<!--
+                	作者：offline
+                	时间：2018-07-29
+                	描述：快捷方式
+                -->
+				<br />
+				<h1 class="icon-star">快捷方式</h1>
+				<br />
+				<br />
+				<div id="starul">
+					<div class="starli">
+						<div class="starName"><i class="icon-book"></i>高数笔记本</div>
+						<div class="starBtn"><i class="icon-minus-sign notebli_i" title="删除快捷方式"></i></div>
+					</div>
+					<div class="starli">
+						<div class="starName"><i class="icon-tag"></i>JAVA</div>
+						<div class="starBtn"><i class="icon-minus-sign notebli_i" title="删除快捷方式"></i></div>
+					</div>
+					<div class="starli">
+						<div class="starName"><i class="icon-file"></i>7/27笔记</div>
+						<div class="starBtn"><i class="icon-minus-sign notebli_i" title="删除快捷方式"></i></div>
+					</div>
+					<div class="starli">
+						<div class="starName"><i class="icon-book"></i>日记本</div>
+						<div class="starBtn"><i class="icon-minus-sign notebli_i" title="删除快捷方式"></i></div>
+					</div>
+					<div class="starli">
+						<div class="starName"><i class="icon-tag"></i>C++</div>
+						<div class="starBtn"><i class="icon-minus-sign notebli_i" title="删除快捷方式"></i></div>
+					</div>
+					<div class="starli">
+						<div class="starName"><i class="icon-book"></i>高数笔记本</div>
+						<div class="starBtn"><i class="icon-minus-sign notebli_i" title="删除快捷方式"></i></div>
+					</div>
+					<div class="starli">
+						<div class="starName"><i class="icon-tag"></i>JAVA</div>
+						<div class="starBtn"><i class="icon-minus-sign notebli_i" title="删除快捷方式"></i></div>
+					</div>
+					<div class="starli">
+						<div class="starName"><i class="icon-file"></i>7/27笔记</div>
+						<div class="starBtn"><i class="icon-minus-sign notebli_i" title="删除快捷方式"></i></div>
+					</div>
+					<div class="starli">
+						<div class="starName"><i class="icon-book"></i>日记本</div>
+						<div class="starBtn"><i class="icon-minus-sign notebli_i" title="删除快捷方式"></i></div>
+					</div>
+					<div class="starli">
+						<div class="starName"><i class="icon-tag"></i>C++</div>
+						<div class="starBtn"><i class="icon-minus-sign notebli_i" title="删除快捷方式"></i></div>
+					</div>
+					<div class="starli">
+						<div class="starName"><i class="icon-book"></i>高数笔记本</div>
+						<div class="starBtn"><i class="icon-minus-sign notebli_i" title="删除快捷方式"></i></div>
+					</div>
+					<div class="starli">
+						<div class="starName"><i class="icon-tag"></i>JAVA</div>
+						<div class="starBtn"><i class="icon-minus-sign notebli_i" title="删除快捷方式"></i></div>
+					</div>
+					<div class="starli">
+						<div class="starName"><i class="icon-file"></i>7/27笔记</div>
+						<div class="starBtn"><i class="icon-minus-sign notebli_i" title="删除快捷方式"></i></div>
+					</div>
+					<div class="starli">
+						<div class="starName"><i class="icon-book"></i>日记本</div>
+						<div class="starBtn"><i class="icon-minus-sign notebli_i" title="删除快捷方式"></i></div>
+					</div>
+					<div class="starli">
+						<div class="starName"><i class="icon-tag"></i>C++</div>
+						<div class="starBtn"><i class="icon-minus-sign notebli_i" title="删除快捷方式"></i></div>
+					</div>
+				</div>
+
+			</div>
+
 			<div id="noteb" class="show">
 				<!--
                 	作者：offline
@@ -112,55 +190,55 @@
 				<div id="notebul">
 					<div class="notebli">
 						<div class="notebliBook"><i class="icon-book"></i>高数笔记本</div>
-						<div class="notebliBtn"><i class="icon-share notebli_i"></i><i class="icon-star-empty notebli_i "></i><i class="icon-trash notebli_i"></i></div>
+						<div class="notebliBtn"><i title="修改名称" class="icon-magic notebli_i"></i><i title="添加快捷方式" class="icon-star-empty notebli_i "></i><i title="删除笔记本" class="icon-trash notebli_i"></i></div>
 					</div>
 					<div class="notebli">
 
 						<div class="notebliBook"><i class="icon-book"></i>英语笔记本</div>
-						<div class="notebliBtn"><i class="icon-share notebli_i"></i><i class="icon-star-empty notebli_i"></i><i class="icon-trash notebli_i"></i></div>
+						<div class="notebliBtn"><i title="修改名称" class="icon-magic notebli_i"></i><i title="添加快捷方式" class="icon-star-empty notebli_i"></i><i title="删除笔记本" class="icon-trash notebli_i"></i></div>
 
 					</div>
 					<div class="notebli">
 						<div class="notebliBook"><i class="icon-book"></i>日记本</div>
-						<div class="notebliBtn"><i class="icon-share notebli_i"></i><i class="icon-star-empty notebli_i"></i><i class="icon-trash notebli_i"></i></div>
+						<div class="notebliBtn"><i title="修改名称" class="icon-magic notebli_i"></i><i title="添加快捷方式" class="icon-star-empty notebli_i"></i><i title="删除笔记本" class="icon-trash notebli_i"></i></div>
 
 					</div>
 					<div class="notebli">
 						<div class="notebliBook"><i class="icon-book"></i>练习题</div>
-						<div class="notebliBtn"><i class="icon-share notebli_i"></i><i class="icon-star-empty notebli_i"></i><i class="icon-trash notebli_i"></i></div>
+						<div class="notebliBtn"><i title="修改名称" class="icon-magic notebli_i"></i><i title="添加快捷方式" class="icon-star-empty notebli_i"></i><i title="删除笔记本" class="icon-trash notebli_i"></i></div>
 
 					</div>
 					<div class="notebli">
 						<div class="notebliBook"><i class="icon-book"></i>笔记本</div>
-						<div class="notebliBtn"><i class="icon-share notebli_i"></i><i class="icon-star-empty notebli_i"></i><i class="icon-trash notebli_i"></i></div>
+						<div class="notebliBtn"><i title="修改名称" class="icon-magic notebli_i"></i><i title="添加快捷方式" class="icon-star-empty notebli_i"></i><i title="删除笔记本" class="icon-trash notebli_i"></i></div>
 					</div>
 					<div class="notebli">
 						<div class="notebliBook"><i class="icon-book"></i>日记本</div>
-						<div class="notebliBtn"><i class="icon-share notebli_i"></i><i class="icon-star-empty notebli_i"></i><i class="icon-trash notebli_i"></i></div>
+						<div class="notebliBtn"><i title="修改名称" class="icon-magic notebli_i"></i><i title="添加快捷方式" class="icon-star-empty notebli_i"></i><i title="删除笔记本" class="icon-trash notebli_i"></i></div>
 
 					</div>
 					<div class="notebli">
 						<div class="notebliBook"><i class="icon-book"></i>练习题</div>
-						<div class="notebliBtn"><i class="icon-share notebli_i"></i><i class="icon-star-empty notebli_i"></i><i class="icon-trash notebli_i"></i></div>
+						<div class="notebliBtn"><i title="修改名称" class="icon-magic notebli_i"></i><i title="添加快捷方式" class="icon-star-empty notebli_i"></i><i title="删除笔记本" class="icon-trash notebli_i"></i></div>
 
 					</div>
 					<div class="notebli">
 						<div class="notebliBook"><i class="icon-book"></i>笔记本</div>
-						<div class="notebliBtn"><i class="icon-share notebli_i"></i><i class="icon-star-empty notebli_i"></i><i class="icon-trash notebli_i"></i></div>
+						<div class="notebliBtn"><i title="修改名称" class="icon-magic notebli_i"></i><i title="添加快捷方式" class="icon-star-empty notebli_i"></i><i title="删除笔记本" class="icon-trash notebli_i"></i></div>
 					</div>
 					<div class="notebli">
 						<div class="notebliBook"><i class="icon-book"></i>日记本</div>
-						<div class="notebliBtn"><i class="icon-share notebli_i"></i><i class="icon-star-empty notebli_i"></i><i class="icon-trash notebli_i"></i></div>
+						<div class="notebliBtn"><i title="修改名称" class="icon-magic notebli_i"></i><i title="添加快捷方式" class="icon-star-empty notebli_i"></i><i title="删除笔记本" class="icon-trash notebli_i"></i></div>
 
 					</div>
 					<div class="notebli">
 						<div class="notebliBook"><i class="icon-book"></i>练习题</div>
-						<div class="notebliBtn"><i class="icon-share notebli_i"></i><i class="icon-star-empty notebli_i"></i><i class="icon-trash notebli_i"></i></div>
+						<div class="notebliBtn"><i title="修改名称" class="icon-magic notebli_i"></i><i title="添加快捷方式" class="icon-star-empty notebli_i"></i><i title="删除笔记本" class="icon-trash notebli_i"></i></div>
 
 					</div>
 					<div class="notebli">
 						<div class="notebliBook"><i class="icon-book"></i>笔记本</div>
-						<div class="notebliBtn"><i class="icon-share notebli_i"></i><i class="icon-star-empty notebli_i"></i><i class="icon-trash notebli_i"></i></div>
+						<div class="notebliBtn"><i title="修改名称" class="icon-magic notebli_i"></i><i title="添加快捷方式" class="icon-star-empty notebli_i"></i><i title="删除笔记本" class="icon-trash notebli_i"></i></div>
 					</div>
 
 				</div>
@@ -194,67 +272,80 @@
 						<div class="markli">
 							<i class="icon-tag"></i>C++
 						</div>
-						<div class="notebliBtn"><a name="0" class="icon-pencil notebli_i"></a><i class="icon-star-empty notebli_i "></i><i class="icon-trash notebli_i"></i></div>
+						<div class="notebliBtn">
+							<a name="0" title="修改标签名" class="icon-pencil notebli_i"></a><i title="添加快捷方式" class="icon-star-empty notebli_i "></i><i title="删除标签" class="icon-trash notebli_i"></i></div>
 					</div>
 					<div class="notebli">
 
 						<div class="markli"><i class="icon-tag"></i>JAVA</div>
-						<div class="notebliBtn"><a name="0" class="icon-pencil notebli_i"></a><i class="icon-star-empty notebli_i"></i><i class="icon-trash notebli_i"></i></div>
+						<div class="notebliBtn">
+							<a name="0" title="修改标签名" class="icon-pencil notebli_i"></a><i title="添加快捷方式" class="icon-star-empty notebli_i"></i><i title="删除标签" class="icon-trash notebli_i"></i></div>
 
 					</div>
 					<div class="notebli">
 						<div class="markli"><i class="icon-tag"></i>前端</div>
-						<div class="notebliBtn"><a name="0" class="icon-pencil notebli_i"></a><i class="icon-star-empty notebli_i"></i><i class="icon-trash notebli_i"></i></div>
+						<div class="notebliBtn">
+							<a name="0" title="修改标签名" class="icon-pencil notebli_i"></a><i title="添加快捷方式" class="icon-star-empty notebli_i"></i><i title="删除标签" class="icon-trash notebli_i"></i></div>
 
 					</div>
 					<div class="notebli">
 						<div class="markli"><i class="icon-tag"></i>数据库</div>
-						<div class="notebliBtn"><a name="0" class="icon-pencil notebli_i"></a><i class="icon-star-empty notebli_i"></i><i class="icon-trash notebli_i"></i></div>
+						<div class="notebliBtn">
+							<a name="0" title="修改标签名" class="icon-pencil notebli_i"></a><i title="添加快捷方式" class="icon-star-empty notebli_i"></i><i title="删除标签" class="icon-trash notebli_i"></i></div>
 
 					</div>
 					<div class="notebli">
 						<div class="markli"><i class="icon-tag"></i>Linux</div>
-						<div class="notebliBtn"><a name="0" class="icon-pencil notebli_i"></a><i class="icon-star-empty notebli_i"></i><i class="icon-trash notebli_i"></i></div>
+						<div class="notebliBtn">
+							<a name="0" title="修改标签名" class="icon-pencil notebli_i"></a><i title="添加快捷方式" class="icon-star-empty notebli_i"></i><i title="删除标签" class="icon-trash notebli_i"></i></div>
 
 					</div>
 					<div class="notebli">
 						<div class="markli"><i class="icon-tag"></i>JAVA</div>
-						<div class="notebliBtn"><a name="0" class="icon-pencil notebli_i"></a><i class="icon-star-empty notebli_i"></i><i class="icon-trash notebli_i"></i></div>
+						<div class="notebliBtn">
+							<a name="0" title="修改标签名" class="icon-pencil notebli_i"></a><i title="添加快捷方式" class="icon-star-empty notebli_i"></i><i title="删除标签" class="icon-trash notebli_i"></i></div>
 
 					</div>
 					<div class="notebli">
 						<div class="markli"><i class="icon-tag"></i>C++</div>
-						<div class="notebliBtn"><a name="0" class="icon-pencil notebli_i"></a><i class="icon-star-empty notebli_i"></i><i class="icon-trash notebli_i"></i></div>
+						<div class="notebliBtn">
+							<a name="0" title="修改标签名" class="icon-pencil notebli_i"></a><i title="添加快捷方式" class="icon-star-empty notebli_i"></i><i title="删除标签" class="icon-trash notebli_i"></i></div>
 
 					</div>
 					<div class="notebli">
 						<div class="markli"><i class="icon-tag"></i>Linux</div>
-						<div class="notebliBtn"><a name="0" class="icon-pencil notebli_i"></a><i class="icon-star-empty notebli_i"></i><i class="icon-trash notebli_i"></i></div>
+						<div class="notebliBtn">
+							<a name="0" title="修改标签名" class="icon-pencil notebli_i"></a><i title="添加快捷方式" class="icon-star-empty notebli_i"></i><i title="删除标签" class="icon-trash notebli_i"></i></div>
 
 					</div>
 					<div class="notebli">
 						<div class="markli"><i class="icon-tag"></i>前端</div>
-						<div class="notebliBtn"><a name="0" class="icon-pencil notebli_i"></a><i class="icon-star-empty notebli_i"></i><i class="icon-trash notebli_i"></i></div>
+						<div class="notebliBtn">
+							<a name="0" title="修改标签名" class="icon-pencil notebli_i"></a><i title="添加快捷方式" class="icon-star-empty notebli_i"></i><i title="删除标签" class="icon-trash notebli_i"></i></div>
 
 					</div>
 					<div class="notebli">
 						<div class="markli"><i class="icon-tag"></i>JAVA</div>
-						<div class="notebliBtn"><a name="0" class="icon-pencil notebli_i"></a><i class="icon-star-empty notebli_i"></i><i class="icon-trash notebli_i"></i></div>
+						<div class="notebliBtn">
+							<a name="0" title="修改标签名" class="icon-pencil notebli_i"></a><i title="添加快捷方式" class="icon-star-empty notebli_i"></i><i title="删除标签" class="icon-trash notebli_i"></i></div>
 
 					</div>
 					<div class="notebli">
 						<div class="markli"><i class="icon-tag"></i>C++</div>
-						<div class="notebliBtn"><a name="0" class="icon-pencil notebli_i"></a><i class="icon-star-empty notebli_i"></i><i class="icon-trash notebli_i"></i></div>
+						<div class="notebliBtn">
+							<a name="0" title="修改标签名" class="icon-pencil notebli_i"></a><i title="添加快捷方式" class="icon-star-empty notebli_i"></i><i title="删除标签" class="icon-trash notebli_i"></i></div>
 
 					</div>
 					<div class="notebli">
 						<div class="markli"><i class="icon-tag"></i>Linux</div>
-						<div class="notebliBtn"><a name="0" class="icon-pencil notebli_i"></a><i class="icon-star-empty notebli_i"></i><i class="icon-trash notebli_i"></i></div>
+						<div class="notebliBtn">
+							<a name="0" title="修改标签名" class="icon-pencil notebli_i"></a><i title="添加快捷方式" class="icon-star-empty notebli_i"></i><i title="删除标签" class="icon-trash notebli_i"></i></div>
 
 					</div>
 					<div class="notebli">
 						<div class="markli"><i class="icon-tag"></i>前端</div>
-						<div class="notebliBtn"><a name="0" class="icon-pencil notebli_i"></a><i class="icon-star-empty notebli_i"></i><i class="icon-trash notebli_i"></i></div>
+						<div class="notebliBtn">
+							<a name="0" title="修改标签名" class="icon-pencil notebli_i"></a><i title="添加快捷方式" class="icon-star-empty notebli_i"></i><i title="删除标签" class="icon-trash notebli_i"></i></div>
 
 					</div>
 				</div>
@@ -376,6 +467,8 @@
 		</div>
 		<div id="overlay"></div>
 	</body>
+	<link rel="stylesheet" href="//apps.bdimg.com/libs/jqueryui/1.10.4/css/jquery-ui.min.css">
+	<script src="//apps.bdimg.com/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
 	<script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js" type="text/javascript" charset="utf-8"></script>
 	<script type="text/javascript" src="js/style.js"></script>
 	<script type="text/javascript" src="http://widget.renren.com/js/rrshare.js"></script>

@@ -8,6 +8,11 @@ function notecIsnull() {
 		hideOverlay();
 	}
 }
+
+$(function() {
+	$(document).tooltip();
+});
+
 //添加标签确认
 function markcIsnull() {
 	if(document.getElementById("markcdivinput").value == "") {
@@ -79,6 +84,24 @@ function markHideOverlay() {
 
 }
 $(document).ready(function() {
+
+	//鼠标悬浮按钮出现
+	$(".notebli").mouseover(function() {
+		$(this).children('div.notebliBtn').show();
+	});
+	//鼠标离开按钮隐藏
+	$(".notebli").mouseleave(function() {
+		$(this).children('div.notebliBtn').hide();
+
+	});
+	//鼠标悬浮star按钮出现
+	$(".starli").mouseover(function() {
+		$(this).children('div.starBtn').show();
+	});
+	//鼠标离开按钮star隐藏
+	$(".starli").mouseleave(function() {
+		$(this).children('div.starBtn').hide();
+	});
 
 	//点击注销账户进行询问并链接到登录页面
 	$("#logoffB").click(function() {
@@ -155,41 +178,27 @@ $(document).ready(function() {
 		$(this).toggleClass("icon-star");
 	});
 	//点击编辑标签名称
-	$(".icon-pencil").click(function(){
-		
-		var btnI=document.getElementsByClassName("icon-pencil");
-		var btnM=document.getElementsByClassName("markli");
-		if(this.name=="1")
-		{
+	$(".icon-pencil").click(function() {
+
+		var btnI = document.getElementsByClassName("icon-pencil");
+		var btnM = document.getElementsByClassName("markli");
+		if(this.name == "1") {
 			$(this).parent().prev().stop().animate({
 				width: '100px'
 			});
-			this.name="0";
-		}else if(this.name=="0"){
-			for(var i=0;i<btnI.length;i++)
-			{
+			this.name = "0";
+		} else if(this.name == "0") {
+			for(var i = 0; i < btnI.length; i++) {
 				btnI[i].name = "0";
-				btnM[i].style.width="100px";
-				
+				btnM[i].style.width = "100px";
+
 			}
 			$(this).parent().prev().stop().animate({
 				width: '220px'
 			});
-			this.name="1";
+			this.name = "1";
 		}
-		
-		
 
-		
-			
-		
-		
-		
 	});
-	
-	
-	
-	
-	
 
 });
