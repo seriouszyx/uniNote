@@ -15,6 +15,120 @@
 			<div id="helloUser">
 				<div>NOTE</div>
 			</div>
+			<!--	*************ADD****************		-->	
+			<div id="middle">
+				
+					<div class="img2" onclick="ShowDiv('MyDiv5','fade5')" style="width: 32px; height: 32px;"><img src="img/6.png" style="width: 19px; height: 19px;"></div>
+					<!--弹出层时背景层DIV-->
+					<div id="fade5" class="black_overlay1">
+					</div>
+				
+					<div id="MyDiv5" class="white_content1">
+					
+						<div style="text-align: right; cursor: default; height: 40px;">
+							<span style="font-size: 16px;" onclick="CloseDiv('MyDiv5','fade5')"><img id="cut" src="img/5.png"></span>
+						</div>
+						<div class="delect1"><img src="img/12.png" style="width: 40px; height: 40px;"></div>
+						
+					   <div class="remind"> <input type="button" value="标记完成"></div>
+					   <div class="remind"> <input type="button" value="清除提醒"></div>
+					   <div class="remind"> <input type="button" value="通知我"></div>
+					
+					</div>  
+					
+				   <div class="img2" onclick="ShowDiv('MyDiv6','fade6')" style="width: 32px; height: 32px;"><img src="img/7.png" style="width: 20px; height: 20px;"></div>
+							<!--弹出层时背景层DIV-->
+							<div id="fade6" class="black_overlay1">
+							</div>
+						
+							<div id="MyDiv6" class="white_content1">
+							
+								<div style="text-align: right; cursor: default; height: 40px;">
+									<span style="font-size: 16px;" onclick="CloseDiv('MyDiv6','fade6')"><img id="cut" src="img/5.png"></span>
+								</div>
+								<div class="delect">
+									<div class="delect1"><img src="img/13.png" style="width: 40px; height: 40px;"></div>
+									<p>快捷方式</p>
+									<div class="delect2"></div> 
+									<h1>确认添加快捷方式？</h1>
+		
+								<div class="delect5">	<input class="cancel" type="button" value="否"> 
+									<input class="confirm" type="button" value="是"></div>
+							</div>
+								
+							</div>
+		
+							<div class="img2" onclick="ShowDiv('MyDiv7','fade7')" style="width: 32px; height: 32px;"><img src="img/8.png" style="width: 22px; height: 22px;"></div>
+							<!--弹出层时背景层DIV-->
+							<div id="fade7" class="black_overlay1">
+							</div>
+						
+							<div id="MyDiv7" class="white_content1">
+							
+								<div style="text-align: right; cursor: default; height: 40px;">
+									<span style="font-size: 16px;" onclick="CloseDiv('MyDiv7','fade7')"><img id="cut" src="img/5.png"></span>
+								</div>
+								<div class="delect">
+									<div class="delect1"><img src="img/8.png" style="width: 40px; height: 40px;"></div>
+									<p>笔记信息</p>
+									<div class="delect2"></div> 
+									
+
+	
+								<div class="delect5">	<input class="cancel" type="button" value="取消"> 
+									<input class="confirm" type="button" value="保存"></div>
+							</div>
+								
+							</div>
+		
+							<div class="img2" onclick="ShowDiv('MyDiv8','fade8')" style="width: 32px; height: 32px;"><img src="img/9.png" style="width: 20px; height: 20px;"></div>
+							<!--弹出层时背景层DIV-->
+							<div id="fade8" class="black_overlay1">
+							</div>
+						
+							<div id="MyDiv8" class="white_content1">
+							
+								<div style="text-align: right; cursor: default; height: 40px;">
+									<span style="font-size: 16px;" onclick="CloseDiv('MyDiv8','fade8')"><img id="cut" src="img/5.png"></span>
+								</div>
+								<div class="delect">
+									<div class="delect1"><img src="img/9.png" style="width: 40px; height: 40px;"></div>
+									<p>删除笔记</p>
+									<div class="delect2"></div> 
+									<h1>确认删除吗？</h1>
+	
+								<div class="delect5">	<input class="cancel" type="button" value="取消"> 
+									<input class="confirm" type="button" value="删除"></div>
+							</div>
+								
+							</div>
+		
+							<div class="img2" onclick="ShowDiv('MyDiv9','fade9')" style="width: 32px; height: 32px;"><img src="img/10.png" style="width: 20px; height: 20px;"></div>
+							<!--弹出层时背景层DIV-->
+							<div id="fade9" class="black_overlay1">
+							</div>
+						
+							<div id="MyDiv9" class="white_content1">
+							
+								<div style="text-align: right; cursor: default; height: 40px;">
+									<span style="font-size: 16px;" onclick="CloseDiv('MyDiv9','fade9')"><img id="cut" src="img/5.png"></span>
+								</div>
+								<div class="delect">
+									<div class="delect1"><img src="img/10.png" style="width: 40px; height: 40px;"></div>
+									<p>复制笔记链接</p>
+									<div class="delect2"></div> 
+									<h1>确认复制吗？</h1>
+	
+								<div class="delect5">	<input class="cancel" type="button" value="取消"> 
+									<input class="confirm" type="button" value="确认"></div>
+							</div>
+								
+							</div>
+
+						
+				</div>
+				<!--	*****************************		-->	
+		
 			<div id="share">
 				<div class="bshare-custom icon-medium-plus" style="font-size: 40px;line-height: 63px !important;">
 					<a title="分享到QQ空间" class="bshare-qzone"></a>
@@ -588,8 +702,96 @@
 		<div id="workPlace">
 			<div id="BIJI">
 				<h1 id="note" class="icon-paste">笔记</h1>
+				<div id="note_below"><span>几条笔记</span></div>
 			</div>
-			<div class="biji"></div>
+			<div class="biji">
+				<!--	************ADD*****************		-->	
+				<div class="h1"><span>笔记标题</span></div>
+					<div class="p1"><span>笔记内容hahahahhahahhhahahahhahahahhahahahhahahah</span></div>				
+
+					<div class="img1" onclick="ShowDiv('MyDiv','fade')" style="width: 32px; height: 32px;"><img src="img/4.png" style="width: 20px; height: 20px;"></div>
+					<!--弹出层时背景层DIV-->
+					<div id="fade" class="black_overlay">
+					</div>
+				
+					<div id="MyDiv" class="white_content">
+					
+						<div style="text-align: right; cursor: default; height: 40px;">
+							<span style="font-size: 16px;" onclick="CloseDiv('MyDiv','fade')"><img id="cut" src="img/5.png"></span>
+						</div>
+						
+						<div class="delect">
+								<div class="delect1"><img src="img/9.png" style="width: 40px; height: 40px;"></div>
+								<p>删除笔记</p>
+								<div class="delect2"></div> 
+								<h1>确认删除吗？</h1>
+
+							<div class="delect5">	<input class="cancel" type="button" value="取消"> 
+								<input class="confirm" type="button" value="删除"></div>
+						</div>
+						
+					</div>
+				
+					
+					<div class="img1" onclick="ShowDiv('MyDiv2','fade2')" style="width: 32px; height: 32px;"><img src="img/3.png" style="width: 20px; height: 20px;"></div>
+					<!--弹出层时背景层DIV-->
+					<div id="fade2" class="black_overlay">
+					</div>
+				
+					<div id="MyDiv2" class="white_content">
+					
+						<div style="text-align: right; cursor: default; height: 40px;">
+							<span style="font-size: 16px;" onclick="CloseDiv('MyDiv2','fade2')"><img id="cut" src="img/5.png"></span>
+						</div>
+						<div class="delect">
+							<div class="delect1"><img src="img/13.png" style="width: 40px; height: 40px;"></div>
+							<p>快捷方式</p>
+							<div class="delect2"></div> 
+							<h1>确认添加快捷方式？</h1>
+
+						<div class="delect5">	<input class="cancel" type="button" value="否"> 
+							<input class="confirm" type="button" value="是"></div>
+					</div>
+						
+					</div>
+
+
+					<div class="img1" onclick="ShowDiv('MyDiv3','fade3')" style="width: 32px; height: 32px;"><img src="img/2.png" style="width: 22px; height: 22px;"></div>
+					<!--弹出层时背景层DIV-->
+					<div id="fade3" class="black_overlay">
+					</div>
+				
+					<div id="MyDiv3" class="white_content">
+					
+						<div style="text-align: right; cursor: default; height: 40px;">
+							<span style="font-size: 16px;" onclick="CloseDiv('MyDiv3','fade3')"><img id="cut" src="img/5.png"></span>
+						</div>
+						<div class="delect1"><img src="img/12.png" style="width: 40px; height: 40px;"></div>
+						
+					   <div class="remind"> <input type="button" value="标记完成"></div>
+					   <div class="remind"> <input type="button" value="清除提醒"></div>
+					   <div class="remind"> <input type="button" value="通知我"></div>
+						
+					</div>
+
+
+					<div class="img1" onclick="ShowDiv('MyDiv4','fade4')" style="width: 32px; height: 32px;"><img src="img/1.png" style="width: 21px; height: 21px;"></div>
+					<!--弹出层时背景层DIV-->
+					<div id="fade4" class="black_overlay">
+					</div>
+				
+					<div id="MyDiv4" class="white_content">
+					
+						<div style="text-align: right; cursor: default; height: 40px;">
+							<span style="font-size: 16px;" onclick="CloseDiv('MyDiv4','fade4')"><img id="cut" src="img/5.png"></span>
+						</div>
+						<div class="delect1"><img src="img/11.png" style="width: 40px; height: 40px;"></div>
+					<div id="MyDiv4_1"><div class="people">收件人：</div> <input type="text" class="man"  maxlength="300" value="电子邮箱"></div>	
+						<input class="confirm2" type="button" value="发送">
+					</div>
+				
+<!--	*****************************		-->	
+			</div>
 			<div class="fenge"></div>
 			<div class="biji"></div>
 			<div class="fenge"></div>
@@ -605,8 +807,8 @@
 		</div>
 		<div id="overlay"></div>
 	</body>
-	<link rel="stylesheet" href="//apps.bdimg.com/libs/jqueryui/1.10.4/css/jquery-ui.min.css">
-	<script src="//apps.bdimg.com/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+	<link rel="stylesheet" href="http://apps.bdimg.com/libs/jqueryui/1.10.4/css/jquery-ui.min.css">
+	<script src="http://apps.bdimg.com/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
 	<script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js" type="text/javascript" charset="utf-8"></script>
 	<script type="text/javascript" src="js/style.js"></script>
 	<script type="text/javascript" src="http://widget.renren.com/js/rrshare.js"></script>
