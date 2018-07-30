@@ -98,11 +98,13 @@ ul li:hover {
 }
 
 #mainPlace {
-	width: 49%;
+	width:53%;
 	background-color: white;
 	height: 760px;
 	float: left;
 	border: 1px solid black;
+	position: fixed;
+	right: 0;
 }
 
 .fristC {
@@ -754,8 +756,19 @@ label {
 	color: white;
 	cursor: pointer;
 }
-
-
+.Num{
+	    -webkit-font-smoothing: antialiased;
+    font-family: gotham, helvetica, arial, sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    color: #ababab;
+    margin: 10px;
+}
+#trashSort{
+	position: absolute;
+    right: 24px;
+    top: 0;
+}
 /*notec*/
 
 #overlay {

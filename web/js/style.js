@@ -103,6 +103,14 @@ function markHideOverlay() {
 }
 $(document).ready(function() {
 
+	//显示条数
+	{
+		document.getElementById("trashNum").innerHTML = $(".trashName").children('i.icon-file').length + "条笔记;" + $(".trashName").children('i.icon-tag').length + "条标签;" + $(".trashName").children('i.icon-book').length + "本笔记本";
+		document.getElementById("commentNum").innerHTML = $("#commentul").children('div.starli').length + "个群聊";
+		document.getElementById("markNum").innerHTML = $("#markul").children('div.notebli').length + "条标签";
+		document.getElementById("notebNum").innerHTML = $("#notebul").children('div.notebli').length + "本笔记本";
+	}
+
 	//鼠标悬浮按钮出现
 	$(".notebli").mouseover(function() {
 		$(this).children('div.notebliBtn').show();
@@ -170,14 +178,45 @@ $(document).ready(function() {
 		var btnB = document.getElementsByClassName("chooseB");
 
 		if(this.name == "1") {
+			
+			if(this.id=="newB")
+			{
+				$("#mainPlace").stop().animate({
+
+				width: '53.5%'
+			});
+			}
 			$(this).removeClass("onchoose");
 			this.name = "0";
 			$("#" + this.id.replace("B", "")).stop().animate({
 
 				left: '-285px'
 			});
+			
+			
+			$("#workPlace").fadeTo(200, 1);
+			
 
 		} else if(this.name == "0") {
+			
+			if(this.id=="newB")
+			{
+				$("#mainPlace").stop().animate({
+
+				width: '85.5%'
+			});
+			}else{
+				
+				$("#mainPlace").stop().animate({
+
+				width: '53.5%'
+			});
+				
+			}
+			
+			
+			
+			$("#workPlace").fadeOut(200);
 			$(".chooseB").removeClass("onchoose");
 
 			$(".show").stop().animate({
