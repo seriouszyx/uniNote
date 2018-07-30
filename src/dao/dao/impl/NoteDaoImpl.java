@@ -10,6 +10,7 @@ import org.apache.commons.dbutils.handlers.BeanListHandler;
 import utils.JDBCUtils;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -58,5 +59,22 @@ public class NoteDaoImpl implements NoteDao {
         String sql = "update note set isDelete = 1 where id = ?";
         QueryRunner qr = new QueryRunner(JDBCUtils.getDataSource());
         qr.update(sql, noteID);
+    }
+
+    @Override
+    public List<Note> searchNote(User user, String keyword) throws SQLException {
+        String sql = "select * from note where userid = ?";
+        QueryRunner qr = new QueryRunner(JDBCUtils.getDataSource());
+        List<String> list = new ArrayList<>();
+        sql = sql + " and title like ?";
+        list.add("%" + keyword + "%");
+        return qr.query(sql, new BeanListHandler<Note>(Note.class), user.getId(), list.get(0));
+    }
+
+    @Override
+    public void starNote(User user, int noteID) throws SQLException {
+        String sql = "update note set isStart = 1 where userid = ? and id = ?";
+        QueryRunner qr = new QueryRunner(JDBCUtils.getDataSource());
+        qr.update(sql, user.getId(), noteID);
     }
 }

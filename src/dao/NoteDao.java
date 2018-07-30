@@ -52,4 +52,22 @@ public interface NoteDao {
      * @return void
      **/
     void delNote(int noteID) throws SQLException;
+
+    /**
+     * @Author Yixiang Zhao
+     * @Description 根据关键字模糊搜索出笔记
+     * @Date 9:40 2018/7/30
+     * @Param [user, keyword]
+     * @return java.util.List<domain.Note>
+     **/
+    List<Note> searchNote(User user, String keyword) throws SQLException;
+
+    /**
+     * @Author Yixiang Zhao
+     * @Description 将数据库中对应的笔记记录isStart改为1
+     * @Date 10:53 2018/7/30
+     * @Param [user, noteID]
+     * @return void
+     **/
+    void starNote(User user, int noteID) throws SQLException;
 }

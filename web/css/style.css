@@ -381,3 +381,11 @@ ol {
 	color: #E74C3C!important;
 	    font-size: 28px!important;
 }
+
+.toolbar {
+	border: 1px solid #ccc;
+}
+.text {
+	border: 1px solid #ccc;
+	height: 400px;
+}

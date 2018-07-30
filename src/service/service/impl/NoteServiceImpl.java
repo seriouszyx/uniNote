@@ -45,4 +45,14 @@ public class NoteServiceImpl implements NoteService {
     public void delNote(int noteID) throws SQLException {
         dao.delNote(noteID);
     }
+
+    @Override
+    public List<Note> searchNote(User user, String keyword) throws SQLException {
+        return dao.searchNote(user, keyword);
+    }
+
+    @Override
+    public void starNote(User user, int noteID) throws SQLException {
+        dao.starNote(user, noteID);
+    }
 }

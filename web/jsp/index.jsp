@@ -8,18 +8,14 @@
 </head>
 <link href="../css/style.css" rel="stylesheet">
 <link href="../css/font-awesome.css" rel="stylesheet">
-<link href="../css/new.css" rel="stylesheet">
-<script type="text/javascript" src="../js/jquery-1.10.1.min.js"></script>
+<script type="text/javascript" src="../js/jq.js"></script>
 <script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js" type="text/javascript" charset="utf-8"></script>
 <script type="text/javascript" src="http://widget.renren.com/js/rrshare.js"></script>
 <script type="text/javascript" src="../js/style.js"></script>
-<script type="text/javascript" src="../js/index.js"></script>
 <script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/buttonLite.js#style=-1&amp;uuid=&amp;pophcol=2&amp;lang=zh"></script>
 <script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/bshareC0.js"></script>
-<script type="text/javascript" src="../js/google-maps.js"></script>
 <script type="text/javascript" src="../wangEditor-3.1.1/release/wangEditor.min.js"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+<script src="http://cdn.ronghub.com/RongIMLib-2.2.4.min.js"></script>
 
 <body onload="init()">
 <c:if test="${empty loginUser}">
@@ -50,111 +46,35 @@
         时间：2018-07-18
         描述：对所需选项进行选择
     -->
-    <div class="kePublic">
-        <div class="content">
+        <div>
             <ul class="vertical-nav dark red" style="height: 760px;z-index: 2;">
                 <li class="active">
-                    <a href="../UserInformation.html" target="_blank"><i class="icon-user " style="margin: -14.958px 14px 15px -20px;"></i>个人中心</a>
+                    <a href="../UserInformation.html" target="_blank"><i class="icon-user " style="margin: -14.958px 14px 15px -20px;"></i>个人用户</a>
                 </li>
                 <li class="fristC">
-                    <a href="#"><i class="icon-edit " style="margin: 0px 14px 0 -20px;font-size:30px"></i>新建笔记
-                    </a>
+                    <a id="newB" name="0" class="chooseB"><i class="icon-edit " style="margin: 0px 14px 0 -20px;font-size:30px"></i>新建笔记</a>
                 </li>
                 <li class="fristC">
-                    <a id="find"><i class="icon-search " style="margin: 0px 14px 0 -20px;font-size:30px"></i>搜索笔记</a>
+                    <a id="findB" name="0" class="chooseB"><i class="icon-search " style="margin: 0px 14px 0 -20px;font-size:30px"></i>搜索笔记</a>
                 </li>
                 <li class="fristC">
-                    <a href="#"><i class="icon-th-list" style="margin: 0px 14px 0 -20px;font-size:30px"></i>笔记本
-                        <span class="submenu-icon " style="line-height: 48px;"></span></a>
-                    <ul id="notebook">
-                        <li class="sceondC">
-                            <a href="#" id="createNotebook">新建笔记本<span class="submenu-icon"></span></a>
-                        </li>
-                        <li class="sceondC">
-                            <a id="1" href="#">我的第一个笔记本<span class="submenu-icon"></span></a>
-                            <ul>
-                                <li>
-                                    <a href="#">编辑</a>
-                                </li>
-                                <li>
-                                    <a href="#">添加标签</a>
-                                </li>
-                                <li>
-                                    <a href="#">共享
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" onclick="deleteNote()">删除</a>
-                                </li>
-                            </ul>
-                        </li>
-
-                    </ul>
+                    <a id="notebB" name="0" class="chooseB"><i class="icon-th-list" style="margin: 0px 14px 0 -20px;font-size:30px"></i>笔记本</a>
                 </li>
                 <li class="fristC">
-                    <a href="#"><i class="icon-tags " style="margin: 0px 14px 0 -20px;font-size:30px"></i>标签分类<span class="submenu-icon " style="line-height: 48px;"></span></a>
-                    <ul>
-                        <li class="sceondC">
-                            <a href="#">分类1<span class="submenu-icon "></span></a>
-                            <ul>
-                                <li>
-                                    <a href="#">查看笔记</a>
-                                </li>
-                                <li>
-                                    <a href="#">删除分类</a>
-
-                                </li>
-
-                            </ul>
-                        </li>
-                        <li class="sceondC">
-                            <a href="#">分类2<span class="submenu-icon "></span></a>
-                            <ul>
-                                <li>
-                                    <a href="#">查看笔记</a>
-                                </li>
-                                <li>
-                                    <a href="#">删除分类</a>
-
-                                </li>
-
-                            </ul>
-                        </li>
-                        <li class="sceondC">
-                            <a href="#">分类3<span class="submenu-icon "></span></a>
-                            <ul>
-                                <li>
-                                    <a href="#">查看笔记</a>
-                                </li>
-                                <li>
-                                    <a href="#">删除分类</a>
-
-                                </li>
-
-                            </ul>
-                        </li>
-                        <li class="sceondC">
-                            <a href="#">新建分类</a>
-                        </li>
-
-                    </ul>
+                    <a id="markB" name="0" class="chooseB"><i class="icon-tags " style="margin: 0px 14px 0 -20px;font-size:30px"></i>标签分类</a>
                 </li>
                 <li class="fristC">
-                    <a id="comment"><i class="icon-comments " style="margin: 0px 14px 0 -20px;font-size:30px"></i>工作群聊</a>
-
+                    <a id="commentB" name="0" class="chooseB"><i class="icon-comments " style="margin: 0px 14px 0 -20px;font-size:30px"></i>工作群聊</a>
                 </li>
                 <li class="fristC">
-                    <a id="trashB"><i class="icon-trash" style="margin: 0px 14px 0 -20px;font-size:30px"></i>废纸篓<span style="line-height: 48px;"></span></a>
-
+                    <a id="trashB" name="0" class="chooseB"><i class="icon-trash" style="margin: 0px 14px 0 -20px;font-size:30px"></i>废纸篓</a>
                 </li>
                 <li class="fristC">
-                    <a id="logoff" href="${pageContext.request.contextPath}/UserServlet?method=logOut"><i class="icon-off " style="margin: 0px 14px 0 -20px;font-size:30px"></i>注销账户</a>
+                    <a href="${pageContext.request.contextPath}/UserServlet?method=logOut" id="logoffB"><i class="icon-off " style="margin: 0px 14px 0 -20px;font-size:30px"></i>注销账户</a>
                 </li>
             </ul>
         </div>
-        <div class="clear"></div>
-    </div>
-    <div id="box">
+    <div id="find" class="show">
         <!--
                       作者：offline
                       时间：2018-07-24
@@ -165,27 +85,33 @@
 
         <div class="findChat">
             <input id="workInput" class="chatInput1" type="text" name="search" placeholder="请输入关键字">
-            <input class="chatInput2" type="button" value="搜索" />
+            <input class="chatInput2" id="searchNote" type="button" value="搜索" />
         </div>
-        <div>
-            <!--
-                 作者：offline
-                 时间：2018-07-24
-                 描述：根据关键字显示符合的笔记
-             -->
-            <ul>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-            </ul>
+        <div id="searchNoteRes"></div>
+    </div>
 
-        </div>
+    <div id="noteb" class="show">
+        <!--
+            作者：offline
+            时间：2018-07-27
+            描述：笔记本
+        -->
+        <br />
+        <h1 class="icon-th-list">笔记本</h1>
+
+    </div>
+    <div id="mark" class="show">
+        <!--
+            作者：offline
+            时间：2018-07-27
+            描述：标签分类
+        -->
+        <br />
+        <h1 class="icon-tags">标签分类</h1>
 
     </div>
 
-    <div id="WorkChat">
+    <div id="comment" class="show">
         <!--作者：offline时间：2018-07-19描述：工作群聊-->
         <!--
             作者：903875165@qq.com
@@ -211,12 +137,15 @@
 
     </div>
 
-    <div id="trash">
-        <!--回收站-->
+    <div id="trash" class="show">
+        <!--
+            作者：offline
+            时间：2018-07-27
+            描述：废纸篓
+        -->
         <br />
         <h1 class="icon-trash">废纸篓</h1>
-        <ul id="note-in-bin">
-        </ul>
+        <ul id="note-in-bin"></ul>
         <div id="cleanTrash" class="newChat"><i class="icon-trash"></i><span>&nbsp;清空废纸篓</span></div>
 
     </div>
@@ -229,7 +158,10 @@
     </ul>
 </div>
 <div id="mainPlace">
-    <div id="editor">
+    <div id="div1" class="toolbar">
+    </div>
+    <div style="padding: 5px 0; color: #ccc"></div>
+    <div id="div2" class="text" style="height:700px;width: 920px;max-height:500px;border: 1px solid grey;">
         <p></p>
     </div>
     <button id="btn1">创建</button>
@@ -249,13 +181,13 @@
     // 目前所写笔记的id
     var NOTE = 0;
     var E = window.wangEditor;
-    var editor = new E('#editor');
-    editor.customConfig.uploadImgShowBase64 = true
-    editor.create();
+    var editor1 = new E('#div1', '#div2')
+    editor1.customConfig.uploadImgShowBase64 = true
+    editor1.create();
 
     document.getElementById('btn1').addEventListener('click', function () {
         // 读取 html
-        $.post("${pageContext.request.contextPath}/EditorServlet?method=createNote", {getHTML:editor.txt.html()}, function(data) {
+        $.post("${pageContext.request.contextPath}/EditorServlet?method=createNote", {getHTML:editor1.txt.html()}, function(data) {
             $.each(data, function(i, obj) {
                 alert("笔记创建成功")
                 listNote();
@@ -291,14 +223,13 @@
             });
 
             alert("创建成功！")
-            jsInit();
         }, 'json');
     }, false)
 
 
     document.getElementById('btn2').addEventListener('click', function () {
         // 保存
-        $.post("${pageContext.request.contextPath}/EditorServlet?method=saveNote", {getHTML:editor.txt.html(),noteID:NOTE}, function(data) {
+        $.post("${pageContext.request.contextPath}/EditorServlet?method=saveNote", {getHTML:editor1.txt.html(),noteID:NOTE}, function(data) {
             alert(data);
             changeNote();
         });
@@ -308,7 +239,7 @@
         // 删除
         $.post("${pageContext.request.contextPath}/EditorServlet?method=delNote", {noteID:NOTE}, function(data) {
             alert(data);
-            editor.txt.clear();
+            editor1.txt.clear();
             listNote();
             changeNote();
         });
@@ -364,7 +295,7 @@
                 $.post("${pageContext.request.contextPath}/EditorServlet?method=findContent", {noteID:noteID}, function(data) {
                     $.each(data, function(i, obj) {
                         // editor.txt.html(obj.content)
-                        editor.txt.html(obj.content)
+                        editor1.txt.html(obj.content)
                     });
                 }, 'json')
             }, false)
@@ -372,16 +303,10 @@
     }
 
 
-    function jsInit() {
-        $(".vertical-nav").verticalnav({
-            speed: 400,
-            align: "left"
-        });
-    }
 
     function init() {
-        jsInit();
-        $.post("${pageContext.request.contextPath}/NotebookServlet?method=listNotebook", {}, function(data) {
+        /*
+        $.post("/NotebookServlet?method=listNotebook", {}, function(data) {
             $.each(data, function(i, obj) {
                 var li = "<li class=\"sceondC\">\n" +
                     "       <a href=\"#\">"+obj.bookName+"<span class=\"submenu-icon\"></span></a>\n" +
@@ -403,11 +328,11 @@
                     "      </li>";
                 $('#notebook').append(li);
             });
-            jsInit();
             changeNote();
         }, 'json');
-
+        */
         listNote();
+        searchNote();
 
     }
     function listNote() {
@@ -423,6 +348,19 @@
             });
             changeNote();
         }, 'json');
+    }
+
+    function searchNote() {
+        $("#searchNote").on('click', function() {
+            var keyword = $("#workInput").val();
+            $.post("${pageContext.request.contextPath}/NoteServlet?method=searchNote", {keyword:keyword}, function(data) {
+                $("#searchNoteRes").html("");
+                $.each(data, function(i, obj) {
+                    var li = "<li id=\"noteAfterSearch"+obj.id+"\"><i class=\"icon-file filei\"></i><span>"+obj.title+"</span><i class=\"icon-trash trashi both\"></i><i class=\"icon-undo both\"></i></li>";
+                    $("#searchNoteRes").append(li);
+                });
+            }, 'json')
+        })
     }
 
 
