@@ -25,4 +25,31 @@ public interface NotebookService {
      * @return java.util.List<domain.Notebook>
      **/
     List<Notebook> listNotebook(User user) throws SQLException;
+
+    /**
+     * @Author Yixiang Zhao
+     * @Description 将笔记本移入废纸篓
+     * @Date 15:00 2018/7/30
+     * @Param [user, notebookID]
+     * @return void
+     **/
+    void delNotebook(User user, int notebookID) throws SQLException;
+
+    /**
+     * @Author Yixiang Zhao
+     * @Description 将笔记本收藏
+     * @Date 16:18 2018/7/30
+     * @Param [user, notebookID]
+     * @return void
+     **/
+    void markNotebook(User user, int notebookID) throws SQLException;
+
+    /**
+     * @Author Yixiang Zhao
+     * @Description 笔记本取消标记
+     * @Date 16:45 2018/7/30
+     * @Param [user, notebookID]
+     * @return void
+     **/
+    void unMarkNotebook(User user, int notebookID) throws SQLException;
 }

@@ -62,4 +62,13 @@
         <servlet-name>BinServlet</servlet-name>
         <url-pattern>/BinServlet</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>MarkServlet</servlet-name>
+        <servlet-class>web.servlet.MarkServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>MarkServlet</servlet-name>
+        <url-pattern>/MarkServlet</url-pattern>
+    </servlet-mapping>
 </web-app>

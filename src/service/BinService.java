@@ -1,6 +1,7 @@
 package service;
 
 import domain.Note;
+import domain.Notebook;
 import domain.User;
 
 import java.sql.SQLException;
@@ -43,4 +44,31 @@ public interface BinService {
      * @return void
      **/
     void clearNoteInBin(User user) throws SQLException;
+
+    /**
+     * @Author Yixiang Zhao
+     * @Description 找到所有删除但是未移除的笔记本
+     * @Date 15:26 2018/7/30
+     * @Param [user]
+     * @return java.util.List<domain.Notebook>
+     **/
+    List<Notebook> listNotebookInBin(User user) throws SQLException;
+
+    /**
+     * @Author Yixiang Zhao
+     * @Description 将废纸篓中的笔记本移除
+     * @Date 15:44 2018/7/30
+     * @Param [user, id]
+     * @return void
+     **/
+    void removeNotebookInBin(User user, int id) throws SQLException;
+
+    /**
+     * @Author Yixiang Zhao
+     * @Description 将废纸篓中的笔记本还原
+     * @Date 16:03 2018/7/30
+     * @Param [user, id]
+     * @return void
+     **/
+    void RecoverNotebookInBin(User user, int id) throws SQLException;
 }

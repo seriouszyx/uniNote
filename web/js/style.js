@@ -5,7 +5,7 @@ function notecIsnull() {
 		alert("名称不能为空！");
 	} else {
 		alert("创建成功！");
-		hideOverlay();
+		newHideOverlay();
 	}
 }
 
@@ -19,7 +19,7 @@ function markcIsnull() {
 		alert("名称不能为空！");
 	} else {
 		alert("添加成功！");
-		hideOverlay();
+        markHideOverlay();
 	}
 }
 //提示信息

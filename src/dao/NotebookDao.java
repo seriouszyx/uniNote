@@ -25,4 +25,31 @@ public interface NotebookDao {
      * @return java.util.List<domain.Notebook>
      **/
     List<Notebook> listNotebook(User user) throws SQLException;
+
+    /**
+     * @Author Yixiang Zhao
+     * @Description 根据条件将笔记本的isdelete属性改为1
+     * @Date 15:02 2018/7/30
+     * @Param [user, notebookID]
+     * @return void
+     **/
+    void delNotebook(User user, int notebookID) throws SQLException;
+
+    /**
+     * @Author Yixiang Zhao
+     * @Description 将选中笔记本的isStart属性设为1
+     * @Date 16:19 2018/7/30
+     * @Param [user, notebookID]
+     * @return void
+     **/
+    void markNotebook(User user, int notebookID) throws SQLException;
+
+    /**
+     * @Author Yixiang Zhao
+     * @Description 将选中的笔记本的isStart属性设为0
+     * @Date 16:46 2018/7/30
+     * @Param [user, notebookID]
+     * @return void
+     **/
+    void unMarkNotebook(User user, int notebookID) throws SQLException;
 }
