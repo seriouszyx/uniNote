@@ -1,6 +1,7 @@
 package dao.dao.impl;
 
 import dao.NotebookDao;
+import domain.Note;
 import domain.Notebook;
 import domain.User;
 import org.apache.commons.dbutils.QueryRunner;
@@ -34,7 +35,35 @@ public class NotebookDaoImpl implements NotebookDao {
 
     @Override
     public List<Notebook> listNotebook(User user) throws SQLException {
-        String sql = "select * from notebook where userid = ?";
+        String sql = "select * from notebook where userid = ? and isDelete = 0";
+        QueryRunner qr = new QueryRunner(JDBCUtils.getDataSource());
+        return qr.query(sql, new BeanListHandler<Notebook>(Notebook.class), user.getId());
+    }
+
+    @Override
+    public void delNotebook(User user, int notebookID) throws SQLException {
+        String sql = "update notebook set isDelete = 1 where userid = ? and id = ?";
+        QueryRunner qr = new QueryRunner(JDBCUtils.getDataSource());
+        qr.update(sql, user.getId(), notebookID);
+    }
+
+    @Override
+    public void markNotebook(User user, int notebookID) throws SQLException {
+        String sql = "update notebook set isStart = 1 where userid = ? and id = ?";
+        QueryRunner qr = new QueryRunner(JDBCUtils.getDataSource());
+        qr.update(sql, user.getId(), notebookID);
+    }
+
+    @Override
+    public void unMarkNotebook(User user, int notebookID) throws SQLException {
+        String sql = "update notebook set isStart = 0 where userid = ? and id = ?";
+        QueryRunner qr = new QueryRunner(JDBCUtils.getDataSource());
+        qr.update(sql, user.getId(), notebookID);
+    }
+
+    @Override
+    public List<Notebook> listStar(User user) throws SQLException {
+        String sql = "select * from notebook where userid = ? and isStart = 1";
         QueryRunner qr = new QueryRunner(JDBCUtils.getDataSource());
         return qr.query(sql, new BeanListHandler<Notebook>(Notebook.class), user.getId());
     }

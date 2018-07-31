@@ -1,7 +1,14 @@
 package web.servlet;
 
+import domain.Notebook;
 import domain.User;
+import io.rong.RongCloud;
+import io.rong.models.response.TokenResult;
+import io.rong.models.user.UserModel;
+import net.sf.json.JSONArray;
+import service.NotebookService;
 import service.UserService;
+import service.service.impl.NotebookServiceImpl;
 import service.service.impl.UserServiceImpl;
 import utils.MailUtils;
 import utils.MyBeanUtils;
@@ -45,8 +52,13 @@ public class UserServlet extends BaseServlet {
             // 向数据库添加用户信息
             UserService service = new UserServiceImpl();
             service.userSignup(user);
-
+            // 融云获取用户token
+            // initRY(user);
+            // 为用户创建初始笔记本
+            initNotebook(user);
+            // 发送邮件信息
             MailUtils.sendMail(user.getEmail(), user.getCode());
+            // 响应消息
             request.setAttribute("msg", "用户注册成功，请激活");
         } catch (Exception e) {
             request.setAttribute("msg", "用户注册失败，请重新注册");
@@ -54,6 +66,39 @@ public class UserServlet extends BaseServlet {
         // 响应用户
         return "/jsp/info.jsp";
     }
+
+    public void initNotebook(User user) {
+        try {
+            Notebook notebook = new Notebook();
+            notebook.setBookName("我的第一个笔记本");
+            String nowTime = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date());
+            notebook.setCreateTime(Timestamp.valueOf(nowTime));
+            notebook.setId(1);
+            NotebookService service = new NotebookServiceImpl();
+            notebook = service.createNotebook(notebook, user);
+        } catch (Exception e) {
+            // 创建 失败
+            e.printStackTrace();
+        }
+    }
+
+    public void initRY(User u) throws Exception {
+        String appKey = "8w7jv4qb826py";
+        String appSecret = "OCjWhhgXd1mwfC";
+
+        RongCloud rongCloud = RongCloud.getInstance(appKey, appSecret);
+        io.rong.methods.user.User User = rongCloud.user;
+
+        UserModel user = new UserModel()
+                .setId(u.getId())
+                .setName(u.getName());
+        TokenResult result = null;
+        result = User.register(user);
+        System.out.println("getToken:  " + result.toString());
+    }
+
+
+
 
     /**
      * @Author Yixiang Zhao

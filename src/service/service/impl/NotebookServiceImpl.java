@@ -18,15 +18,31 @@ import java.util.List;
  */
 public class NotebookServiceImpl implements NotebookService {
 
+    NotebookDao dao = new NotebookDaoImpl();
+
     @Override
     public Notebook createNotebook(Notebook notebook, User user) throws SQLException {
-        NotebookDao dao = new NotebookDaoImpl();
+
         return dao.createNotebook(notebook, user);
     }
 
     @Override
     public List<Notebook> listNotebook(User user) throws SQLException {
-        NotebookDao dao = new NotebookDaoImpl();
         return dao.listNotebook(user);
+    }
+
+    @Override
+    public void delNotebook(User user, int notebookID) throws SQLException {
+        dao.delNotebook(user, notebookID);
+    }
+
+    @Override
+    public void markNotebook(User user, int notebookID) throws SQLException {
+        dao.markNotebook(user, notebookID);
+    }
+
+    @Override
+    public void unMarkNotebook(User user, int notebookID) throws SQLException {
+        dao.unMarkNotebook(user, notebookID);
     }
 }

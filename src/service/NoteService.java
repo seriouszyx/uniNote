@@ -16,7 +16,7 @@ public interface NoteService {
      * @Param []
      * @return void
      **/
-    void createNote(User user, Note note)throws SQLException;
+    void createNote(User user, Note note, String notebookName, String markName)throws SQLException;
 
     /**
      * @Author Yixiang Zhao
@@ -53,4 +53,22 @@ public interface NoteService {
      * @return void
      **/
     void delNote(int noteID) throws SQLException;
+
+    /**
+     * @Author Yixiang Zhao
+     * @Description 根据关键字查找笔记
+     * @Date 9:39 2018/7/30
+     * @Param [user, keyword]
+     * @return java.util.List<domain.Note>
+     **/
+    List<Note> searchNote(User user, String keyword) throws SQLException;
+
+    /**
+     * @Author Yixiang Zhao
+     * @Description 收藏笔记
+     * @Date 10:52 2018/7/30
+     * @Param [user, noteID]
+     * @return void
+     **/
+    void starNote(User user, int noteID) throws SQLException;
 }

@@ -386,6 +386,8 @@ view.onResize = function paperOnResize() {
         shapeGroup.children[5].opacity = 1;
     }
 };
+
+
 window.onload = function() {
 	username();
 	password();

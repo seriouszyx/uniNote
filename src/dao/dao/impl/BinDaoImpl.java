@@ -1,7 +1,9 @@
 package dao.dao.impl;
 
 import dao.BinDao;
+import domain.Mark;
 import domain.Note;
+import domain.Notebook;
 import domain.User;
 import org.apache.commons.dbutils.QueryRunner;
 import org.apache.commons.dbutils.handlers.BeanListHandler;
@@ -44,5 +46,47 @@ public class BinDaoImpl implements BinDao {
         String sql = "delete from note where userid = ? and isDelete = 1";
         QueryRunner qr = new QueryRunner(JDBCUtils.getDataSource());
         qr.update(sql, user.getId());
+    }
+
+    @Override
+    public List<Notebook> listNotebookInBin(User user) throws SQLException {
+        String sql = "select * from notebook where isDelete = 1 and userid = ?";
+        QueryRunner qr = new QueryRunner(JDBCUtils.getDataSource());
+        return qr.query(sql, new BeanListHandler<Notebook>(Notebook.class), user.getId());
+    }
+
+    @Override
+    public void removeNotebookInBin(User user, int id) throws SQLException {
+        String sql = "delete from notebook where userid = ? and isDelete = 1";
+        QueryRunner qr = new QueryRunner(JDBCUtils.getDataSource());
+        qr.update(sql, user.getId());
+    }
+
+    @Override
+    public void RecoverNotebookInBin(User user, int id) throws SQLException {
+        String sql = "update notebook set isDelete = 0 where userid = ? and id = ?";
+        QueryRunner qr = new QueryRunner(JDBCUtils.getDataSource());
+        qr.update(sql, user.getId(), id);
+    }
+
+    @Override
+    public List<Mark> listMarkInBin(User user) throws SQLException {
+        String sql = "select * from mark where userid = ? and isDelete = 1";
+        QueryRunner qr = new QueryRunner(JDBCUtils.getDataSource());
+        return qr.query(sql, new BeanListHandler<Mark>(Mark.class), user.getId());
+    }
+
+    @Override
+    public void removeMarkInBin(User user, int markInBin) throws SQLException {
+        String sql = "delete from mark where userid = ? and id = ? and isDelete = 1";
+        QueryRunner qr = new QueryRunner(JDBCUtils.getDataSource());
+        qr.update(sql, user.getId(), markInBin);
+    }
+
+    @Override
+    public void RecoverMarkInBin(User user, int id) throws SQLException {
+        String sql = "update mark set isDelete = 0 where userid = ? and id = ?";
+        QueryRunner qr = new QueryRunner(JDBCUtils.getDataSource());
+        qr.update(sql, user.getId(), id);
     }
 }
