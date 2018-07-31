@@ -35,5 +35,33 @@ public class MarkDaoImpl implements MarkDao {
         return qr.query(sql, new BeanListHandler<Mark>(Mark.class), user.getId());
     }
 
+    @Override
+    public void delMark(User user, int markID) throws SQLException {
+        String sql = "update mark set isDelete = 1 where userid = ? and id = ?";
+        QueryRunner qr = new QueryRunner(JDBCUtils.getDataSource());
+        qr.update(sql, user.getId(), markID);
+    }
+
+    @Override
+    public void markTag(User user, int markID) throws SQLException {
+        String sql = "update mark set isStart = 1 where userid = ? and id = ?";
+        QueryRunner qr = new QueryRunner(JDBCUtils.getDataSource());
+        qr.update(sql, user.getId(), markID);
+    }
+
+    @Override
+    public void unMarkTag(User user, int markID) throws SQLException {
+        String sql = "update mark set isStart = 0 where userid = ? and id = ?";
+        QueryRunner qr = new QueryRunner(JDBCUtils.getDataSource());
+        qr.update(sql, user.getId(), markID);
+    }
+
+    @Override
+    public List<Mark> listStar(User user) throws SQLException {
+        String sql = "select * from mark where userid = ? and isStart = 1";
+        QueryRunner qr = new QueryRunner(JDBCUtils.getDataSource());
+        return qr.query(sql, new BeanListHandler<Mark>(Mark.class), user.getId());
+    }
+
 
 }

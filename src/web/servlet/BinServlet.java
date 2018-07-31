@@ -1,5 +1,6 @@
 package web.servlet;
 
+import domain.Mark;
 import domain.Note;
 import domain.Notebook;
 import domain.User;
@@ -34,6 +35,9 @@ public class BinServlet extends BaseServlet {
 
             List<Notebook> notebookList = service.listNotebookInBin(user);
             list.add(notebookList);
+
+            List<Mark> markList = service.listMarkInBin(user);
+            list.add(markList);
 
             String jsonStr = JSONArray.fromObject(list).toString();
             response.setContentType("text/html;charset=utf-8");
@@ -114,6 +118,36 @@ public class BinServlet extends BaseServlet {
             response.getWriter().print("废纸篓已清空");
         } catch (Exception e) {
             request.setAttribute("msg", "废纸篓清空失败！");
+            return "/jsp/info.jsp";
+        }
+        return null;
+    }
+
+    public String removeMarkInBin(HttpServletRequest request, HttpServletResponse response) throws Exception{
+        User user = (User) request.getSession().getAttribute("loginUser");
+        int markInBin = Integer.parseInt(request.getParameter("markInBin"));
+        BinService service = new BinServiceImpl();
+        try {
+            service.removeMarkInBin(user, markInBin);
+            response.setContentType("text/html;charset=utf-8");
+            response.getWriter().print("标签已移除");
+        } catch (Exception e) {
+            request.setAttribute("msg", "标签移除失败！");
+            return "/jsp/info.jsp";
+        }
+        return null;
+    }
+
+    public String RecoverMarkInBin(HttpServletRequest request, HttpServletResponse response) throws Exception{
+        User user = (User) request.getSession().getAttribute("loginUser");
+        int id = Integer.parseInt(request.getParameter("markInBin"));
+        BinService service = new BinServiceImpl();
+        try {
+            service.RecoverMarkInBin(user, id);
+            response.setContentType("text/html;charset=utf-8");
+            response.getWriter().print("标签还原成功");
+        } catch (Exception e) {
+            request.setAttribute("msg", "标签还原失败！");
             return "/jsp/info.jsp";
         }
         return null;

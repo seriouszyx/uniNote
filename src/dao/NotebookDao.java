@@ -52,4 +52,13 @@ public interface NotebookDao {
      * @return void
      **/
     void unMarkNotebook(User user, int notebookID) throws SQLException;
+
+    /**
+     * @Author Yixiang Zhao
+     * @Description 查找所有标记的笔记本
+     * @Date 13:16 2018/7/31
+     * @Param [user]
+     * @return java.util.List<domain.Notebook>
+     **/
+    List<Notebook> listStar(User user) throws SQLException;
 }

@@ -49,4 +49,51 @@ public class MarkServlet extends BaseServlet {
 
         return null;
     }
+
+    public String delMark(HttpServletRequest request, HttpServletResponse response) throws Exception {
+        User user = (User) request.getSession().getAttribute("loginUser");
+        int markID = Integer.parseInt(request.getParameter("markID"));
+        MarkService service = new MarkServiceImpl();
+        try {
+            service.delMark(user, markID);
+            response.setContentType("text/html;charset=utf-8");
+            response.getWriter().print("标签已移入废止楼！");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return null;
+    }
+
+    public String markTag(HttpServletRequest request, HttpServletResponse response) throws Exception {
+        User user = (User) request.getSession().getAttribute("loginUser");
+        int markID = Integer.parseInt(request.getParameter("markID"));
+        MarkService service = new MarkServiceImpl();
+        try {
+            service.markTag(user, markID);
+            response.setContentType("text/html;charset=utf-8");
+            response.getWriter().print("标签已收藏！");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return null;
+    }
+
+    public String unMarkTag(HttpServletRequest request, HttpServletResponse response) throws Exception {
+        User user = (User) request.getSession().getAttribute("loginUser");
+        int markID = Integer.parseInt(request.getParameter("markID"));
+        MarkService service = new MarkServiceImpl();
+        try {
+            service.unMarkTag(user, markID);
+            response.setContentType("text/html;charset=utf-8");
+            response.getWriter().print("标签已移除收藏！");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return null;
+    }
 }
+
+

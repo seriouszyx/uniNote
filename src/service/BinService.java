@@ -1,5 +1,6 @@
 package service;
 
+import domain.Mark;
 import domain.Note;
 import domain.Notebook;
 import domain.User;
@@ -71,4 +72,31 @@ public interface BinService {
      * @return void
      **/
     void RecoverNotebookInBin(User user, int id) throws SQLException;
+
+    /**
+     * @Author Yixiang Zhao
+     * @Description 找到所有删除但是未移除的标签
+     * @Date 21:51 2018/7/30
+     * @Param [user]
+     * @return java.util.List<domain.Mark>
+     **/
+    List<Mark> listMarkInBin(User user) throws SQLException;
+
+    /**
+     * @Author Yixiang Zhao
+     * @Description 将废纸篓中的标签删除
+     * @Date 8:01 2018/7/31
+     * @Param [user]
+     * @return void
+     **/
+    void removeMarkInBin(User user, int markInBin) throws SQLException;
+
+    /**
+     * @Author Yixiang Zhao
+     * @Description 将废纸篓中的标签还原
+     * @Date 8:15 2018/7/31
+     * @Param [user, id]
+     * @return void
+     **/
+    void RecoverMarkInBin(User user, int id) throws SQLException;
 }

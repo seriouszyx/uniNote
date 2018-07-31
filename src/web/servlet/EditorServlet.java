@@ -28,15 +28,16 @@ public class EditorServlet extends BaseServlet {
     public String createNote(HttpServletRequest request, HttpServletResponse response) throws Exception{
         Note note = new Note();
         note.setContent(request.getParameter("getHTML"));
-        note.setNotebookID("1");
         String nowTime = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date());
         note.setCreateTime(Timestamp.valueOf(nowTime));
         User user = (User) request.getSession().getAttribute("loginUser");
         // 标题
-        note.setTitle("test");
+        note.setTitle(request.getParameter("noteName"));
+        String notebookName = request.getParameter("notebookName");
+        String markName = request.getParameter("markName");
         try {
             NoteService service = new NoteServiceImpl();
-            service.createNote(user, note);
+            service.createNote(user, note, notebookName, markName);
             String jsonStr = JSONArray.fromObject(note).toString();
             response.setContentType("text/html;charset=utf-8");
             response.getWriter().print(jsonStr);
@@ -59,7 +60,7 @@ public class EditorServlet extends BaseServlet {
         User user = (User) request.getSession().getAttribute("loginUser");
         NoteService service = new NoteServiceImpl();
         Notebook notebook = new Notebook();
-        notebook.setId(1);
+        notebook.setId(Integer.parseInt(request.getParameter("notebookID")));
         try {
             List<Note> list = service.listNote(user, notebook);
             String jsonStr = JSONArray.fromObject(list).toString();

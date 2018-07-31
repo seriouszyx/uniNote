@@ -15,7 +15,7 @@ public interface NoteDao {
      * @Param []
      * @return void
      **/
-    void createNote(User user, Note note) throws SQLException;
+    void createNote(User user, Note note, int notebookID, int markID) throws SQLException;
 
     /**
      * @Author Yixiang Zhao
@@ -70,4 +70,31 @@ public interface NoteDao {
      * @return void
      **/
     void starNote(User user, int noteID) throws SQLException;
+
+    /**
+     * @Author Yixiang Zhao
+     * @Description 笔记本名字找笔记本id
+     * @Date 10:01 2018/7/31
+     * @Param [user, notebookName]
+     * @return int
+     **/
+    int findNotebookID(User user, String notebookName) throws SQLException;
+
+    /**
+     * @Author Yixiang Zhao
+     * @Description 标签名字找标签id
+     * @Date 10:03 2018/7/31
+     * @Param [user, markName]
+     * @return int
+     **/
+    int findMarkID(User user, String markName) throws SQLException;
+
+    /**
+     * @Author Yixiang Zhao
+     * @Description 查找所有标记的笔记
+     * @Date 13:19 2018/7/31
+     * @Param [user]
+     * @return java.util.List<domain.Note>
+     **/
+    List<Note> listStar(User user) throws SQLException;
 }

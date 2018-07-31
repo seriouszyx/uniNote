@@ -2,6 +2,7 @@ package service.service.impl;
 
 import dao.BinDao;
 import dao.dao.impl.BinDaoImpl;
+import domain.Mark;
 import domain.Note;
 import domain.Notebook;
 import domain.User;
@@ -53,5 +54,20 @@ public class BinServiceImpl implements BinService {
     @Override
     public void RecoverNotebookInBin(User user, int id) throws SQLException {
         dao.RecoverNotebookInBin(user, id);
+    }
+
+    @Override
+    public List<Mark> listMarkInBin(User user) throws SQLException {
+        return dao.listMarkInBin(user);
+    }
+
+    @Override
+    public void removeMarkInBin(User user, int markInBin) throws SQLException {
+        dao.removeMarkInBin(user, markInBin);
+    }
+
+    @Override
+    public void RecoverMarkInBin(User user, int id) throws SQLException {
+        dao.RecoverMarkInBin(user, id);
     }
 }

@@ -29,4 +29,19 @@ public class MarkServiceImpl implements MarkService {
     public List<Mark> listMark(User user) throws SQLException {
         return dao.listMark(user);
     }
+
+    @Override
+    public void delMark(User user, int markID) throws SQLException {
+        dao.delMark(user, markID);
+    }
+
+    @Override
+    public void markTag(User user, int markID) throws SQLException {
+        dao.markTag(user, markID);
+    }
+
+    @Override
+    public void unMarkTag(User user, int markID) throws SQLException {
+        dao.unMarkTag(user, markID);
+    }
 }

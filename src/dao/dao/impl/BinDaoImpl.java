@@ -1,6 +1,7 @@
 package dao.dao.impl;
 
 import dao.BinDao;
+import domain.Mark;
 import domain.Note;
 import domain.Notebook;
 import domain.User;
@@ -64,6 +65,27 @@ public class BinDaoImpl implements BinDao {
     @Override
     public void RecoverNotebookInBin(User user, int id) throws SQLException {
         String sql = "update notebook set isDelete = 0 where userid = ? and id = ?";
+        QueryRunner qr = new QueryRunner(JDBCUtils.getDataSource());
+        qr.update(sql, user.getId(), id);
+    }
+
+    @Override
+    public List<Mark> listMarkInBin(User user) throws SQLException {
+        String sql = "select * from mark where userid = ? and isDelete = 1";
+        QueryRunner qr = new QueryRunner(JDBCUtils.getDataSource());
+        return qr.query(sql, new BeanListHandler<Mark>(Mark.class), user.getId());
+    }
+
+    @Override
+    public void removeMarkInBin(User user, int markInBin) throws SQLException {
+        String sql = "delete from mark where userid = ? and id = ? and isDelete = 1";
+        QueryRunner qr = new QueryRunner(JDBCUtils.getDataSource());
+        qr.update(sql, user.getId(), markInBin);
+    }
+
+    @Override
+    public void RecoverMarkInBin(User user, int id) throws SQLException {
+        String sql = "update mark set isDelete = 0 where userid = ? and id = ?";
         QueryRunner qr = new QueryRunner(JDBCUtils.getDataSource());
         qr.update(sql, user.getId(), id);
     }

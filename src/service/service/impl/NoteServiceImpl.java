@@ -22,8 +22,11 @@ public class NoteServiceImpl implements NoteService {
     NoteDao dao = new NoteDaoImpl();
 
     @Override
-    public void createNote(User user, Note note) throws SQLException {
-        dao.createNote(user, note);
+    public void createNote(User user, Note note, String notebookName, String markName) throws SQLException {
+        int notebookID = dao.findNotebookID(user, notebookName);
+        int markID = dao.findMarkID(user, markName);
+        System.out.println(markID);
+        dao.createNote(user, note, notebookID, markID);
     }
 
     @Override

@@ -32,6 +32,119 @@
     <div id="helloUser">
         <div>${loginUser.username},欢迎您！</div>
     </div>
+    <!--	*************ADD****************		-->
+    <div id="middle">
+
+        <div class="img2" onclick="ShowDiv('MyDiv5','fade5')" style="width: 32px; height: 32px;"><img src="../img/6.png" style="width: 19px; height: 19px;"></div>
+        <!--弹出层时背景层DIV-->
+        <div id="fade5" class="black_overlay1">
+        </div>
+
+        <div id="MyDiv5" class="white_content1">
+
+            <div style="text-align: right; cursor: default; height: 40px;">
+                <span style="font-size: 16px;" onclick="CloseDiv('MyDiv5','fade5')"><img class="cut" src="../img/5.png"></span>
+            </div>
+            <div class="delect1"><img src="../img/12.png" style="width: 40px; height: 40px;"></div>
+
+            <div class="remind"> <input type="button" value="标记完成"></div>
+            <div class="remind"> <input type="button" value="清除提醒"></div>
+            <div class="remind"> <input type="button" value="通知我"></div>
+
+        </div>
+
+        <div class="img2" onclick="ShowDiv('MyDiv6','fade6')" style="width: 32px; height: 32px;"><img src="../img/7.png" style="width: 20px; height: 20px;"></div>
+        <!--弹出层时背景层DIV-->
+        <div id="fade6" class="black_overlay1">
+        </div>
+
+        <div id="MyDiv6" class="white_content1">
+
+            <div style="text-align: right; cursor: default; height: 40px;">
+                <span style="font-size: 16px;" onclick="CloseDiv('MyDiv6','fade6')"><img class="cut" src="../img/5.png"></span>
+            </div>
+            <div class="delect">
+                <div class="delect1"><img src="../img/13.png" style="width: 40px; height: 40px;"></div>
+                <p>快捷方式</p>
+                <div class="delect2"></div>
+                <h1>确认添加快捷方式？</h1>
+
+                <div class="delect5">	<input class="cancel" type="button" value="否">
+                    <input class="confirm" type="button" value="是"></div>
+            </div>
+
+        </div>
+
+        <div class="img2" onclick="ShowDiv('MyDiv7','fade7')" style="width: 32px; height: 32px;"><img src="../img/8.png" style="width: 22px; height: 22px;"></div>
+        <!--弹出层时背景层DIV-->
+        <div id="fade7" class="black_overlay1">
+        </div>
+
+        <div id="MyDiv7" class="white_content1">
+
+            <div style="text-align: right; cursor: default; height: 40px;">
+                <span style="font-size: 16px;" onclick="CloseDiv('MyDiv7','fade7')"><img class="cut" src="../img/5.png"></span>
+            </div>
+            <div class="delect">
+                <div class="delect1"><img src="../img/8.png" style="width: 40px; height: 40px;"></div>
+                <p>笔记信息</p>
+                <div class="delect2"></div>
+
+
+
+                <div class="delect5">	<input class="cancel" type="button" value="取消">
+                    <input class="confirm" type="button" value="保存"></div>
+            </div>
+
+        </div>
+
+        <div class="img2" onclick="ShowDiv('MyDiv8','fade8')" style="width: 32px; height: 32px;"><img src="../img/9.png" style="width: 20px; height: 20px;"></div>
+        <!--弹出层时背景层DIV-->
+        <div id="fade8" class="black_overlay1">
+        </div>
+
+        <div id="MyDiv8" class="white_content1">
+
+            <div style="text-align: right; cursor: default; height: 40px;">
+                <span style="font-size: 16px;" onclick="CloseDiv('MyDiv8','fade8')"><img class="cut" src="../img/5.png"></span>
+            </div>
+            <div class="delect">
+                <div class="delect1"><img src="../img/9.png" style="width: 40px; height: 40px;"></div>
+                <p>删除笔记</p>
+                <div class="delect2"></div>
+                <h1>确认删除吗？</h1>
+
+                <div class="delect5">	<input class="cancel" type="button" value="取消">
+                    <input class="confirm" type="button" value="删除"></div>
+            </div>
+
+        </div>
+
+        <div class="img2" onclick="ShowDiv('MyDiv9','fade9')" style="width: 32px; height: 32px;"><img src="../img/10.png" style="width: 20px; height: 20px;"></div>
+        <!--弹出层时背景层DIV-->
+        <div id="fade9" class="black_overlay1">
+        </div>
+
+        <div id="MyDiv9" class="white_content1">
+
+            <div style="text-align: right; cursor: default; height: 40px;">
+                <span style="font-size: 16px;" onclick="CloseDiv('MyDiv9','fade9')"><img class="cut" src="../img/5.png"></span>
+            </div>
+            <div class="delect">
+                <div class="delect1"><img src="../img/10.png" style="width: 40px; height: 40px;"></div>
+                <p>复制笔记链接</p>
+                <div class="delect2"></div>
+                <h1>确认复制吗？</h1>
+
+                <div class="delect5">	<input class="cancel" type="button" value="取消">
+                    <input class="confirm" type="button" value="确认"></div>
+            </div>
+
+        </div>
+
+
+    </div>
+    <!--	*****************************		-->
     <div id="share">
         <div class="bshare-custom icon-medium-plus" style="font-size: 40px;line-height: 63px !important;">
             <a title="分享到QQ空间" class="bshare-qzone"></a>
@@ -115,66 +228,7 @@
         <br />
         <br />
         <div id="starul">
-            <div class="starli">
-                <div class="starName"><i class="icon-book"></i>高数笔记本</div>
-                <div class="starBtn"><i class="icon-minus-sign notebli_i" title="删除快捷方式"></i></div>
-            </div>
-            <div class="starli">
-                <div class="starName"><i class="icon-tag"></i>JAVA</div>
-                <div class="starBtn"><i class="icon-minus-sign notebli_i" title="删除快捷方式"></i></div>
-            </div>
-            <div class="starli">
-                <div class="starName"><i class="icon-file"></i>7/27笔记</div>
-                <div class="starBtn"><i class="icon-minus-sign notebli_i" title="删除快捷方式"></i></div>
-            </div>
-            <div class="starli">
-                <div class="starName"><i class="icon-book"></i>日记本</div>
-                <div class="starBtn"><i class="icon-minus-sign notebli_i" title="删除快捷方式"></i></div>
-            </div>
-            <div class="starli">
-                <div class="starName"><i class="icon-tag"></i>C++</div>
-                <div class="starBtn"><i class="icon-minus-sign notebli_i" title="删除快捷方式"></i></div>
-            </div>
-            <div class="starli">
-                <div class="starName"><i class="icon-book"></i>高数笔记本</div>
-                <div class="starBtn"><i class="icon-minus-sign notebli_i" title="删除快捷方式"></i></div>
-            </div>
-            <div class="starli">
-                <div class="starName"><i class="icon-tag"></i>JAVA</div>
-                <div class="starBtn"><i class="icon-minus-sign notebli_i" title="删除快捷方式"></i></div>
-            </div>
-            <div class="starli">
-                <div class="starName"><i class="icon-file"></i>7/27笔记</div>
-                <div class="starBtn"><i class="icon-minus-sign notebli_i" title="删除快捷方式"></i></div>
-            </div>
-            <div class="starli">
-                <div class="starName"><i class="icon-book"></i>日记本</div>
-                <div class="starBtn"><i class="icon-minus-sign notebli_i" title="删除快捷方式"></i></div>
-            </div>
-            <div class="starli">
-                <div class="starName"><i class="icon-tag"></i>C++</div>
-                <div class="starBtn"><i class="icon-minus-sign notebli_i" title="删除快捷方式"></i></div>
-            </div>
-            <div class="starli">
-                <div class="starName"><i class="icon-book"></i>高数笔记本</div>
-                <div class="starBtn"><i class="icon-minus-sign notebli_i" title="删除快捷方式"></i></div>
-            </div>
-            <div class="starli">
-                <div class="starName"><i class="icon-tag"></i>JAVA</div>
-                <div class="starBtn"><i class="icon-minus-sign notebli_i" title="删除快捷方式"></i></div>
-            </div>
-            <div class="starli">
-                <div class="starName"><i class="icon-file"></i>7/27笔记</div>
-                <div class="starBtn"><i class="icon-minus-sign notebli_i" title="删除快捷方式"></i></div>
-            </div>
-            <div class="starli">
-                <div class="starName"><i class="icon-book"></i>日记本</div>
-                <div class="starBtn"><i class="icon-minus-sign notebli_i" title="删除快捷方式"></i></div>
-            </div>
-            <div class="starli">
-                <div class="starName"><i class="icon-tag"></i>C++</div>
-                <div class="starBtn"><i class="icon-minus-sign notebli_i" title="删除快捷方式"></i></div>
-            </div>
+
         </div>
 
     </div>
@@ -427,10 +481,89 @@
 </div>
 </div>
 <div id="workPlace">
-    <div id="BIJI"><p id="note">笔记</p></div>
+    <div id="BIJI">
+        <h1 id="note" class="icon-paste">笔记</h1>
+        <div id="note_below"><span>几条笔记</span></div>
+    </div>
+    <!--
     <ul id="notelist">
 
     </ul>
+    -->
+        <!--	************ADD*****************		-->
+        <ul id="notelist">
+
+        </ul>
+    <!--弹出层时背景层DIV-->
+    <div id="fade" class="black_overlay">
+    </div>
+
+    <div id="MyDiv" class="white_content">
+
+        <div style="text-align: right; cursor: default; height: 40px;">
+            <span style="font-size: 16px;" onclick="CloseDiv('MyDiv','fade')"><img class="cut" src="../img/5.png"></span>
+        </div>
+
+        <div class="delect">
+            <div class="delect1"><img src="img/9.png" style="width: 40px; height: 40px;"></div>
+            <p>删除笔记</p>
+            <div class="delect2"></div>
+            <h1>确认删除吗？</h1>
+
+            <div class="delect5">	<input class="cancel" type="button" value="取消">
+                <input class="confirm" type="button" value="删除"></div>
+        </div>
+
+    </div>
+    <!--弹出层时背景层DIV-->
+    <div id="fade2" class="black_overlay">
+    </div>
+
+    <div id="MyDiv2" class="white_content">
+
+        <div style="text-align: right; cursor: default; height: 40px;">
+            <span style="font-size: 16px;" onclick="CloseDiv('MyDiv2','fade2')"><img class="cut" src="../img/5.png"></span>
+        </div>
+        <div class="delect">
+            <div class="delect1"><img src="img/13.png" style="width: 40px; height: 40px;"></div>
+            <p>快捷方式</p>
+            <div class="delect2"></div>
+            <h1>确认添加快捷方式？</h1>
+
+            <div class="delect5">	<input class="cancel" type="button" value="否">
+                <input class="confirm" type="button" value="是"></div>
+        </div>
+
+    </div>
+    <!--弹出层时背景层DIV-->
+    <div id="fade3" class="black_overlay">
+    </div>
+
+    <div id="MyDiv3" class="white_content">
+
+        <div style="text-align: right; cursor: default; height: 40px;">
+            <span style="font-size: 16px;" onclick="CloseDiv('MyDiv3','fade3')"><img class="cut" src="../img/5.png"></span>
+        </div>
+        <div class="delect1"><img src="../img/12.png" style="width: 40px; height: 40px;"></div>
+
+        <div class="remind"> <input type="button" value="标记完成"></div>
+        <div class="remind"> <input type="button" value="清除提醒"></div>
+        <div class="remind"> <input type="button" value="通知我"></div>
+
+    </div>
+    <!--弹出层时背景层DIV-->
+    <div id="fade4" class="black_overlay">
+    </div>
+
+    <div id="MyDiv4" class="white_content">
+
+        <div style="text-align: right; cursor: default; height: 40px;">
+            <span style="font-size: 16px;" onclick="CloseDiv('MyDiv4','fade4')"><img class="cut" src="../img/5.png"></span>
+        </div>
+        <div class="delect1"><img src="../img/11.png" style="width: 40px; height: 40px;"></div>
+        <div id="MyDiv4_1"><div class="people">收件人：</div> <input type="text" class="man"  maxlength="300" value="电子邮箱"></div>
+        <input class="confirm2" type="button" value="发送">
+    </div>
 </div>
 <div id="mainPlace">
     <div id="div1" class="toolbar">
@@ -442,27 +575,54 @@
     <button id="btn1">创建</button>
     <button id="btn2">保存</button>
     <button id="btn3">删除</button>
+
+    <div id="createNotePop">
+        <form>
+            笔记名：<input id="noteName" type="text" placeholder="笔记名">
+            笔记本名：<input id="notebookName" type="text" placeholder="笔记本名">
+            标签名：<input id="markName" type="text" placeholder="标签名">
+        </form>
+    </div>
 </div>
+
 <div id="overlay"></div>
+
 
 <script>
     // 目前所写笔记的id
     var NOTE = 0;
+    var NOTEBOOK = 1;
     var E = window.wangEditor;
     var editor1 = new E('#div1', '#div2')
     editor1.customConfig.uploadImgShowBase64 = true
     editor1.create();
 
-    document.getElementById('btn1').addEventListener('click', function () {
-        // 读取 html
-        $.post("${pageContext.request.contextPath}/EditorServlet?method=createNote", {getHTML:editor1.txt.html()}, function(data) {
-            $.each(data, function(i, obj) {
-                alert("笔记创建成功")
-                listNote();
-            });
-            changeNote();
-        }, 'json');
-    }, false);
+
+            document.getElementById('btn1').addEventListener('click', function () {
+                var noteName = $('#noteName').val();
+                var notebookName = $('#notebookName').val();
+                var markName = $('#markName').val();
+                if (noteName == 0) {
+                    alert('请输入笔记标题')
+                } else {
+                    // 读取 html
+                    if (notebookName == 0) {
+                        notebookName = "我的第一个笔记本";
+                    }
+
+                    var json = {getHTML:editor1.txt.html(), noteName:noteName, notebookName:notebookName, markName:markName};
+                    $.post("${pageContext.request.contextPath}/EditorServlet?method=createNote", json, function(data) {
+                        $.each(data, function(i, obj) {
+                            $("#noteName").val("");
+                            $("#notebookName").val("");
+                            $("#markName").val("");
+                            alert("笔记创建成功")
+                            listNote();
+                        });
+                        changeNote();
+                    }, 'json');
+                }
+            }, false);
 
 
 
@@ -501,6 +661,13 @@
                                 "                <div class=\"trashBtn\"><i class=\"icon-undo notebli_i\" title=\"还原\"></i><i class=\"icon-trash notebli_i trashi\" title=\"彻底删除\"></i></div>\n" +
                                 "            </div>"
                             $("#trashul").append(div);
+                        } else if (obj.markName != undefined) {
+                            // 标签
+                            var div = "            <div class=\"trashli\" id=\"markInBin"+obj.id+"\">\n" +
+                                "                <div class=\"trashName\"><i class=\"icon-tag\"></i>"+obj.markName+"</div>\n" +
+                                "                <div class=\"trashBtn\"><i class=\"icon-undo notebli_i\" title=\"还原\"></i><i class=\"icon-trash notebli_i trashi\" title=\"彻底删除\"></i></div>\n" +
+                                "            </div>"
+                            $("#trashul").append(div);
                         } else {
                             // 笔记本
                             var div = "            <div class=\"trashli\" id=\"notebookInBin"+obj.id+"\">\n" +
@@ -524,14 +691,21 @@
                 alert(data)
                 listNoteInBin();
             })
-        } else {
-            // 笔记
-            var noteInBinID = this.parentNode.parentNode.id.slice(9);
-            $.post("${pageContext.request.contextPath}/BinServlet?method=removeNoteInBin", {noteIDInBin:noteInBinID}, function(data) {
+        } else if (this.parentNode.parentNode.id.search('mark') != -1) {
+            //  标签
+            var markInBin = this.parentNode.parentNode.id.slice(9);
+            $.post("${pageContext.request.contextPath}/BinServlet?method=removeMarkInBin", {markInBin:markInBin}, function(data) {
                 alert(data)
                 listNoteInBin();
             })
-        }
+        } else {
+                // 笔记
+                var noteInBinID = this.parentNode.parentNode.id.slice(9);
+                $.post("${pageContext.request.contextPath}/BinServlet?method=removeNoteInBin", {noteIDInBin:noteInBinID}, function(data) {
+                    alert(data)
+                    listNoteInBin();
+                })
+            }
     })
 
     $(document).on('click', '.icon-undo', function() {
@@ -542,6 +716,13 @@
                 alert(data)
                 listNoteInBin();
                 listNote();
+            })
+        }else if (this.parentNode.parentNode.id.search('mark') != -1) {
+            //  标签
+            var markInBin = this.parentNode.parentNode.id.slice(9);
+            $.post("${pageContext.request.contextPath}/BinServlet?method=RecoverMarkInBin", {markInBin:markInBin}, function(data) {
+                alert(data)
+                listNoteInBin();
             })
         } else {
             // 笔记
@@ -565,7 +746,7 @@
     });
 
     function changeNote() {
-        var notes = document.getElementById('notelist').getElementsByTagName("li");
+        var notes = document.getElementById('notelist').getElementsByClassName('biji');
         for (var i=0; i<notes.length; i++) {
             notes[i].addEventListener('click', function() {
                 var noteID = this.id.slice(4);
@@ -593,20 +774,30 @@
         listNote();
         markNotebook();
         createMark();
+        markTag();
         // searchNote();
 
     }
     function listNote() {
         // 将所有笔记部署到页面上
-        $.post("${pageContext.request.contextPath}/EditorServlet?method=listNote", {}, function(data) {
+        $.post("${pageContext.request.contextPath}/EditorServlet?method=listNote", {notebookID:NOTEBOOK}, function(data) {
             $("#notelist").html("");
             $.each(data, function(i, obj) {
+                var divs = "\t\t\t<div class=\"biji\" id=\"note"+obj.id+"\">\n" +
+                    "                    <div class=\"h1\"><span>"+obj.title+"</span></div>\n" +
+                    "                    <div class=\"p1\"><span>"+obj.content.substr(0, 10)+"</span></div>\n" +
+                    "                    <div class=\"img1\" onclick=\"ShowDiv('MyDiv','fade')\" style=\"width: 32px; height: 32px;\"><img src=\"../img/4.png\" style=\"width: 20px; height: 20px;\"></div>\n" +
+                    "                    <div class=\"img1\" onclick=\"ShowDiv('MyDiv2','fade2')\" style=\"width: 32px; height: 32px;\"><img src=\"../img/3.png\" style=\"width: 20px; height: 20px;\"></div>\n" +
+                    "                    <div class=\"img1\" onclick=\"ShowDiv('MyDiv3','fade3')\" style=\"width: 32px; height: 32px;\"><img src=\"../img/2.png\" style=\"width: 22px; height: 22px;\"></div>\n" +
+                    "                    <div class=\"img1\" onclick=\"ShowDiv('MyDiv4','fade4')\" style=\"width: 32px; height: 32px;\"><img src=\"../img/1.png\" style=\"width: 21px; height: 21px;\"></div>\n" +
+                    "\t\t\t</div>";
                 var li = "<li class=\"biji\" id=\"note"+obj.id+"\">\n" +
                     "            "+obj.title+"\n" +
                     "        </li>"
-                $("#notelist").append(li);
+                $("#notelist").append(divs);
                 NOTE = obj.id;
             });
+            editor1.txt.html("");
             changeNote();
         }, 'json');
     }
@@ -616,12 +807,12 @@
             $("#notebul").html("");
             $.each(data, function(i, obj) {
                 if (obj.isStart == 1) {
-                    var div = "<div class=\"notebli\" id=\"notebook"+obj.id+"\">\n" +
+                    var div = "<div class=\"notebli notebookLi\" id=\"notebook"+obj.id+"\">\n" +
                         "<div class=\"notebliBook\"><i class=\"icon-book\"></i>"+obj.bookName+"</div>\n" +
                         "<div class=\"notebliBtn\"><i title=\"修改名称\" class=\"icon-magic notebli_i\"></i><i title=\"添加/（删除）快捷方式\" class=\"icon-star-empty notebli_i markNotebook icon-star \"></i><i title=\"删除笔记本\" class=\"icon-trash notebli_i delNotebook\"></i></div>\n" +
                         "</div>";
                 } else {
-                    var div = "<div class=\"notebli\" id=\"notebook"+obj.id+"\">\n" +
+                    var div = "<div class=\"notebli notebookLi\" id=\"notebook"+obj.id+"\">\n" +
                         "<div class=\"notebliBook\"><i class=\"icon-book\"></i>"+obj.bookName+"</div>\n" +
                         "<div class=\"notebliBtn\"><i title=\"修改名称\" class=\"icon-magic notebli_i\"></i><i title=\"添加/（删除）快捷方式\" class=\"icon-star-empty notebli_i markNotebook \"></i><i title=\"删除笔记本\" class=\"icon-trash notebli_i delNotebook\"></i></div>\n" +
                         "</div>";
@@ -645,6 +836,25 @@
                 var notebookID = this.parentNode.parentNode.id.slice(8);
                 $.post("${pageContext.request.contextPath}/NotebookServlet?method=unMarkNotebook", {notebookID:notebookID}, function(data) {
                     listNotebook();
+                });
+            }
+        })
+    }
+
+    function markTag() {
+        $(document).on('click', '.markTag', function() {
+            if (this.className.split(' ').length == 3) {
+                // 没有被标记
+                var markID = this.parentNode.parentNode.id.slice(4);
+                $.post("${pageContext.request.contextPath}/MarkServlet?method=markTag", {markID:markID}, function(data) {
+                    listMark();
+                });
+
+            } else {
+                // 已经被标记
+                var markID = this.parentNode.parentNode.id.slice(4);
+                $.post("${pageContext.request.contextPath}/MarkServlet?method=unMarkTag", {markID:markID}, function(data) {
+                    listMark();
                 });
             }
         })
@@ -678,6 +888,14 @@
         })
     }
 
+    $(document).on('click', ".delMark", function() {
+        var markID = this.parentNode.parentNode.id.slice(4)
+        $.post("${pageContext.request.contextPath}/MarkServlet?method=delMark", {markID:markID}, function(data) {
+            alert(data)
+            listMark()
+        })
+    });
+
     $("#markB").on('click', function() {
         listMark();
     })
@@ -686,18 +904,32 @@
             $.post("${pageContext.request.contextPath}/MarkServlet?method=listMark", {}, function(data) {
                 $("#markul").html("");
                 $.each(data, function(i, obj) {
-                    var div = "<div class=\"notebli\" id=\"mark"+obj.id+"\">\n" +
-                        "<div class=\"markli\"><i class=\"icon-tag\"></i>"+obj.markName+"</div>\n" +
-                        "<div class=\"notebliBtn\">\n" +
-                        "<a name=\"0\" title=\"修改标签名\" class=\"icon-pencil notebli_i\"></a><i title=\"添加/（删除）快捷方式\" class=\"icon-star-empty notebli_i\"></i><i title=\"删除标签\" class=\"icon-trash notebli_i\"></i></div>\n" +
-                        "</div>";
-                    $("#markul").append(div);
+                    if (obj.isStart == 1) {
+                        var div = "<div class=\"notebli\" id=\"mark"+obj.id+"\">\n" +
+                            "<div class=\"markli\"><i class=\"icon-tag\"></i>"+obj.markName+"</div>\n" +
+                            "<div class=\"notebliBtn\">\n" +
+                            "<a name=\"0\" title=\"修改标签名\" class=\"icon-pencil notebli_i\"></a><i title=\"添加/（删除）快捷方式\" class=\"icon-star-empty notebli_i markTag icon-star \"></i><i title=\"删除标签\" class=\"icon-trash notebli_i delMark\"></i></div>\n" +
+                            "</div>";
+                        $("#markul").append(div);
+                    } else {
+                        var div = "<div class=\"notebli\" id=\"mark"+obj.id+"\">\n" +
+                            "<div class=\"markli\"><i class=\"icon-tag\"></i>"+obj.markName+"</div>\n" +
+                            "<div class=\"notebliBtn\">\n" +
+                            "<a name=\"0\" title=\"修改标签名\" class=\"icon-pencil notebli_i\"></a><i title=\"添加/（删除）快捷方式\" class=\"icon-star-empty notebli_i markTag\"></i><i title=\"删除标签\" class=\"icon-trash notebli_i delMark\"></i></div>\n" +
+                            "</div>";
+                        $("#markul").append(div);
+                    }
                 })
                 btnAnimation();
             }, 'json')
     }
 
-    <!--
+    $(document).on('click', '.notebookLi', function() {
+        NOTEBOOK = this.id.slice(8);
+        listNote();
+    })
+
+
     function searchNote() {
         var form = new FormData();
         var keyword = $("#searchNote").val();
@@ -714,7 +946,38 @@
             }
         });
     }
--->
+
+    $("#starB").on('click', function() {
+        $.post("${pageContext.request.contextPath}/StarServlet?method=listStar", {}, function(data) {
+            $("#starul").html("");
+            $.each(data, function(i, o) {
+                $.each(o, function(j, obj) {
+                    if (obj.markName != undefined) {
+                        var div = "<div class=\"starli\" id=\"markStared"+obj.id+"\">\n" +
+                            "<div class=\"starName\"><i class=\"icon-tag\"></i>"+obj.markName+"</div>\n" +
+                            "<div class=\"starBtn\"><i class=\"icon-minus-sign notebli_i\" title=\"删除快捷方式\"></i></div>\n" +
+                            "</div>";
+                        $("#starul").append(div);
+                    } else if (obj.bookName != undefined) {
+                        var div = "<div class=\"starli\" id=\"notebookStared"+obj.id+"\">\n" +
+                            "<div class=\"starName\"><i class=\"icon-book\"></i>"+obj.bookName+"</div>\n" +
+                            "<div class=\"starBtn\"><i class=\"icon-minus-sign notebli_i\" title=\"删除快捷方式\"></i></div>\n" +
+                            "</div>";
+                        $("#starul").append(div);
+                    } else {
+                        var div = "<div class=\"starli\" id=\"noteStared"+obj.id+"\">\n" +
+                            "<div class=\"starName\"><i class=\"icon-file\"></i>"+obj.title+"</div>\n" +
+                            "<div class=\"starBtn\"><i class=\"icon-minus-sign notebli_i\" title=\"删除快捷方式\"></i></div>\n" +
+                            "</div>";
+                        $("#starul").append(div);
+                    }
+                })
+            })
+            btnAnimation();
+        }, 'json')
+    })
+
+
 
 
     function btnAnimation() {

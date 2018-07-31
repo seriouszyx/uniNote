@@ -39,7 +39,6 @@ public class NoteServlet extends BaseServlet {
         NoteService service = new NoteServiceImpl();
         try {
             List<Note> notes = service.searchNote(user, keyword);
-            System.out.println(notes);
             String jsonStr = JSONArray.fromObject(notes).toString();
             response.setContentType("text/html;charset=utf-8");
             response.getWriter().print(jsonStr);

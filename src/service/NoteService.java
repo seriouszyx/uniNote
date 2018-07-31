@@ -16,7 +16,7 @@ public interface NoteService {
      * @Param []
      * @return void
      **/
-    void createNote(User user, Note note)throws SQLException;
+    void createNote(User user, Note note, String notebookName, String markName)throws SQLException;
 
     /**
      * @Author Yixiang Zhao

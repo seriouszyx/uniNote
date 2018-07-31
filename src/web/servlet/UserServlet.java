@@ -1,10 +1,14 @@
 package web.servlet;
 
+import domain.Notebook;
 import domain.User;
 import io.rong.RongCloud;
 import io.rong.models.response.TokenResult;
 import io.rong.models.user.UserModel;
+import net.sf.json.JSONArray;
+import service.NotebookService;
 import service.UserService;
+import service.service.impl.NotebookServiceImpl;
 import service.service.impl.UserServiceImpl;
 import utils.MailUtils;
 import utils.MyBeanUtils;
@@ -50,6 +54,8 @@ public class UserServlet extends BaseServlet {
             service.userSignup(user);
             // 融云获取用户token
             // initRY(user);
+            // 为用户创建初始笔记本
+            initNotebook(user);
             // 发送邮件信息
             MailUtils.sendMail(user.getEmail(), user.getCode());
             // 响应消息
@@ -59,6 +65,21 @@ public class UserServlet extends BaseServlet {
         }
         // 响应用户
         return "/jsp/info.jsp";
+    }
+
+    public void initNotebook(User user) {
+        try {
+            Notebook notebook = new Notebook();
+            notebook.setBookName("我的第一个笔记本");
+            String nowTime = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date());
+            notebook.setCreateTime(Timestamp.valueOf(nowTime));
+            notebook.setId(1);
+            NotebookService service = new NotebookServiceImpl();
+            notebook = service.createNotebook(notebook, user);
+        } catch (Exception e) {
+            // 创建 失败
+            e.printStackTrace();
+        }
     }
 
     public void initRY(User u) throws Exception {
