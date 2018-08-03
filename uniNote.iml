@@ -23,25 +23,6 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" scope="PROVIDED" name="Tomcat 9.0.10" level="application_server_libraries" />
-    <orderEntry type="module-library">
-      <library>
-        <CLASSES>
-          <root url="jar://F:/Java/mylib/c3p0-0.9.5.2/lib/c3p0-0.9.5.2.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library>
-        <CLASSES>
-          <root url="jar://F:/Java/mylib/c3p0-0.9.5.2/lib/mchange-commons-java-0.2.11.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
     <orderEntry type="module-library">
       <library>
         <CLASSES>
@@ -54,7 +35,7 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://F:/Java/mylib/commons-collections-3.2.2/commons-collections-3.2.2.jar!/" />
+          <root url="jar://F:/Java/mylib/standard.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -63,7 +44,7 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://F:/Java/mylib/commons-dbutils-1.7/commons-dbutils-1.7.jar!/" />
+          <root url="jar://F:/Java/mylib/mchange-commons-java-0.2.3.4.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -72,61 +53,7 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://F:/Java/mylib/commons-fileupload-1.3.3-bin/commons-fileupload-1.3.3.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library>
-        <CLASSES>
-          <root url="jar://F:/Java/mylib/commons-io-2.6/commons-io-2.6.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library>
-        <CLASSES>
-          <root url="jar://F:/Java/mylib/commons-lang-2.6/commons-lang-2.6.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library>
-        <CLASSES>
-          <root url="jar://F:/Java/mylib/commons-logging-1.2/commons-logging-1.2.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library>
-        <CLASSES>
-          <root url="jar://F:/Java/mylib/commons-pool2-2.6.0/commons-pool2-2.6.0.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library>
-        <CLASSES>
-          <root url="file://F:/Java/mylib/mysql-connector-java-8.0.11" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library>
-        <CLASSES>
-          <root url="jar://F:/Java/mylib/ezmorph-1.0.6.jar!/" />
+          <root url="jar://F:/Java/mylib/jedis-2.9.0.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -162,7 +89,7 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://F:/Java/mylib/mchange-commons-java-0.2.11.jar!/" />
+          <root url="jar://F:/Java/mylib/ezmorph-1.0.6.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -171,7 +98,16 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://F:/Java/mylib/standard.jar!/" />
+          <root url="file://F:/Java/mylib/mysql-connector-java-8.0.11" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://F:/Java/mylib/javamail1_4_4/javamail-1.4.4/mail.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -189,11 +125,84 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://F:/Java/mylib/server-sdk-java-3.0.1.jar!/" />
+          <root url="jar://F:/Java/mylib/commons-pool2-2.6.0/commons-pool2-2.6.0.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
       </library>
     </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://F:/Java/mylib/commons-logging-1.2/commons-logging-1.2.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://F:/Java/mylib/commons-lang-2.6/commons-lang-2.6.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://F:/Java/mylib/commons-io-2.6/commons-io-2.6.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://F:/Java/mylib/commons-fileupload-1.3.3-bin/commons-fileupload-1.3.3.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://F:/Java/mylib/commons-email-1.5/commons-email-1.5.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://F:/Java/mylib/commons-dbutils-1.7/commons-dbutils-1.7.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://F:/Java/mylib/commons-collections4-4.2/commons-collections4-4.2.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://F:/Java/mylib/commons-collections-3.2.2/commons-collections-3.2.2.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="library" name="lib" level="project" />
   </component>
 </module>
