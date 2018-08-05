@@ -140,34 +140,6 @@ ul li:hover {
 
 /* ZYX changed below */
 
-#createNotebookPop {
-	width: 300px;
-	height: 600px;
-	background-color: darkslategray;
-	text-align: center;
-	/*让div内部文字居中*/
-	border-radius: 20px;
-	margin: auto;
-	position: absolute;
-	z-index: 10000;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	display: none;
-}
-
-#createNotebookPop>span {
-	width: 20px;
-	height: 20px;
-	background-color: #FFFFFF;
-	display: block;
-	position: absolute;
-	right: 0;
-	top: 0;
-}
-
-
 
 #choose h1 {
 	margin: 20px;
@@ -1204,4 +1176,5 @@ label {
 	top: 0px;
 	text-align: center; 
     left: 70%;
-} 
+}
+

@@ -168,11 +168,6 @@ $(document).ready(function() {
 
 	});
 
-	//点击新建笔记,收起workPlace，放大mainPlace
-	$("#newB").click(function() {
-
-	});
-
 	//choose选中样式
 	$(".chooseB").click(function() {
 		var btnB = document.getElementsByClassName("chooseB");
@@ -284,3 +279,5 @@ function CloseDiv(show_div, bg_div) { 
 	document.getElementById(show_div).style.display = 'none'; 
 	document.getElementById(bg_div).style.display = 'none';
 };
+
+

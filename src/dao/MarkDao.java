@@ -1,6 +1,7 @@
 package dao;
 
 import domain.Mark;
+import domain.Note;
 import domain.User;
 
 import java.sql.SQLException;
@@ -61,4 +62,13 @@ public interface MarkDao {
      * @return java.util.List<domain.Mark>
      **/
     List<Mark> listStar(User user) throws SQLException;
+
+    /**
+     * @Author Yixiang Zhao
+     * @Description 根据markID查找笔记记录
+     * @Date 15:14 2018/8/5
+     * @Param [user, markID]
+     * @return java.util.List<domain.Note>
+     **/
+    List<Note> listNoteByMark(User user, int markID) throws SQLException;
 }

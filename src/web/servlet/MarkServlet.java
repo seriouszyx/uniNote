@@ -1,6 +1,7 @@
 package web.servlet;
 
 import domain.Mark;
+import domain.Note;
 import domain.User;
 import net.sf.json.JSONArray;
 import service.MarkService;
@@ -88,6 +89,22 @@ public class MarkServlet extends BaseServlet {
             service.unMarkTag(user, markID);
             response.setContentType("text/html;charset=utf-8");
             response.getWriter().print("标签已移除收藏！");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return null;
+    }
+
+    public String listNoteByMark(HttpServletRequest request, HttpServletResponse response) throws Exception {
+        User user = (User) request.getSession().getAttribute("loginUser");
+        int markID = Integer.parseInt(request.getParameter("markID"));
+        MarkService service = new MarkServiceImpl();
+        try {
+            List<Note> list = service.listNoteByMark(user, markID);
+            String jsonStr = JSONArray.fromObject(list).toString();
+            response.setContentType("text/html;charset=utf-8");
+            response.getWriter().print(jsonStr);
         } catch (Exception e) {
             e.printStackTrace();
         }
