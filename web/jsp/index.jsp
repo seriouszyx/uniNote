@@ -118,7 +118,7 @@
 
         </div>
 
-        <div class="img2" onclick="ShowDiv('MyDiv9','fade9')" style="width: 32px; height: 32px;"><img src="../img/10.png" style="width: 20px; height: 20px;"></div>
+        <div id="codeOpen" class="img2" style="width: 32px; height: 32px;"><img src="../img/10.png" style="width: 20px; height: 20px;"></div>
         <!--弹出层时背景层DIV-->
         <div id="fade9" class="black_overlay1">
         </div>
@@ -129,15 +129,8 @@
                 <span style="font-size: 16px;" onclick="CloseDiv('MyDiv9','fade9')"><img class="cut" src="../img/5.png"></span>
             </div>
             <div class="delect">
-                <div class="delect1"><img src="../img/10.png" style="width: 40px; height: 40px;"></div>
-                <p>复制笔记链接</p>
-                <div class="delect2"></div>
-                <h1>确认复制吗？</h1>
-
-                <div class="delect5">	<input class="cancel" type="button" value="取消">
-                    <input class="confirm" type="button" value="确认"></div>
             </div>
-
+            <div id="qrcode"></div>
         </div>
 
 
@@ -165,7 +158,7 @@
                 <a href="UserInformation.html" target="_blank"><i class="icon-user " style="margin: -14.958px 14px 15px -20px;"></i>个人中心</a>
             </li>
             <li class="fristC">
-                <a id="newB" name="0" class="chooseB"><i class="icon-edit " style="margin: 0px 14px 0 -20px;font-size:30px"></i>新建笔记</a>
+                <a id="newB"  name="0" class="chooseB"><i class="icon-edit " style="margin: 0px 14px 0 -20px;font-size:30px"></i>新建笔记</a>
             </li>
             <li class="fristC">
                 <a id="findB" name="0" class="chooseB"><i class="icon-search " style="margin: 0px 14px 0 -20px;font-size:30px"></i>搜索</a>
@@ -206,13 +199,7 @@
             </form>
         </div>
         <div id="findul">
-            <ul>
-                <!--搜索到的匹配项-->
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-            </ul>
+
         </div>
     </div>
     <div id="star" class="show">
@@ -575,12 +562,32 @@
 
     <div id="createNotePop">
         <form>
-            笔记名：<input id="noteName" type="text" placeholder="笔记名">
-            笔记本名：<input id="notebookName" type="text" placeholder="笔记本名">
-            标签名：<input id="markName" type="text" placeholder="标签名">
+            <table>
+                <tr>
+                    <td align="right">笔记名：</td>
+                    <td align="center"><input id="noteName" type="text" placeholder="笔记名"></td>
+                </tr>
+                <tr>
+                    <td align="right">笔记本名：</td>
+                    <td align="center">
+                        <select id="notebookName" width="100px">
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="right">标签名：</td>
+                    <td align="center">
+                        <select id="markName" width="100px">
+                            <option value=""></option>
+                        </select>
+                    </td>
+                </tr>
+            </table>
         </form>
     </div>
 </div>
+
+
 
 <div id="overlay"></div>
 
@@ -598,8 +605,8 @@
 
     document.getElementById('btn1').addEventListener('click', function () {
         var noteName = $('#noteName').val();
-        var notebookName = $('#notebookName').val();
-        var markName = $('#markName').val();
+        var notebookName = $('#notebookName option:selected').val();
+        var markName = $('#markName option:selected').val();
         if (noteName == 0) {
             alert('请输入笔记标题')
         } else {
@@ -766,7 +773,6 @@
 
 
     function init() {
-
         btnAnimation();
         createNotebook();
         delNotebook();
@@ -774,7 +780,7 @@
         markNotebook();
         createMark();
         markTag();
-        // searchNote();
+        searchNote();
 
     }
     function listNote() {
@@ -904,6 +910,7 @@
         listNoteByMark(markID);
     })
 
+
     function listNoteByMark(markID) {
         $.post("${pageContext.request.contextPath}/MarkServlet?method=listNoteByMark", {markID:markID}, function(data) {
             if (data == "") {
@@ -955,6 +962,21 @@
         }, 'json')
     }
 
+    $.post("${pageContext.request.contextPath}/MarkServlet?method=listMark", {}, function(data) {
+        $("#markName").html("<option value=\"\"></option>");
+        $.each(data, function(i, obj) {
+            var option = "<option value=\""+obj.markName+"\">"+obj.markName+"</option>";
+            $("#markName").append(option);
+        })
+    }, 'json')
+
+    $.post("${pageContext.request.contextPath}/NotebookServlet?method=listNotebook", {}, function(data) {
+        $.each(data, function(i, obj) {
+            var option = "<option value=\""+obj.bookName+"\">"+obj.bookName+"</option>";
+            $("#notebookName").append(option);
+        })
+    }, 'json')
+
     $(document).on('click', '.notebookLi', function() {
         NOTEBOOK = this.id.slice(8);
         listNote();
@@ -962,21 +984,32 @@
 
 
     function searchNote() {
-        var form = new FormData();
-        var keyword = $("#searchNote").val();
-        form.append("keyword",keyword);
-        $.ajax({
-            url:"${pageContext.request.contextPath}/public/testupload",
-            type:"post",
-            data:form,
-            processData:false,
-            contentType:false,
-            success:function(data){
-                window.clearInterval(timer);
-                console.log("over..");
+        document.getElementById('searchNote').onkeyup = function() {
+            var keyword = $("#searchNote").val();
+            if (keyword != "") {
+                $.post("${pageContext.request.contextPath}/NoteServlet?method=searchNote", {keyword:keyword}, function(data) {
+                    if (data.length != 0) {
+                        $("#findul").html("");
+                        $.each(data, function(i, obj) {
+                            var div = "<div class=\"starli\" \">\n" +
+                                "<div><i class=\"icon-file\"></i>"+obj.title+"</div>\n" +
+                                "</div>";
+                            $("#findul").append(div)
+                        })
+                        btnAnimation();
+                    } else {
+                        $("#findul").html("");
+                    }
+                }, 'json')
+            } else {
+                $("#findul").html("");
             }
-        });
+        }
     }
+
+
+
+
 
     $("#starB").on('click', function() {
         listStar()
@@ -1078,6 +1111,11 @@
 
         }
     })
+
+    $("#codeOpen").click(function() {
+        ShowDiv('MyDiv9','fade9');
+    })
+
 
 
     function btnAnimation() {

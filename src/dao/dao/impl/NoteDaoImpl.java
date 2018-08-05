@@ -65,7 +65,7 @@ public class NoteDaoImpl implements NoteDao {
 
     @Override
     public List<Note> searchNote(User user, String keyword) throws SQLException {
-        String sql = "select * from note where userid = ?";
+        String sql = "select * from note where userid = ? and isDelete = 0";
         QueryRunner qr = new QueryRunner(JDBCUtils.getDataSource());
         List<String> list = new ArrayList<>();
         sql = sql + " and title like ?";

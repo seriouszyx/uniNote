@@ -1,6 +1,7 @@
 package service;
 
 import domain.Mark;
+import domain.Note;
 import domain.User;
 
 import java.sql.SQLException;
@@ -52,4 +53,13 @@ public interface MarkService {
      * @return void
      **/
     void unMarkTag(User user, int markID) throws SQLException;
+
+    /**
+     * @Author Yixiang Zhao
+     * @Description 根据标签查找笔记
+     * @Date 15:12 2018/8/5
+     * @Param [user, markID]
+     * @return void
+     **/
+    List<Note> listNoteByMark(User user, int markID) throws SQLException;
 }

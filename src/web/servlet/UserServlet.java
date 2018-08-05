@@ -10,6 +10,7 @@ import service.NotebookService;
 import service.UserService;
 import service.service.impl.NotebookServiceImpl;
 import service.service.impl.UserServiceImpl;
+import utils.MD5Utils;
 import utils.MailUtils;
 import utils.MyBeanUtils;
 import utils.UUIDUtils;
@@ -43,6 +44,7 @@ public class UserServlet extends BaseServlet {
         Map<String, String[]> parameterMap = request.getParameterMap();
         User user = new User();
         MyBeanUtils.populate(user, parameterMap);
+        user.setPassword(MD5Utils.md5(user.getPassword()));
         user.setId(UUIDUtils.getId());
         user.setCode(UUIDUtils.getCode());
         user.setState(0);
@@ -73,7 +75,6 @@ public class UserServlet extends BaseServlet {
             notebook.setBookName("我的第一个笔记本");
             String nowTime = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date());
             notebook.setCreateTime(Timestamp.valueOf(nowTime));
-            notebook.setId(1);
             NotebookService service = new NotebookServiceImpl();
             notebook = service.createNotebook(notebook, user);
         } catch (Exception e) {

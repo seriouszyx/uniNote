@@ -2,6 +2,7 @@ package dao.dao.impl;
 
 import dao.MarkDao;
 import domain.Mark;
+import domain.Note;
 import domain.User;
 import org.apache.commons.dbutils.QueryRunner;
 import org.apache.commons.dbutils.handlers.BeanListHandler;
@@ -61,6 +62,13 @@ public class MarkDaoImpl implements MarkDao {
         String sql = "select * from mark where userid = ? and isStart = 1";
         QueryRunner qr = new QueryRunner(JDBCUtils.getDataSource());
         return qr.query(sql, new BeanListHandler<Mark>(Mark.class), user.getId());
+    }
+
+    @Override
+    public List<Note> listNoteByMark(User user, int markID) throws SQLException {
+        String sql = "select * from note where userid = ? and markID = ? and isDelete = 0";
+        QueryRunner qr = new QueryRunner(JDBCUtils.getDataSource());
+        return qr.query(sql, new BeanListHandler<Note>(Note.class), user.getId(), markID);
     }
 
 

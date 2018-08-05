@@ -5,6 +5,7 @@ import domain.User;
 import org.apache.commons.dbutils.QueryRunner;
 import org.apache.commons.dbutils.handlers.BeanHandler;
 import utils.JDBCUtils;
+import utils.MD5Utils;
 
 import java.sql.SQLException;
 
@@ -48,7 +49,8 @@ public class UserDaoImpl implements UserDao {
     public User userLogin(User userTest) throws SQLException {
         String sql = "select * from user where username = ? and password = ?";
         QueryRunner qr = new QueryRunner(JDBCUtils.getDataSource());
-        return qr.query(sql, new BeanHandler<User>(User.class), userTest.getUsername(), userTest.getPassword());
+        return qr.query(sql, new BeanHandler<User>(User.class),
+                userTest.getUsername(), MD5Utils.md5(userTest.getPassword()));
     }
 
 

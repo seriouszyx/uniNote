@@ -3,6 +3,7 @@ package service.service.impl;
 import dao.MarkDao;
 import dao.dao.impl.MarkDaoImpl;
 import domain.Mark;
+import domain.Note;
 import domain.User;
 import service.MarkService;
 
@@ -43,5 +44,10 @@ public class MarkServiceImpl implements MarkService {
     @Override
     public void unMarkTag(User user, int markID) throws SQLException {
         dao.unMarkTag(user, markID);
+    }
+
+    @Override
+    public List<Note> listNoteByMark(User user, int markID) throws SQLException {
+        return dao.listNoteByMark(user, markID);
     }
 }
