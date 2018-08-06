@@ -138,25 +138,8 @@ $(document).ready(function() {
 		$(this).children('div.trashBtn').hide();
 	});
 
-	//点击注销账户进行询问并链接到登录页面
-	$("#logoffB").click(function() {
-		var isLogoff = confirm("是否退出当前用户？");
-		if(isLogoff) {
 
-		} else {
 
-		}
-	});
-	//确认是否彻底删除
-	$(".trashi").click(function() {
-		var x = confirm("是否彻底删除该笔记？");
-		if(x) {
-
-		} else {
-
-		}
-
-	});
 	//确认是否清空废纸篓
 	$("#cleanTrash").click(function() {
 		var x = confirm("是否清空废纸篓？");

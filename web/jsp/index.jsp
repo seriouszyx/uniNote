@@ -75,7 +75,7 @@
 
         </div>
 
-        <div class="img2" id="msgBtn" onclick="ShowDiv('MyDiv7','fade7')" style="width: 32px; height: 32px;"><img src="../img/8.png" style="width: 22px; height: 22px;"></div>
+        <div class="img2" id="msgBtn" style="width: 32px; height: 32px;"><img src="../img/8.png" style="width: 22px; height: 22px;"></div>
         <!--弹出层时背景层DIV-->
         <div id="fade7" class="black_overlay1">
         </div>
@@ -89,7 +89,9 @@
                 <div class="delect1"><img src="../img/8.png" style="width: 40px; height: 40px;"></div>
                 <p>笔记信息</p>
                 <div class="delect2"></div>
+                <div id="NoteMsg">
 
+                </div>
                 <div class="delect5">	<input class="cancel" type="button" value="取消">
                     <input class="confirm" type="button" value="保存"></div>
             </div>
@@ -125,12 +127,36 @@
 
         <div id="MyDiv9" class="white_content1">
 
-            <div style="text-align: right; cursor: default; height: 40px;">
+            <div style="text-align: center; cursor: default; height: 40px;">
                 <span style="font-size: 16px;" onclick="CloseDiv('MyDiv9','fade9')"><img class="cut" src="../img/5.png"></span>
             </div>
-            <div class="delect">
+            <div>
+                <form>
+                    <table id="createNotePop"  border="0" cellspacing="0" cellpadding="0"
+                           style="margin-left: 140px; margin-top: 30px; width: 350px; height: 150px;;">
+                        <tr>
+                            <td align="right">笔记名：</td>
+                            <td align="center"><input style="width: 175px;" id="noteName" type="text" placeholder="笔记名"></td>
+                        </tr>
+                        <tr>
+                            <td align="right">笔记本名：</td>
+                            <td align="center">
+                                <select id="notebookName" style="width: 175px;">
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="right">标签名：</td>
+                            <td align="center">
+                                <select id="markName" style="width: 175px;">
+                                    <option value=""></option>
+                                </select>
+                            </td>
+                        </tr>
+                    </table>
+                </form>
             </div>
-            <div id="qrcode"></div>
+            <button id="btn1" style="width: 100px; height: 50px; margin-left: 260px; margin-top: 30px; border: 1px solid transparent;outline: none;">创建</button>
         </div>
 
 
@@ -155,7 +181,7 @@
     <div>
         <ul class="vertical-nav dark red" style="height: 760px;z-index: 2;">
             <li class="active">
-                <a href="UserInformation.html" target="_blank"><i class="icon-user " style="margin: -14.958px 14px 15px -20px;"></i>个人中心</a>
+                <a href="../UserInformation.html" target="_blank"><i class="icon-user " style="margin: -14.958px 14px 15px -20px;"></i>个人中心</a>
             </li>
             <li class="fristC">
                 <a id="newB"  name="0" class="chooseB"><i class="icon-edit " style="margin: 0px 14px 0 -20px;font-size:30px"></i>新建笔记</a>
@@ -179,7 +205,7 @@
                 <a id="trashB" name="0" class="chooseB"><i class="icon-trash" style="margin: 0px 14px 0 -20px;font-size:30px"></i>废纸篓</a>
             </li>
             <li class="fristC">
-                <a href="${pageContext.request.contextPath}/UserServlet?method=logOut" id="logoffB"><i class="icon-off " style="margin: 0px 14px 0 -20px;font-size:30px"></i>注销账户</a>
+                <a  id="logoffB"><i class="icon-off " style="margin: 0px 14px 0 -20px;font-size:30px"></i>注销账户</a>
             </li>
         </ul>
     </div>
@@ -554,37 +580,12 @@
     <div id="div1" class="toolbar">
     </div>
     <div style="padding: 5px 0; color: #ccc"></div>
-    <div id="div2" class="text" style="height:700px;width: 920px;max-height:500px;border: 1px solid grey;">
+    <div id="div2" class="text" style="height:1200px;width: 850px;max-height:650px;border: 1px solid grey;">
         <p></p>
     </div>
-    <button id="btn1">创建</button>
-    <button id="btn2">保存</button>
+    <button id="btn2" style="background-color: rgb(231, 76, 60); color: #FFFFFF;margin-left: 750px;width: 100px; height: 50px; border: 1px solid transparent;outline: none;">保存</button>
 
-    <div id="createNotePop">
-        <form>
-            <table>
-                <tr>
-                    <td align="right">笔记名：</td>
-                    <td align="center"><input id="noteName" type="text" placeholder="笔记名"></td>
-                </tr>
-                <tr>
-                    <td align="right">笔记本名：</td>
-                    <td align="center">
-                        <select id="notebookName" width="100px">
-                        </select>
-                    </td>
-                </tr>
-                <tr>
-                    <td align="right">标签名：</td>
-                    <td align="center">
-                        <select id="markName" width="100px">
-                            <option value=""></option>
-                        </select>
-                    </td>
-                </tr>
-            </table>
-        </form>
-    </div>
+
 </div>
 
 
@@ -599,6 +600,7 @@
     var E = window.wangEditor;
     var editor1 = new E('#div1', '#div2')
     var noteMsg = null;
+    var flag = 0;
     editor1.customConfig.uploadImgShowBase64 = true
     editor1.create();
 
@@ -624,6 +626,7 @@
                     alert("笔记创建成功")
                     listNote();
                 });
+                CloseDiv('MyDiv9','fade9');
                 changeNote();
             }, 'json');
         }
@@ -646,6 +649,7 @@
             editor1.txt.clear();
             listNote();
             changeNote();
+            CloseDiv('MyDiv8','fade8');
         });
     })
 
@@ -1109,13 +1113,57 @@
             alert('请选中笔记');
         } else {
 
+            ShowDiv('MyDiv7','fade7');
+            $('#NoteMsg').html("");
+            $.post("${pageContext.request.contextPath}/EditorServlet?method=findContent", {noteID:NOTE}, function(data) {
+                $.each(data, function(i, obj) {
+                    var table = "<table style=\"margin-left:220px; margin-top:100px;\">\n" +
+                        "                        <tr>\n" +
+                        "                            <td>标题</td>\n" +
+                        "                            <td>"+obj.title+"</td>\n" +
+                        "                        </tr>\n" +
+                        "                        <tr>\n" +
+                        "                            <td>创建时间</td>\n" +
+                        "                            <td>"+new Date(obj.createTime)+"</td>\n" +
+                        "                        </tr>\n" +
+                        "                        <tr>\n" +
+                        "                            <td>更新时间</td>\n" +
+                        "                            <td>"+new Date(obj.updateTime)+"</td>\n" +
+                        "                        </tr>\n" +
+                        "                        <tr>\n" +
+                        "                            <td>标签名</td>\n" +
+                        "                            <td>"+obj.markName+"</td>\n" +
+                        "                        </tr>\n" +
+                        "                        <tr>\n" +
+                        "                            <td>笔记本</td>\n" +
+                        "                            <td>"+obj.bookName+"</td>\n" +
+                        "                        </tr>\n" +
+                        "                    </table>";
+                    $('#NoteMsg').append(table)
+                })
+            }, 'json')
         }
     })
 
-    $("#codeOpen").click(function() {
-        ShowDiv('MyDiv9','fade9');
+    $("#newB").click(function() {
+        if (flag == 0) {
+            ShowDiv('MyDiv9','fade9');
+            editor1.txt.html("");
+            flag = 1;
+        } else {
+            flag = 0;
+        }
+
     })
 
+
+    //点击注销账户进行询问并链接到登录页面
+    $("#logoffB").click(function() {
+        var isLogoff = confirm("是否退出当前用户？");
+        if(isLogoff) {
+            window.self.location = "${pageContext.request.contextPath}/UserServlet?method=logOut";
+        }
+    });
 
 
     function btnAnimation() {
