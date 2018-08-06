@@ -110,13 +110,6 @@
                         <span class="spanStyle" id="repasswordSpan">*</span>
 
                     </div>
-                    <div class="form-element form-checkbox">
-                        <input id="confirm-terms" type="checkbox" name="confirm" value="yes" class="checkbox">
-                        <label for="confirm-terms">I agree to the
-                            <a href="#">Terms of Service</a> and
-                            <a href="#">Privacy Policy</a>
-                        </label>
-                    </div>
                     <div class="form-element form-submit">
                         <button id="signUp" class="signup" type="submit" name="signup">Sign up</button>
                         <button id="goLeft" class="signup off">Log In</button>
