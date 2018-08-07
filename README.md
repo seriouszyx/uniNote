@@ -89,11 +89,6 @@ uniNote gives you the tools to share and collaborate productively with others:
 
 ###	Members
 
-<style>  
-table td { 
- width: 330px; 
-}  
-</style>
 
 <table>
   <tr>
@@ -102,9 +97,9 @@ table td {
     <td align = "center"><a href="https://github.com/GetlostWGY" target="_blank"><b>GetlostWGY</b></a></td>
   </tr>
   <tr>
-    <td><a href="https://github.com/seriouszyx" target="_blank"><img src="https://i.loli.net/2018/08/06/5b684a48dd5ea.jpg "></a></td>
-    <td><a href="https://github.com/StathamWYJ" target="_blank"><img src="https://i.loli.net/2018/08/06/5b684b013ad97.png "></a></td>
-    <td><a href="https://github.com/GetlostWGY" target="_blank"><img src="https://i.loli.net/2018/08/06/5b684b0165664.jpg "></a></td>
+    <td><a width="330px" href="https://github.com/seriouszyx" target="_blank"><img src="https://i.loli.net/2018/08/06/5b684a48dd5ea.jpg "></a></td>
+    <td><a width="330px" href="https://github.com/StathamWYJ" target="_blank"><img src="https://i.loli.net/2018/08/06/5b684b013ad97.png "></a></td>
+    <td><a width="330px" href="https://github.com/GetlostWGY" target="_blank"><img src="https://i.loli.net/2018/08/06/5b684b0165664.jpg "></a></td>
   </tr>
     <tr>
     <td valign="top" width="330px"><ul><li>Design and implementation of the whole login and register page</li><li>Data interaction between front-end and back-end</li><li>Database encapsulation</li><li>Integrate members' codes to `index.jsp`</li><li>Back-end architecture</li><li>Call the API to implement the editor</li><li>A part of main page's animation</li><li>Using the MD5 algorithm for password encryption</li><li>E-mail verification function</li></ul></td>
@@ -120,28 +115,7 @@ Optimizate animation</li><li>Call the API to implement Share function</li><li>Us
 
 ###	Timeline
 
-```mermaid
-gantt
-        dateFormat  MM-DD
-        title Project Timeline
-
-section tag 0.1
-learn and use git      :active,    p1, 07-10, 1d
-Layout and animation of login page   : p3,07-11,7d
- Database design and encapsulation    : p4,07-13, 3d
-Layout and animation of main page  :p5,07-13, 18d
-User function : p6,07-14,6d
-
-section tag 0.2
-Redesign and rebuild main page : p2,07-17,7d
-Note function : p4,07-20,14d
-
-section tag 0.3
-Delete framework and optimizate animation: p2,07-27,4d
-
-section tag 0.4
-debug : p2,08-01, 5d
-```
+![](https://mermaidjs.github.io/mermaid-live-editor/#/view/eyJjb2RlIjoiZ2FudHRcbiAgICAgICAgZGF0ZUZvcm1hdCAgTU0tRERcbiAgICAgICAgdGl0bGUgUHJvamVjdCBUaW1lbGluZVxuXG5zZWN0aW9uIHRhZyAwLjFcbmxlYXJuIGFuZCB1c2UgZ2l0ICAgICAgOmFjdGl2ZSwgICAgcDEsIDA3LTEwLCAxZFxuTGF5b3V0IGFuZCBhbmltYXRpb24gb2YgbG9naW4gcGFnZSAgIDogcDMsMDctMTEsN2RcbiBEYXRhYmFzZSBkZXNpZ24gYW5kIGVuY2Fwc3VsYXRpb24gICAgOiBwNCwwNy0xMywgM2RcbkxheW91dCBhbmQgYW5pbWF0aW9uIG9mIG1haW4gcGFnZSAgOnA1LDA3LTEzLCAxOGRcblVzZXIgZnVuY3Rpb24gOiBwNiwwNy0xNCw2ZFxuXG5zZWN0aW9uIHRhZyAwLjJcblJlZGVzaWduIGFuZCByZWJ1aWxkIG1haW4gcGFnZSA6IHAyLDA3LTE3LDdkXG5Ob3RlIGZ1bmN0aW9uIDogcDQsMDctMjAsMTRkXG5cbnNlY3Rpb24gdGFnIDAuM1xuRGVsZXRlIGZyYW1ld29yayBhbmQgb3B0aW1pemF0ZSBhbmltYXRpb246IHAyLDA3LTI3LDRkXG5cbnNlY3Rpb24gdGFnIDAuNFxuZGVidWcgOiBwMiwwOC0wMSwgNWQiLCJtZXJtYWlkIjp7InRoZW1lIjoiZGVmYXVsdCJ9fQ)
 
 
 ## Community
