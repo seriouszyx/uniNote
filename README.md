@@ -97,15 +97,15 @@ uniNote gives you the tools to share and collaborate productively with others:
     <td align = "center"><a href="https://github.com/GetlostWGY" target="_blank"><b>GetlostWGY</b></a></td>
   </tr>
   <tr>
-    <td><a width="330px" href="https://github.com/seriouszyx" target="_blank"><img src="https://i.loli.net/2018/08/06/5b684a48dd5ea.jpg "></a></td>
-    <td><a width="330px" href="https://github.com/StathamWYJ" target="_blank"><img src="https://i.loli.net/2018/08/06/5b684b013ad97.png "></a></td>
-    <td><a width="330px" href="https://github.com/GetlostWGY" target="_blank"><img src="https://i.loli.net/2018/08/06/5b684b0165664.jpg "></a></td>
+    <td><a href="https://github.com/seriouszyx" target="_blank"><img src="https://i.loli.net/2018/08/06/5b684a48dd5ea.jpg "></a></td>
+    <td><a href="https://github.com/StathamWYJ" target="_blank"><img src="https://i.loli.net/2018/08/06/5b684b013ad97.png "></a></td>
+    <td><a href="https://github.com/GetlostWGY" target="_blank"><img src="https://i.loli.net/2018/08/06/5b684b0165664.jpg "></a></td>
   </tr>
     <tr>
-    <td valign="top" width="330px"><ul><li>Design and implementation of the whole login and register page</li><li>Data interaction between front-end and back-end</li><li>Database encapsulation</li><li>Integrate members' codes to `index.jsp`</li><li>Back-end architecture</li><li>Call the API to implement the editor</li><li>A part of main page's animation</li><li>Using the MD5 algorithm for password encryption</li><li>E-mail verification function</li></ul></td>
-    <td valign="top" width="330px"><ul><li>Design main page layout</li><li>Design and implement of left navigation bar</li><li>  
+    <td valign="top"><ul><li>Design and implementation of the whole login and register page</li><li>Data interaction between front-end and back-end</li><li>Database encapsulation</li><li>Integrate members' codes to `index.jsp`</li><li>Back-end architecture</li><li>Call the API to implement the editor</li><li>A part of main page's animation</li><li>Using the MD5 algorithm for password encryption</li><li>E-mail verification function</li></ul></td>
+    <td valign="top"><ul><li>Design main page layout</li><li>Design and implement of left navigation bar</li><li>  
 Optimizate animation</li><li>Call the API to implement Share function</li><li>Use Font Awesome to landscape icons</li></ul></td>
-    <td valign="top" width="330px"><ul><li>Design and implement of editor area</li><li>Form data validation</li><li>Fix the bug</li><li>Implemention of pop-up windows</li></ul></td>
+    <td valign="top"><ul><li>Design and implement of editor area</li><li>Form data validation</li><li>Fix the bug</li><li>Implemention of pop-up windows</li></ul></td>
   </tr>
 </table>
 
