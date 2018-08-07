@@ -1,17 +1,49 @@
 
+
+
 #	uniNote
 ***Let uniNote change the way you organize your personal and professional projects.***
 
+[![codebeat badge](https://codebeat.co/badges/7c90cb73-2959-4725-9b5d-84faca54601c)](https://codebeat.co/projects/github-com-seriouszyx-uninote-master)
+
+
 <p align="center">
-<a href="https://github.com/seriouszyx/uniNote/README.md"><strong>English</strong></a> | <a href="https://github.com/seriouszyx/uniNote/README_zh_CN.md"><strong>中文</strong></a>
+<a href="https://github.com/seriouszyx/uniNote/blob/master/README.md"><strong>English</strong></a> | <a href="https://github.com/seriouszyx/uniNote/blob/master/README_zh_CN.md"><strong>简体中文</strong></a>
 </p>
+
+<!-- TOC -->
+
+
+- [Introduction](#introduction)
+- [Motivation](#motivation)
+- [Features](#features)
+    - [Good editors](#good-editors)
+    - [Beautiful   Login and register page](#beautiful---login-and-register-page)
+    - [Useful Functions](#useful-functions)
+    - [Share Your Ideas](#share-your-ideas)
+- [Installation](#installation)
+    - [Requirements](#requirements)
+    - [Steps](#steps)
+    - [Notes](#notes)
+- [Team](#team)
+    - [Members](#members)
+    - [Contributors Insights](#contributors-insights)
+    - [Timeline](#timeline)
+- [Community](#community)
+- [Sumarization](#sumarization)
+    - [About teamwork](#about-teamwork)
+    - [About technology](#about-technology)
+- [Credits](#credits)
+
+<!-- /TOC -->
+
 
 ##	Introduction
 
 [uniNote](https://github.com/seriouszyx/uniNote) is a web-based notebook to help you to manager daily memos easily. Because you can:
 
 *  Write, collect and capture ideas as searchable notes, notebooks, memos, mark and to-do lists. It’s the only planner you need. 
-*	Use Evernote as a digital notepad and easy-to-format word processor for all your thoughts and memos as they come.
+*	Use uniNote as a digital notepad and easy-to-format word processor for all your thoughts and memos as they come.
 *	Learn a lot from the codes as a result of its  `100%`  open source.
 
 ##	Motivation
@@ -28,7 +60,7 @@ uniNote was born with the following reasons:
 
 ![](https://i.loli.net/2018/08/06/5b68386b3d5e7.gif)
 
-*  format adjustment: bold, italics, hyperlinks, references, etc. the list toolbar button also supports shortcut keys
+*  format adjustment: bold, italics, hyperlinks, references, etc. the list toolbar button
 * picture upload: support for uploading ordinary pictures
 * Emoji: most of the mainstream support for Emoji expression
 * code insert: support for inserting code and its identification
@@ -37,7 +69,7 @@ uniNote was born with the following reasons:
 
 ![](https://i.loli.net/2018/08/06/5b68389fe30fb.gif)
 
-*	Inspired by a demo in codePen
+*	Inspired by a demo in [codePen](https://codepen.io/pens/)
 *	Perfect color and animation
 
 ###	Useful Functions
@@ -55,8 +87,8 @@ You can use tags to label to-do lists, follow up items, mark what's important or
 
 
 uniNote gives you the tools to share and collaborate productively with others:  
-• Create, share and discuss with the people who help get your work done, all in one app  
-• Get inspired and brainstorm creative ideas by working collaboratively
+*  Create, share and discuss with the people who help get your work done, all in one app  
+*  Get inspired and brainstorm creative ideas by working collaboratively
 
 
 ##	Installation
@@ -90,24 +122,22 @@ uniNote gives you the tools to share and collaborate productively with others:
 ###	Members
 
 
+
+
+| <a href="https://github.com/seriouszyx" target="_blank">**seriouszyx**</a> | <a href="https://github.com/StathamWYJ" target="_blank">**StathamWYJ**</a> | <a href="https://github.com/GetlostWGY" target="_blank">**GetlostWGY**</a> |
+| :---: |:---:| :---:|
+| [![FVCproductions](https://i.loli.net/2018/08/06/5b684a48dd5ea.jpg?s=330)](https://github.com/seriouszyx)    | [![FVCproductions](https://i.loli.net/2018/08/06/5b684b013ad97.png?s-330)](https://github.com/StathamWYJ) | [![FVCproductions](https://i.loli.net/2018/08/06/5b684b0165664.jpg?s=330)](https://github.com/GetlostWGY)  |
+
+<div align = "center"><b>Responsibilities of the team</b></div>
 <table>
-  <tr>
-    <td align = "center"><a href="https://github.com/seriouszyx" target="_blank"><b>seriouszyx</b></a> </td>
-    <td align = "center"><a href="https://github.com/StathamWYJ" target="_blank"><b>StathamWYJ</b></a></td>
-    <td align = "center"><a href="https://github.com/GetlostWGY" target="_blank"><b>GetlostWGY</b></a></td>
-  </tr>
-  <tr>
-    <td><a href="https://github.com/seriouszyx" target="_blank"><img src="https://i.loli.net/2018/08/06/5b684a48dd5ea.jpg "></a></td>
-    <td><a href="https://github.com/StathamWYJ" target="_blank"><img src="https://i.loli.net/2018/08/06/5b684b013ad97.png "></a></td>
-    <td><a href="https://github.com/GetlostWGY" target="_blank"><img src="https://i.loli.net/2018/08/06/5b684b0165664.jpg "></a></td>
-  </tr>
-    <tr>
-    <td valign="top"><ul><li>Design and implementation of the whole login and register page</li><li>Data interaction between front-end and back-end</li><li>Database encapsulation</li><li>Integrate members' codes to `index.jsp`</li><li>Back-end architecture</li><li>Call the API to implement the editor</li><li>A part of main page's animation</li><li>Using the MD5 algorithm for password encryption</li><li>E-mail verification function</li></ul></td>
-    <td valign="top"><ul><li>Design main page layout</li><li>Design and implement of left navigation bar</li><li>  
+ <tr>
+<td valign="top" width = 330><ul><li>Design and implementation of the whole login and register page</li><li>Data interaction between front-end and back-end</li><li>Database encapsulation</li><li>Integrate members' codes to `index.jsp`</li><li>Back-end architecture</li><li>Call the API to implement the editor</li><li>A part of main page's animation</li><li>Using the MD5 algorithm for password encryption</li><li>E-mail verification function</li></ul></td>
+    <td valign="top" width = 330><ul><li>Design main page layout</li><li>Design and implement of left navigation bar</li><li>  
 Optimizate animation</li><li>Call the API to implement Share function</li><li>Use Font Awesome to landscape icons</li></ul></td>
-    <td valign="top"><ul><li>Design and implement of editor area</li><li>Form data validation</li><li>Fix the bug</li><li>Implemention of pop-up windows</li></ul></td>
+    <td valign="top" width = 330><ul><li>Design and implement of editor area</li><li>Form data validation</li><li>Fix the bug</li><li>Implemention of pop-up windows</li></ul></td>
   </tr>
-</table>
+<table>
+
 
 ###	Contributors Insights
 
@@ -115,7 +145,7 @@ Optimizate animation</li><li>Call the API to implement Share function</li><li>Us
 
 ###	Timeline
 
-![](https://mermaidjs.github.io/mermaid-live-editor/#/view/eyJjb2RlIjoiZ2FudHRcbiAgICAgICAgZGF0ZUZvcm1hdCAgTU0tRERcbiAgICAgICAgdGl0bGUgUHJvamVjdCBUaW1lbGluZVxuXG5zZWN0aW9uIHRhZyAwLjFcbmxlYXJuIGFuZCB1c2UgZ2l0ICAgICAgOmFjdGl2ZSwgICAgcDEsIDA3LTEwLCAxZFxuTGF5b3V0IGFuZCBhbmltYXRpb24gb2YgbG9naW4gcGFnZSAgIDogcDMsMDctMTEsN2RcbiBEYXRhYmFzZSBkZXNpZ24gYW5kIGVuY2Fwc3VsYXRpb24gICAgOiBwNCwwNy0xMywgM2RcbkxheW91dCBhbmQgYW5pbWF0aW9uIG9mIG1haW4gcGFnZSAgOnA1LDA3LTEzLCAxOGRcblVzZXIgZnVuY3Rpb24gOiBwNiwwNy0xNCw2ZFxuXG5zZWN0aW9uIHRhZyAwLjJcblJlZGVzaWduIGFuZCByZWJ1aWxkIG1haW4gcGFnZSA6IHAyLDA3LTE3LDdkXG5Ob3RlIGZ1bmN0aW9uIDogcDQsMDctMjAsMTRkXG5cbnNlY3Rpb24gdGFnIDAuM1xuRGVsZXRlIGZyYW1ld29yayBhbmQgb3B0aW1pemF0ZSBhbmltYXRpb246IHAyLDA3LTI3LDRkXG5cbnNlY3Rpb24gdGFnIDAuNFxuZGVidWcgOiBwMiwwOC0wMSwgNWQiLCJtZXJtYWlkIjp7InRoZW1lIjoiZGVmYXVsdCJ9fQ)
+![](https://i.loli.net/2018/08/07/5b69672983088.png)
 
 
 ## Community
@@ -126,6 +156,8 @@ Everyone can discuss the project through the following ways to help the project 
 -   Join uniNote development support QQ 674965440
 
 We are very much looking forward to your advicing the project. Whether it is using feedback or code patches, it is a full of love for uniNote ❤️
+
+&emsp;
 
 ##	Sumarization
 
