@@ -4,8 +4,7 @@
 #	uniNote
 ***Let uniNote change the way you organize your personal and professional projects.***
 
-[![codebeat badge](https://codebeat.co/badges/7c90cb73-2959-4725-9b5d-84faca54601c)](https://codebeat.co/projects/github-com-seriouszyx-uninote-master)
-
+[![MIT License](https://img.shields.io/npm/l/mithril.svg)](https://github.com/seriouszyx/uniNote/blob/master/LICENSE) [![codebeat badge](https://codebeat.co/badges/7c90cb73-2959-4725-9b5d-84faca54601c)](https://codebeat.co/projects/github-com-seriouszyx-uninote-master)
 
 <p align="center">
 <a href="https://github.com/seriouszyx/uniNote/blob/master/README.md"><strong>English</strong></a> | <a href="https://github.com/seriouszyx/uniNote/blob/master/README_zh_CN.md"><strong>简体中文</strong></a>
